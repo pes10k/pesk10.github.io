@@ -52,15 +52,26 @@
       "@bi": {
         "title": "Business Insider",
         "url": "https://www.businessinsider.com/"
+      },
+      "@wired": {
+        "title": "Wired",
+        "url": "https://www.wired.com/"
       }
     }
   },
   "items": [
     {
+      "title": "",
+      "url": "https://www.wired.com/story/google-floc-age-privacy-theater/",
+      "source": "@wired",
+      "date": "2021-03-18T00:00:00",
+      "type": "news"
+    },
+    {
       "title": "What's Up with the Apple App Store's Privacy Changes?",
       "url": "https://themarkup.org/ask-the-markup/2021/03/16/whats-up-with-the-apple-app-stores-privacy-changes",
       "source": "@markup",
-      "date": "2020-03-16T00:00:00",
+      "date": "2021-03-16T00:00:00",
       "type": "news"
     },
     {
