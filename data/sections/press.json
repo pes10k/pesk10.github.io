@@ -56,10 +56,21 @@
       "@wired": {
         "title": "Wired",
         "url": "https://www.wired.com/"
+      },
+      "@wirecutter": {
+        "title": "The WireCutter (NYT)",
+        "url": "https://www.nytimes.com/wirecutter/"
       }
     }
   },
   "items": [
+    {
+      "title": "We Checked 250 iPhone Apps—This Is How They’re Tracking You",
+      "url": "//www.nytimes.com/wirecutter/blog/how-iphone-apps-track-you/",
+      "source": "@wirecutter",
+      "date": "2021-05-06T00:00:00",
+      "type": "news"
+    },
     {
       "title": "What the FLoC? Browser makers queue up to decry Google's latest ad-targeting initiative as invasive tracking",
       "url": "https://www.theregister.com/2021/04/14/browser_makers_reject_google_floc/",
