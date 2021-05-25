@@ -55,6 +55,22 @@
   },
   "items": [
     {
+      "title": "SugarCoat: Programmatically Generating Privacy-Preserving, Web-Compatible Resource Replacements for Content Blocking",
+      "url": "static/papers/sugarcoat-ccs-2021.pdf",
+      "year": 2021,
+      "venue": "@ccs",
+      "authors": [
+        "Michael Smith",
+        "@me",
+        "@ben",
+        "Deian Stefan"
+      ],
+      "links": {
+        "code": "//github.com/SugarCoatWeb/sugarcoat",
+        "dataset": "//github.com/SugarCoatWeb/sugarcoat-data"
+      }
+    },
+    {
       "title": "Towards Realistic and Reproducible Web Crawl Measurements",
       "url": "static/papers/realistic-www-2021.pdf",
       "year": 2021,
