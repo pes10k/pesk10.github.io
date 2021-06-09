@@ -3,67 +3,78 @@
     "sources": {
       "@digitaltrends": {
         "title": "DigitalTrends",
-        "url": "https://www.digitaltrends.com/"
+        "url": "//www.digitaltrends.com/"
       },
       "@register": {
         "title": "The Register",
-        "url": "https://www.theregister.com/"
+        "url": "//www.theregister.com/"
       },
       "@provocateur": {
         "title": "The Provocateur",
-        "url": "https://provocateurpodcast.com/"
+        "url": "//provocateurpodcast.com/"
       },
       "@sciencedaily": {
         "title": "ScienceDaily",
-        "url": "https://www.sciencedaily.com/"
+        "url": "//www.sciencedaily.com/"
       },
       "@forbes": {
         "title": "Forbes",
-        "url": "https://www.forbes.com/"
+        "url": "//www.forbes.com/"
       },
       "@newscientist": {
         "title": "NewScientist",
-        "url": "https://www.newscientist.com/"
+        "url": "//www.newscientist.com/"
       },
       "@softwaresessions": {
         "title": "Software Sessions",
-        "url": "https://www.softwaresessions.com/"
+        "url": "//www.softwaresessions.com/"
       },
       "@cnet": {
         "title": "C|Net",
-        "url": "https://www.cnet.com/"
+        "url": "//www.cnet.com/"
       },
       "@techradar": {
         "title": "TechRadar",
-        "url": "https://www.techradar.com/"
+        "url": "//www.techradar.com/"
       },
       "@sciencefriday": {
         "title": "Science Friday",
-        "url": "https://www.sciencefriday.com/"
+        "url": "//www.sciencefriday.com/"
       },
       "@diw": {
         "title": "Digital Information World",
-        "url": "https://www.digitalinformationworld.com/"
+        "url": "//www.digitalinformationworld.com/"
       },
       "@markup": {
         "title": "TheMarkup",
-        "url": "https://themarkup.org/"
+        "url": "//themarkup.org/"
       },
       "@bi": {
         "title": "Business Insider",
-        "url": "https://www.businessinsider.com/"
+        "url": "//www.businessinsider.com/"
       },
       "@wired": {
         "title": "Wired",
-        "url": "https://www.wired.com/"
+        "url": "//www.wired.com/"
       },
       "@wirecutter": {
         "title": "The WireCutter (NYT)",
-        "url": "https://www.nytimes.com/wirecutter/"
+        "url": "//www.nytimes.com/wirecutter/"
+      },
+      "@androidcentral": {
+        "title": "AndroidCentral",
+        "url": "//www.androidcentral.com/"
       }
     }
   },
   "items": [
+    {
+      "title": "Google pledges not to build backdoors in FLoC but not everyone's convinced",
+      "url": "//www.androidcentral.com/google-privacy-sandbox-commitment-no-floc-backdoors",
+      "source": "@androidcentral",
+      "date": "2021-06-02T00:00:00",
+      "type": "news"
+    },
     {
       "title": "We Checked 250 iPhone Apps—This Is How They’re Tracking You",
       "url": "//www.nytimes.com/wirecutter/blog/how-iphone-apps-track-you/",
@@ -73,112 +84,112 @@
     },
     {
       "title": "What the FLoC? Browser makers queue up to decry Google's latest ad-targeting initiative as invasive tracking",
-      "url": "https://www.theregister.com/2021/04/14/browser_makers_reject_google_floc/",
+      "url": "//www.theregister.com/2021/04/14/browser_makers_reject_google_floc/",
       "source": "@register",
       "date": "2020-04-14T00:00:00",
       "type": "news"
     },
     {
       "title": "Google and the Age of Privacy Theater",
-      "url": "https://www.wired.com/story/google-floc-age-privacy-theater/",
+      "url": "//www.wired.com/story/google-floc-age-privacy-theater/",
       "source": "@wired",
       "date": "2021-03-18T00:00:00",
       "type": "news"
     },
     {
       "title": "What's Up with the Apple App Store's Privacy Changes?",
-      "url": "https://themarkup.org/ask-the-markup/2021/03/16/whats-up-with-the-apple-app-stores-privacy-changes",
+      "url": "//themarkup.org/ask-the-markup/2021/03/16/whats-up-with-the-apple-app-stores-privacy-changes",
       "source": "@markup",
       "date": "2021-03-16T00:00:00",
       "type": "news"
     },
     {
       "title": "How Apple, Google, and other browser makers are quietly duking it out over the future of the web",
-      "url": "https://www.businessinsider.com/apple-google-brave-browser-privacy-fight-2020-10",
+      "url": "//www.businessinsider.com/apple-google-brave-browser-privacy-fight-2020-10",
       "source": "@bi",
       "date": "2020-12-22T00:00:00",
       "type": "news"
     },
     {
       "title": "Google Chrome's crackdown on ad blockers and browser extensions, Manifest v3, is now available in beta",
-      "url": "https://www.theregister.com/2020/12/10/googles_browser_extension_platform_rewrite/",
+      "url": "//www.theregister.com/2020/12/10/googles_browser_extension_platform_rewrite/",
       "source": "@register",
       "date": "2020-12-10T00:00:00",
       "type": "news"
     },
     {
       "title": "The digital switch that blocks all websites from selling your personal data",
-      "url": "https://www.digitaltrends.com/features/global-privacy-control-internet-data-misuse/",
+      "url": "//www.digitaltrends.com/features/global-privacy-control-internet-data-misuse/",
       "source": "@digitaltrends",
       "date": "2020-11-23T00:00:00",
       "type": "news"
     },
     {
       "title": "I Scanned the Websites I Visit with Blacklight, and It’s Horrifying. Now What?",
-      "url": "https://themarkup.org/ask-the-markup/2020/09/22/i-scanned-the-websites-i-visit-with-blacklight-and-its-horrifying-now-what",
+      "url": "//themarkup.org/ask-the-markup/2020/09/22/i-scanned-the-websites-i-visit-with-blacklight-and-its-horrifying-now-what",
       "source": "@markup",
       "date": "2020-09-22T00:00:00",
       "type": "news"
     },
     {
       "title": "Brave Takes Brave Stand Against Google's Plan to Turn Websites into Ad-Blocker-Thwarting Web Bundles",
-      "url": "https://www.theregister.com/2020/08/27/brave_webbundles_google/",
+      "url": "//www.theregister.com/2020/08/27/brave_webbundles_google/",
       "source": "@register",
       "date": "2020-08-27T04:00:00",
       "type": "news"
     },
     {
       "title": "Aggrieved Ad Tech Types Decry Google Dominance in W3C Standards – Who Writes the Rules and for Whom?",
-      "url": "https://www.theregister.com/2020/07/17/aggrieved_ad_tech_types_decry/",
+      "url": "//www.theregister.com/2020/07/17/aggrieved_ad_tech_types_decry/",
       "source": "@register",
       "date": "2020-07-17T04:00:00",
       "type": "news"
     },
     {
       "title": "FYI: Your Browser can pick up Ultrasonic Signals You Can't Hear, and That Sounds Like a Privacy Nightmare to Some",
-      "url": "https://www.theregister.com/2020/05/07/web_audio_api_ultrasonic_leaks/",
+      "url": "//www.theregister.com/2020/05/07/web_audio_api_ultrasonic_leaks/",
       "source": "@register",
       "date": "2020-05-07T00:00:00",
       "type": "news"
     },
     {
       "title": "Chrome Deploys Deep-Linking Tech in Latest Browser Build Despite Privacy Concerns",
-      "url": "https://www.theregister.com/2020/02/20/chrome_deploys_deeplinking/",
+      "url": "//www.theregister.com/2020/02/20/chrome_deploys_deeplinking/",
       "source": "@register",
       "date": "2020-02-20T00:00:00",
       "type": "news"
     },
     {
       "title": "Google's Second Stab at Preserving Both Privacy and Ad Revenue Draws Fire",
-      "url": "https://www.theregister.com/2020/02/10/googles_second_stab_at_preserving_both_privacy_and_ad_revenue_raises_concerns/",
+      "url": "//www.theregister.com/2020/02/10/googles_second_stab_at_preserving_both_privacy_and_ad_revenue_raises_concerns/",
       "source": "@register",
       "date": "2020-02-10T00:00:00",
       "type": "news"
     },
     {
       "title": "If You Want an Example of How User Concerns do not Drive Software Development, Check Out This Google-backed API",
-      "url": "https://www.theregister.com/2019/12/06/chrome_app_detection_api_privacy/",
+      "url": "//www.theregister.com/2019/12/06/chrome_app_detection_api_privacy/",
       "source": "@register",
       "date": "2019-12-06T00:00:00",
       "type": "news"
     },
     {
       "title": "Gotta Have Standards? Security Boffins not API about Bloated Browsers",
-      "url": "https://www.theregister.com/2017/10/24/browsers_api_security_paper/",
+      "url": "//www.theregister.com/2017/10/24/browsers_api_security_paper/",
       "source": "@register",
       "date": "2017-10-24T00:00:00",
       "type": "news"
     },
     {
       "title": "First Large-Scale Doxing Study Reveals Motivations and Targets for Cyber Bullying",
-      "url": "https://www.sciencedaily.com/releases/2017/11/171107122918.htm",
+      "url": "//www.sciencedaily.com/releases/2017/11/171107122918.htm",
       "source": "@sciencedaily",
       "date": "2017-11-07T00:00:00",
       "type": "news"
     },
     {
       "title": "Privacy on the Modern Web",
-      "url": "https://provocateurpodcast.com/2017/07/31/chris-kanich-privacy-on-the-modern-web/",
+      "url": "//provocateurpodcast.com/2017/07/31/chris-kanich-privacy-on-the-modern-web/",
       "source": "@provocateur",
       "date": "2017-07-31T00:00:00",
       "type": "podcast",
@@ -186,49 +197,49 @@
     },
     {
       "title": "Protecting Your Online Privacy",
-      "url": "https://www.sciencefriday.com/segments/protecting-your-online-privacy/",
+      "url": "//www.sciencefriday.com/segments/protecting-your-online-privacy/",
       "source": "@sciencefriday",
       "date": "2017-12-01T00:00:00",
       "type": "radio"
     },
     {
       "title": "Google Chrome 80 Released With Controversial Deep Linking Upgrade",
-      "url": "https://www.forbes.com/sites/gordonkelly/2020/02/23/google-chrome-80-upgrade-deep-linking-update-chrome-browser/#7f4cba12219c",
+      "url": "//www.forbes.com/sites/gordonkelly/2020/02/23/google-chrome-80-upgrade-deep-linking-update-chrome-browser/#7f4cba12219c",
       "source": "@forbes",
       "date": "2020-02-23T00:00:00",
       "type": "news"
     },
     {
       "title": "Why People Ruin Others’ Lives by Exposing All Their Data Online",
-      "url": "https://www.newscientist.com/article/2152950-why-people-ruin-others-lives-by-exposing-all-their-data-online/",
+      "url": "//www.newscientist.com/article/2152950-why-people-ruin-others-lives-by-exposing-all-their-data-online/",
       "source": "@newscientist",
       "date": "2017-11-13T00:00:00",
       "type": "news"
     },
     {
       "title": "The Battle for Your Privacy on the Web With Pete Snyder",
-      "url": "https://www.softwaresessions.com/episodes/the-battle-for-your-privacy-on-the-web/",
+      "url": "//www.softwaresessions.com/episodes/the-battle-for-your-privacy-on-the-web/",
       "source": "@softwaresessions",
       "date": "2020-08-12T00:00:00",
       "type": "podcast"
     },
     {
       "title": "Google's Plan for Chrome Capability has a Big Security Risk",
-      "url": "https://www.cnet.com/news/google-plan-for-chrome-capability-has-a-big-security-risk/",
+      "url": "//www.cnet.com/news/google-plan-for-chrome-capability-has-a-big-security-risk/",
       "source": "@cnet",
       "date": "2020-07-29T00:00:00",
       "type": "news"
     },
     {
       "title": "Google’s New Web Standard Could Disable Your Ad-Blocker",
-      "url": "https://www.techradar.com/in/news/googles-new-web-standard-could-disable-your-ad-blocker",
+      "url": "//www.techradar.com/in/news/googles-new-web-standard-could-disable-your-ad-blocker",
       "source": "@techradar",
       "date": "2020-08-27T00:00:00",
       "type": "news"
     },
     {
       "title": "Google Is Working On A New Web Standard Called WebBundles Which Is Dangerous To The Privacy Of Internet Users, Security Researchers Warned",
-      "url": "https://www.digitalinformationworld.com/2020/09/google-test-webbundles-can-be-dangerous-for-internet-users-privacy-researchers-warned.html",
+      "url": "//www.digitalinformationworld.com/2020/09/google-test-webbundles-can-be-dangerous-for-internet-users-privacy-researchers-warned.html",
       "source": "@diw",
       "date": "2020-09-01T00:00:00",
       "type": "news"
