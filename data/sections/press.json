@@ -64,10 +64,32 @@
       "@androidcentral": {
         "title": "AndroidCentral",
         "url": "//www.androidcentral.com/"
+      },
+      "@technicalmarketing": {
+        "title": "Technical Marketing Handbook",
+        "url": "//www.teamsimmer.com/tmh-podcast/"
+      },
+      "@protocol": {
+        "title": "Protocol",
+        "url": "//www.protocol.com/"
       }
     }
   },
   "items": [
+    {
+      "title": "Concern trolls and power grabs: Inside Big Tech’s angry, geeky, often petty war for your privacy",
+      "url": "//www.protocol.com/policy/w3c-privacy-war",
+      "source": "@protocol",
+      "date": "2021-07-13T00:00:00",
+      "type": "news"
+    },
+    {
+      "title": "Ad Blockers with Pete Snyder",
+      "url": "//www.teamsimmer.com/2021/07/13/ad-blockers-with-pete-snyder/",
+      "source": "@technicalmarketing",
+      "date": "2021-07-13T00:00:00",
+      "type": "podcast"
+    },
     {
       "title": "Google pledges not to build backdoors in FLoC but not everyone's convinced",
       "url": "//www.androidcentral.com/google-privacy-sandbox-commitment-no-floc-backdoors",
