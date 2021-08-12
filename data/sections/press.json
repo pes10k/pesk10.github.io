@@ -72,10 +72,21 @@
       "@protocol": {
         "title": "Protocol",
         "url": "//www.protocol.com/"
+      },
+      "@fastcompany": {
+        "title": "Fast Company",
+        "url": "//www.fastcompany.com/"
       }
     }
   },
   "items": [
+    {
+      "title": "The incredibly sneaky way websites sidestep privacy tools to spy on you",
+      "url": "//www.fastcompany.com/90663878/bounce-tracking-privacy-browsers-brave-firefox-safari-edge",
+      "source": "@fastcompany",
+      "date": "2021-08-12T00:00:00",
+      "type": "news"
+    },
     {
       "title": "Concern trolls and power grabs: Inside Big Tech’s angry, geeky, often petty war for your privacy",
       "url": "//www.protocol.com/policy/w3c-privacy-war",
