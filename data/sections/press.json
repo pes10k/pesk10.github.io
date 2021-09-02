@@ -76,10 +76,21 @@
       "@fastcompany": {
         "title": "Fast Company",
         "url": "//www.fastcompany.com/"
+      },
+      "@digiday": {
+        "title": "DigiDay",
+        "url": "//digiday.com/"
       }
     }
   },
   "items": [
+    {
+      "title": "Google’s vague privacy cure-all is showing up in new proposals, but some say it could break the internet",
+      "url": "//digiday.com/marketing/googles-vague-privacy-cure-all-is-showing-up-in-new-proposals-but-some-say-it-could-break-the-internet/",
+      "source": "@digiday",
+      "date": "2021-08-30T00:00:00",
+      "type": "news"
+    },
     {
       "title": "The incredibly sneaky way websites sidestep privacy tools to spy on you",
       "url": "//www.fastcompany.com/90663878/bounce-tracking-privacy-browsers-brave-firefox-safari-edge",
