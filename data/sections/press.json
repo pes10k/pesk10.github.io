@@ -80,10 +80,21 @@
       "@digiday": {
         "title": "DigiDay",
         "url": "//digiday.com/"
+      },
+      "@cr": {
+        "title": "Consumer Reports",
+        "url": "//www.consumerreports.org/"
       }
     }
   },
   "items": [
+    {
+      "title": "Internet Advertising Is About to Change. Here's What Consumers Need to Know.",
+      "url": "//www.consumerreports.org/advertising-marketing/internet-advertising-is-about-to-change-third-party-cookies-a6221885875/",
+      "source": "@cr",
+      "date": "2021-11-08T00:00:00",
+      "type": "news"
+    },
     {
       "title": "Google’s vague privacy cure-all is showing up in new proposals, but some say it could break the internet",
       "url": "//digiday.com/marketing/googles-vague-privacy-cure-all-is-showing-up-in-new-proposals-but-some-say-it-could-break-the-internet/",
