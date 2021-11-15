@@ -32,6 +32,13 @@
       }
     },
     {
+      "title": "Improving the Coverage and Compatibility of Web Content Blocking in Brave Browsers",
+      "url": "//securitylunch.stanford.edu/2021/fall/",
+      "type":"invited talk",
+      "year": 2021,
+      "venue": "Stanford Security Lunch"
+    },
+    {
       "title": "Best-of-Breed Content Blocking in Brave: Three Projects to Improve the Depth, Breath, and Usefulness of Blocking at Scale",
       "url": "//madweb.work/program20/",
       "type": "invited talk",
