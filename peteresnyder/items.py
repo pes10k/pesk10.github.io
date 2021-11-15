@@ -251,7 +251,7 @@ class InvolvementItem(BaseItem):
 
 
 class PressItem(ListItem):
-    PRESS_ITEM_TYPES = ["news", "podcast", "radio"]
+    ITEM_TYPES = ["news", "podcast", "radio"]
     html_classes = ["publications", "publications-press"]
 
     source: Source
@@ -259,7 +259,7 @@ class PressItem(ListItem):
 
     def __init__(self, date: datetime.datetime, title: str, url: Url,
                  source: Source, item_type: str) -> None:
-        if item_type not in PressItem.PRESS_ITEM_TYPES:
+        if item_type not in PressItem.ITEM_TYPES:
             raise ValueError(f"{item_type} is not a valid PressItem type")
         self.source = source
         self.type = item_type
@@ -283,3 +283,56 @@ class PressItem(ListItem):
         source = source_from_json(item_data, all_data)
         return PressItem(date, item_data["title"], item_data["url"],
                          source, item_data["type"])
+
+
+class TalksItem(ListItem):
+    ITEM_TYPES = ["invited talk", "conference talk"]
+    type: str
+    links: List[Link]
+    venue: Venue
+
+    def __init__(self, year: Year, title: str, item_type: str,
+                 url: Optional[Url], links: List[Link], venue: Venue) -> None:
+        self.links = links
+        self.venue = venue
+        if item_type not in TalksItem.ITEM_TYPES:
+            raise ValueError(f"{item_type} is not a valid TalksItem type")
+        self.type = item_type
+        super().__init__(year, title, url)
+
+    def type_line(self) -> Html:
+        type_markup = html.escape(self.type)
+        return f"<span class='pub-type'>{type_markup}</span>"
+
+    def add_html(self, markup: Indenter) -> None:
+        markup.add("<li>").up()
+        markup.add(self.title_html())
+        add_dest_html(self.venue, self, markup)
+        markup.add(self.type_line())
+        add_links_html(self.links, markup)
+        markup.down().add("</li>")
+
+    def links_to_local_file(self) -> bool:
+        if not self.url:
+            return False
+        if "//" in self.url:  # Looks like a HTTP link
+            return False
+        return True
+
+    def validate(self, root_dir: Path) -> bool:
+        if self.url and self.links_to_local_file():
+            possible_pdf_path = root_dir / Path(self.url)
+            if not possible_pdf_path.is_file():
+                raise FileNotFoundError(str(possible_pdf_path))
+        return True
+
+    @staticmethod
+    def item_from_json(item_data: Dict[str, Any],
+                       all_data: Dict[str, Any]) -> "TalksItem":
+        year = item_data["year"]
+        links = links_from_json(item_data)
+        item_type = item_data["type"]
+        venue = venue_from_json(item_data, all_data)
+        url = item_data["url"] if "url" in item_data else None
+        return TalksItem(year, item_data["title"], item_type, url, links,
+                         venue)
