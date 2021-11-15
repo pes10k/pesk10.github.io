@@ -95,7 +95,7 @@ class BaseItem:
         raise NotImplementedError()
 
     def validate(self, root_dir: Path) -> bool:
-        possible_files = []
+        possible_files: List[str] = []
         for file_field_name in type(self).file_fields:
             field_values = getattr(self, file_field_name)
             if not isinstance(field_values, list):
@@ -305,6 +305,7 @@ class PressItem(ListItem):
 
 class TalksItem(ListItem):
     ITEM_TYPES = ["invited talk", "conference talk"]
+    html_classes = ["publications", "publications-talks"]
     file_fields = ["url", "links"]
 
     type: str
