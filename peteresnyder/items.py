@@ -12,6 +12,14 @@ from .indent import Indenter
 from .types import Author, Date, Html, Link, Source, Url, Venue, Year
 
 
+def is_local_file_ref(ref: Optional[str]) -> bool:
+    if not ref:
+        return False
+    if "//" in ref:  # Looks like a HTTP link
+        return False
+    return True
+
+
 def add_authors_html(authors: List[Author], markup: Indenter) -> None:
     markup.add("<ol class='authors'>").up()
     for author in authors:
@@ -81,11 +89,31 @@ def links_from_json(item_data: Dict[str, Any]) -> List[Link]:
 
 class BaseItem:
     html_classes: List[str] = []
+    file_fields: List[str] = []
 
     def add_html(self, markup: Indenter) -> None:
         raise NotImplementedError()
 
     def validate(self, root_dir: Path) -> bool:
+        possible_files = []
+        for file_field_name in type(self).file_fields:
+            field_values = getattr(self, file_field_name)
+            if not isinstance(field_values, list):
+                field_values = [field_values]
+            for a_field_value in field_values:
+                if isinstance(a_field_value, dict):
+                    possible_files.extend(a_field_value.values())
+                    continue
+                if isinstance(a_field_value, Link):
+                    possible_files.append(a_field_value.url)
+                    continue
+                possible_files.append(a_field_value)
+        for a_ref in possible_files:
+            if not is_local_file_ref(a_ref):
+                continue
+            possible_file_path = root_dir / Path(a_ref)
+            if not possible_file_path.is_file():
+                raise FileNotFoundError(str(possible_file_path))
         return True
 
     @staticmethod
@@ -115,6 +143,8 @@ class BaseItem:
 
 class ListItem(BaseItem):
     html_classes = ["publications"]
+    file_fields = ["url"]
+
     date: Date
     title: str
     url: Optional[Url]
@@ -171,6 +201,8 @@ class BlogItem(ListItem):
 
 @dataclasses.dataclass
 class PublicationItem(ListItem):
+    file_fields = ["url", "links"]
+
     authors: List[Author]
     links: List[Link]
     venue: Venue
@@ -190,20 +222,6 @@ class PublicationItem(ListItem):
         add_dest_html(self.venue, self, markup)
         add_links_html(self.links, markup)
         markup.down().add("</li>")
-
-    def links_to_local_file(self) -> bool:
-        if not self.url:
-            return False
-        if "//" in self.url:  # Looks like a HTTP link
-            return False
-        return True
-
-    def validate(self, root_dir: Path) -> bool:
-        if self.url and self.links_to_local_file():
-            possible_pdf_path = root_dir / Path(self.url)
-            if not possible_pdf_path.is_file():
-                raise FileNotFoundError(str(possible_pdf_path))
-        return True
 
     @staticmethod
     def item_from_json(item_data: Dict[str, Any],
@@ -287,6 +305,8 @@ class PressItem(ListItem):
 
 class TalksItem(ListItem):
     ITEM_TYPES = ["invited talk", "conference talk"]
+    file_fields = ["url", "links"]
+
     type: str
     links: List[Link]
     venue: Venue
@@ -311,20 +331,6 @@ class TalksItem(ListItem):
         markup.add(self.type_line())
         add_links_html(self.links, markup)
         markup.down().add("</li>")
-
-    def links_to_local_file(self) -> bool:
-        if not self.url:
-            return False
-        if "//" in self.url:  # Looks like a HTTP link
-            return False
-        return True
-
-    def validate(self, root_dir: Path) -> bool:
-        if self.url and self.links_to_local_file():
-            possible_pdf_path = root_dir / Path(self.url)
-            if not possible_pdf_path.is_file():
-                raise FileNotFoundError(str(possible_pdf_path))
-        return True
 
     @staticmethod
     def item_from_json(item_data: Dict[str, Any],
