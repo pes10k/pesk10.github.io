@@ -17,13 +17,24 @@
   },
   "items": [
     {
+      "title": "Online Tracking, What Can Be Done About it, and Who’s Doing it",
+      "url": "//web.stanford.edu/class/cs253/",
+      "type": "invited talk",
+      "year": 2021,
+      "venue": "CS253 - Web Security @ Stanford",
+      "links": {
+        "slides (keynote)": "stanford-2021-online-tracking.key",
+        "slides (pdf)": "stanford-2021-online-tracking.pdf"
+      }
+    },
+    {
       "title": "Best-of-Breed Content Blocking in Brave: Three Projects to Improve the Depth, Breath, and Usefulness of Blocking at Scale",
       "url": "//madweb.work/program20/",
       "type": "invited talk",
       "year": 2020,
-      "venue": "@venue",
+      "venue": "@madweb",
       "links": {
-        "slides": "static/slides/madweb-2020-best-of-breed-blocking.pdf",
+        "slides (pdf)": "static/slides/madweb-2020-best-of-breed-blocking.pdf"
       }
     },
     {
@@ -33,7 +44,7 @@
       "year": 2019,
       "venue": "CS253 - Web Security @ Stanford",
       "links": {
-        "slides": "static/slides/brave-fingerprinting-privacy-on-web.pdf",
+        "slides (pdf)": "static/slides/brave-fingerprinting-privacy-on-web.pdf",
         "video": "//www.youtube.com/watch?v=OVh0oHbmla0"
       }
     },
@@ -44,7 +55,7 @@
       "year": 2019,
       "venue": "@pearg",
       "links": {
-        "slides": "static/slides/ietf-2019-privacy-standards-and-anti-patterns.pdf"
+        "slides (pdf)": "static/slides/ietf-2019-privacy-standards-and-anti-patterns.pdf"
       }
     },
     {
@@ -54,7 +65,7 @@
       "year": 2019,
       "venue": "@www",
       "links": {
-        "slides": "static/slides/www-w3c-2019-brave-privacy-standards.pdf"
+        "slides (pdf)": "static/slides/www-w3c-2019-brave-privacy-standards.pdf"
       }
     },
     {
@@ -64,7 +75,7 @@
       "year": 2019,
       "venue": "USENIX Enigma",
       "links": {
-        "slides": "static/slides/usenix-enigma-2019-extensions.pdf"
+        "slides (pdf)": "static/slides/usenix-enigma-2019-extensions.pdf"
       }
     },
     {
