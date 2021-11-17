@@ -152,7 +152,6 @@ a:hover {
 }
 
 #press-container .publications li .date:before,
-#press-container .publications li .pub-type:before,
 #other-writing-container .publications li .date:before {
   content: ", ";
 }
@@ -202,6 +201,7 @@ code {
   content: " ";
 }
 
-.publications-talks .venue span:after {
+.publications-talks .venue span:after,
+.publications-press .year:after {
   content: ", ";
 }
