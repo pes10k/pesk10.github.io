@@ -8,18 +8,18 @@
     "sources": {
       "@w3c": {
         "title": "W3C Blog",
-        "url": "//www.w3.org/blog/"
+        "url": "https://www.w3.org/blog/"
       },
       "@brave": {
         "title": "Brave Blog",
-        "url": "//brave.com/blog/"
+        "url": "https://brave.com/blog/"
       }
     }
   },
   "items": [
     {
       "title": "Global Privacy Control, a new Privacy Standard Proposal, now Available in Brave’s Desktop and Android Testing Versions",
-      "url": "//brave.com/global-privacy-control/",
+      "url": "https://brave.com/global-privacy-control/",
       "date": "2020-10-07T00:00:00",
       "desc": "Brave authors and implements a new proposal for opting users out of online tracking.",
       "authors": [
@@ -30,7 +30,7 @@
     },
     {
       "title": "WebBundles Harmful to Content Blocking, Security Tools, and the Open Web (Standards Updates #2)",
-      "url": "//brave.com/webbundles-harmful-to-content-blocking-security-tools-and-the-open-web/",
+      "url": "https://brave.com/webbundles-harmful-to-content-blocking-security-tools-and-the-open-web/",
       "date": "2020-08-25T00:00:00",
       "desc": "WebBundles are extremely bad for researchers, blocking tools, and folks hoping to preserve a user-editable web.",
       "authors": [
@@ -40,7 +40,7 @@
     },
     {
       "title": "What’s Brave Done For My Privacy Lately #5: Grab Bag",
-      "url": "//brave.com/whats-brave-done-for-my-privacy-lately-episode5/",
+      "url": "https://brave.com/whats-brave-done-for-my-privacy-lately-episode5/",
       "date": "2020-07-20T00:00:00",
       "desc": "Description of new query-param filters, referrer policy changes, and removing the Reporting API from Brave",
       "authors": [
@@ -53,7 +53,7 @@
     },
     {
       "title": "What’s Brave Done For My Privacy Lately? Episode #4: Fingerprinting Defenses 2.0",
-      "url": "//brave.com/whats-brave-done-for-my-privacy-lately-episode-4-fingerprinting-defenses-2-0/",
+      "url": "https://brave.com/whats-brave-done-for-my-privacy-lately-episode-4-fingerprinting-defenses-2-0/",
       "date": "2020-05-18T00:00:00",
       "desc": "Description of all the features included in Brave's new, randomization based fingerprinting defenses.",
       "authors": [
@@ -65,7 +65,7 @@
     },
     {
       "title": "What’s Brave Done For My Privacy Lately? Episode #3: Fingerprint Randomization",
-      "url": "//brave.com/whats-brave-done-for-my-privacy-lately-episode3/",
+      "url": "https://brave.com/whats-brave-done-for-my-privacy-lately-episode3/",
       "date": "2020-05-05T00:00:00",
       "desc": "Introduction to Brave moving from 'consistent response' to 'randomized response' based fingerprinting defenses.",
       "authors": [
@@ -77,7 +77,7 @@
     },
     {
       "title": "What’s Brave Done For My Privacy Lately? Episode #2: Third-Party Cosmetic Filtering",
-      "url": "//brave.com/whats-brave-done-for-my-privacy-lately-episode2/",
+      "url": "https://brave.com/whats-brave-done-for-my-privacy-lately-episode2/",
       "date": "2020-02-20T00:00:00",
       "desc": "Description of Brave's unique approach to cosmetic filtering, which heuristically only hides third party ads.",
       "authors": [
@@ -90,7 +90,7 @@
     },
     {
       "title": "What’s Brave Done For My Privacy Lately-Episode #1: Web Resource Replacements",
-      "url": "//brave.com/whats-brave-done-for-my-privacy-lately-episode1/",
+      "url": "https://brave.com/whats-brave-done-for-my-privacy-lately-episode1/",
       "date": "2020-01-23T00:00:00",
       "desc": "Description of the technique and benefits of resource replacements in Brave.",
       "authors": [
@@ -103,7 +103,7 @@
     },
     {
       "title": "Brave, Fingerprinting, and Privacy Budgets",
-      "url": "//brave.com/brave-fingerprinting-and-privacy-budgets/",
+      "url": "https://brave.com/brave-fingerprinting-and-privacy-budgets/",
       "date": "2019-12-06T00:00:00",
       "desc": "Discussion of why <a href='//github.com/bslassey/privacy-budget'>Google's Privacy Budget</a> proposal for combating browser fingerprinting would not be effective, and what alternatives Brave is pursuing.",
       "authors": [
@@ -114,7 +114,7 @@
     },
     {
       "title": "Privacy Anti-Patterns In Standards",
-      "url": "//www.w3.org/blog/2019/06/privacy-anti-patterns-in-standards/",
+      "url": "https://www.w3.org/blog/2019/06/privacy-anti-patterns-in-standards/",
       "date": "2019-06-12T00:00:00",
       "desc": "Description of several privacy-harming patterns observed as part of <a href='//www.w3.org/Privacy/'><abbr title='Privacy Interest Group'>PING</abbr></a>, the W3C's privacy review group, how these anti-patterns make it difficult to protect user privacy on the web.",
       "authors": [
@@ -124,7 +124,7 @@
     },
     {
       "title": "Brave's Concerns with the Client-Hints Proposal",
-      "url": "//brave.com/brave-and-client-hints/",
+      "url": "https://brave.com/brave-and-client-hints/",
       "date": "2019-05-09T00:00:00",
       "desc": "Discussion of concerns with the proposed <a href='//tools.ietf.org/html/draft-ietf-httpbis-client-hints-07'>Client Hints</a> standard, and why it would be harmful for web privacy.",
       "authors": [
@@ -137,7 +137,7 @@
     },
     {
       "title": "Understanding Redirection-Based Tracking",
-      "url": "//brave.com/redirection-based-tracking/",
+      "url": "https://brave.com/redirection-based-tracking/",
       "date": "2018-08-12T00:00:00",
       "desc": "Blog post description research lead at Brave regarding the frequency and parties involved in bounce-tracking. Conducted as part of designing Brave's improvements to Safari's <a href='//webkit.org/blog/8311/intelligent-tracking-prevention-2-0/'>Intelligent Tracking Prevention 2.0</a>.",
       "authors": [
@@ -148,7 +148,7 @@
     },
     {
       "title": "The Mounting Cost of Stale Ad Blocking Rules",
-      "url": "//brave.com/the-mounting-cost-of-stale-ad-blocking-rules/",
+      "url": "https://brave.com/the-mounting-cost-of-stale-ad-blocking-rules/",
       "date": "2018-07-18T00:00:00",
       "desc": "Blog post describing research lead at Brave regarding the number and cost of the accumulation of stale rules in EasyList.",
       "authors": [

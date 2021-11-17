@@ -15,14 +15,14 @@
       },
       "@uicsigsec": {
         "title": "UIC SIG Security",
-        "url": "//acm.cs.uic.edu/sigsecurity"
+        "url": "https://acm.cs.uic.edu/sigsecurity"
       }
     }
   },
   "items": [
     {
       "title": "Online Tracking, What Can Be Done About it, and Who’s Doing it",
-      "url": "//web.stanford.edu/class/cs253/",
+      "url": "https://web.stanford.edu/class/cs253/",
       "type": "invited talk",
       "year": 2021,
       "venue": "CS253 - Web Security @ Stanford",
@@ -33,14 +33,14 @@
     },
     {
       "title": "Improving the Coverage and Compatibility of Web Content Blocking in Brave Browsers",
-      "url": "//securitylunch.stanford.edu/2021/fall/",
+      "url": "https://securitylunch.stanford.edu/2021/fall/",
       "type":"invited talk",
       "year": 2021,
       "venue": "Stanford Security Lunch"
     },
     {
       "title": "Best-of-Breed Content Blocking in Brave: Three Projects to Improve the Depth, Breath, and Usefulness of Blocking at Scale",
-      "url": "//madweb.work/program20/",
+      "url": "https://madweb.work/program20/",
       "type": "invited talk",
       "year": 2020,
       "venue": "@madweb",
@@ -50,18 +50,18 @@
     },
     {
       "title": "Brave, Fingerprinting, and Privacy on the Web",
-      "url": "//web.stanford.edu/class/cs253/",
+      "url": "https://web.stanford.edu/class/cs253/",
       "type": "invited talk",
       "year": 2019,
       "venue": "CS253 - Web Security @ Stanford",
       "links": {
         "slides (pdf)": "static/slides/brave-fingerprinting-privacy-on-web.pdf",
-        "video": "//www.youtube.com/watch?v=OVh0oHbmla0"
+        "video": "https://www.youtube.com/watch?v=OVh0oHbmla0"
       }
     },
     {
       "title": "Privacy, Standards and Anti-Patterns",
-      "url": "//datatracker.ietf.org/meeting/105/materials/agenda-105-pearg-01",
+      "url": "https://datatracker.ietf.org/meeting/105/materials/agenda-105-pearg-01",
       "type": "invited talk",
       "year": 2019,
       "venue": "@pearg",
@@ -71,7 +71,7 @@
     },
     {
       "title": "Brave, Privacy and Standards",
-      "url": "//www.w3.org/2019/05/15-w3c-track/speakers.html#pete",
+      "url": "https://www.w3.org/2019/05/15-w3c-track/speakers.html#pete",
       "type": "invited talk",
       "year": 2019,
       "venue": "@www",
@@ -81,7 +81,7 @@
     },
     {
       "title": "Web Privacy Beyond Extensions: New Browsers Are Pursuing Deep Privacy Protections",
-      "url": "//www.usenix.org/conference/enigma2019/presentation/snyder",
+      "url": "https://www.usenix.org/conference/enigma2019/presentation/snyder",
       "type": "conference talk",
       "year": 2019,
       "venue": "USENIX Enigma",

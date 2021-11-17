@@ -66,8 +66,8 @@
         "Deian Stefan"
       ],
       "links": {
-        "code": "//github.com/SugarCoatWeb/sugarcoat",
-        "dataset": "//github.com/SugarCoatWeb/sugarcoat-data"
+        "code": "https://github.com/SugarCoatWeb/sugarcoat",
+        "dataset": "https://github.com/SugarCoatWeb/sugarcoat-data"
       }
     },
     {
@@ -86,9 +86,9 @@
         "@alex"
       ],
       "links": {
-        "arxiv": "//arxiv.org/abs/1905.08767",
-        "code": "//github.com/wspr-ncsu/reprocrawl-code-release",
-        "dataset": "//drive.google.com/file/d/1x-6_ATLtUTgBGmF8Yuz_ne-e_G20ve46/view"
+        "arxiv": "https://arxiv.org/abs/1905.08767",
+        "code": "https://github.com/wspr-ncsu/reprocrawl-code-release",
+        "dataset": "https://drive.google.com/file/d/1x-6_ATLtUTgBGmF8Yuz_ne-e_G20ve46/view"
       }
     },
     {
@@ -103,8 +103,8 @@
         "@alex"
       ],
       "links": {
-        "arxiv": "//arxiv.org/abs/2005.11910",
-        "dataset": "//github.com/semantic-signatures/semantic-signatures",
+        "arxiv": "https://arxiv.org/abs/2005.11910",
+        "dataset": "https://github.com/semantic-signatures/semantic-signatures",
         "@slides": "static/slides/sigmetrics-2020-filters-slides.pdf"
       }
     },
@@ -119,7 +119,7 @@
         "@ben"
       ],
       "links": {
-        "arxiv": "//arxiv.org/abs/1810.09160",
+        "arxiv": "https://arxiv.org/abs/1810.09160",
         "@slides": "static/slides/easylist-sigmetrics-2020.pdf"
       }
     },
@@ -136,8 +136,8 @@
         "@ben"
       ],
       "links": {
-        "arxiv": "//arxiv.org/pdf/1910.07303",
-        "dataset": "//sites.google.com/site/longtailfilterlists/"
+        "arxiv": "https://arxiv.org/pdf/1910.07303",
+        "dataset": "https://sites.google.com/site/longtailfilterlists/"
       }
     },
     {
@@ -152,7 +152,7 @@
         "@ben"
       ],
       "links": {
-        "arxiv": "//arxiv.org/pdf/1903.01406"
+        "arxiv": "https://arxiv.org/pdf/1903.01406"
       }
     },
     {
@@ -169,8 +169,8 @@
         "Zubair Shafiq"
       ],
       "links": {
-        "arxiv": "//arxiv.org/pdf/1805.09155",
-        "blog": "//www.brave.com/brave-proposes-a-machine-learning-approach-for-ad-blocking/"
+        "arxiv": "https://arxiv.org/pdf/1805.09155",
+        "blog": "https://www.brave.com/brave-proposes-a-machine-learning-approach-for-ad-blocking/"
       }
     },
     {
@@ -185,7 +185,7 @@
         "@ben"
       ],
       "links": {
-        "arxiv": "//arxiv.org/abs/1811.03661"
+        "arxiv": "https://arxiv.org/abs/1811.03661"
       }
     },
     {
@@ -199,7 +199,7 @@
         "@chris"
       ],
       "links": {
-        "code": "//github.com/pes10k/firefox-api-blocking-extension",
+        "code": "https://github.com/pes10k/firefox-api-blocking-extension",
         "@slides": "static/papers/vibrate-ccs-2017.pdf"
       }
     },
@@ -231,7 +231,7 @@
         "@chris"
       ],
       "links": {
-        "code": "//github.com/bitslab/cdf",
+        "code": "https://github.com/bitslab/cdf",
         "@slides": "static/slides/cdf-conpro-2017.pdf"
       }
     },
@@ -254,7 +254,7 @@
     },
     {
       "title": "Characterizing Fraud and Its Ramifications in Affiliate Marketing Networks",
-      "url": "//cybersecurity.oxfordjournals.org/content/cybers/2/1/71.full.pdf",
+      "url": "https://cybersecurity.oxfordjournals.org/content/cybers/2/1/71.full.pdf",
       "year": 2016,
       "venue": "Journal of Cybersecurity",
       "authors": [
@@ -262,7 +262,7 @@
         "@chris"
       ],
       "links": {
-        "journal listing": "//cybersecurity.oxfordjournals.org/content/2/1/71"
+        "journal listing": "https://cybersecurity.oxfordjournals.org/content/2/1/71"
       }
     },
     {
@@ -308,7 +308,7 @@
     },
     {
       "title": "Cloudsweeper and Data-Centric Security",
-      "url": "//dl.acm.org/citation.cfm?id=2656872",
+      "url": "https://dl.acm.org/citation.cfm?id=2656872",
       "year": 2014,
       "venue": "ACM SIGCAS Computers and Society",
       "authors": [
@@ -316,7 +316,7 @@
         "@chris"
       ],
       "links": {
-        "listing": "//dl.acm.org/toc/sigcas/2014/44/2"
+        "listing": "https://dl.acm.org/toc/sigcas/2014/44/2"
       }
     },
     {
