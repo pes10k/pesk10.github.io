@@ -84,10 +84,21 @@
       "@cr": {
         "title": "Consumer Reports",
         "url": "https://www.consumerreports.org/"
+      },
+      "@nsf": {
+        "title": "National Science Foundation",
+        "url": "https://www.nsf.gov/"
       }
     }
   },
   "items": [
+    {
+      "title": "Tool protects users' private data while they browse",
+      "url": "https://www.nsf.gov/discoveries/disc_summ.jsp?cntn_id=304099",
+      "source": "@nsf",
+      "date": "2021-12-14T00:00:00",
+      "type": "news"
+    },
     {
       "title": "Internet Advertising Is About to Change. Here's What Consumers Need to Know.",
       "url": "https://www.consumerreports.org/advertising-marketing/internet-advertising-is-about-to-change-third-party-cookies-a6221885875/",
