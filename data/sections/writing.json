@@ -1,6 +1,12 @@
 {
   "items": [
     {
+      "title": "W3C Security and Privacy Questionnaire",
+      "url": "https://w3ctag.github.io/security-questionnaire/",
+      "year": "@now",
+      "desc": "W3C guidance document for specification authors, on how to identify and mitigate privacy and security risks in Web standards proposals"
+    },
+    {
       "title": "Global Privacy Control (GPC)",
       "url": "https://globalprivacycontrol.github.io/gpc-spec/",
       "year": 2021,

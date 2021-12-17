@@ -47,6 +47,13 @@ def add_dest_html(dest: Union[Source, Venue], list_item: "ListItem",
     markup.down().add("</span>")
 
 
+def add_date_html(date: Union[Date, Year], list_item: "ListItem",
+                  markup: Indenter) -> None:
+    markup.add("<span class='venue'>").up()
+    markup.add(list_item.date_html())
+    markup.down().add("</span>")
+
+
 def authors_from_json(item_data: Dict[str, Any],
                       all_data: Dict[str, Any]) -> List[Author]:
     authors = []
@@ -65,6 +72,12 @@ def source_from_json(item_data: Dict[str, Any],
     source_data = all_data["abbrs"]["sources"][source_abbr]
     return Source(source_data["title"], source_data["url"], source_abbr)
 
+def year_from_json(item_data: Union[str, int]) -> int:
+    if isinstance(item_data, str):
+        if item_data != "@now":
+            raise(f'Invalid year value in json: {item_data}')
+        return datetime.datetime.now().year
+    return item_data
 
 def venue_from_json(item_data: Dict[str, Any],
                     all_data: Dict[str, Any]) -> Venue:
@@ -226,7 +239,7 @@ class PublicationItem(ListItem):
     @staticmethod
     def item_from_json(item_data: Dict[str, Any],
                        all_data: Dict[str, Any]) -> "PublicationItem":
-        year = item_data["year"]
+        year = year_from_json(item_data["year"])
         authors = authors_from_json(item_data, all_data)
         links = links_from_json(item_data)
         venue = venue_from_json(item_data, all_data)
@@ -336,10 +349,45 @@ class TalksItem(ListItem):
     @staticmethod
     def item_from_json(item_data: Dict[str, Any],
                        all_data: Dict[str, Any]) -> "TalksItem":
-        year = item_data["year"]
+        year = year_from_json(item_data["year"])
         links = links_from_json(item_data)
         item_type = item_data["type"]
         venue = venue_from_json(item_data, all_data)
         url = item_data["url"] if "url" in item_data else None
         return TalksItem(year, item_data["title"], item_type, url, links,
                          venue)
+
+
+class WritingItem(ListItem):
+    html_classes = ["publications"]
+    file_fields = ["url", "links"]
+
+    links: List[Link]
+    desc: str
+
+    def __init__(self, year: Year, title: str, url: Url, links: List[Link],
+                 desc: str) -> None:
+        self.links = links
+        self.desc = desc
+        super().__init__(year, title, url)
+
+    def desc_line(self) -> Html:
+        desc_markup = html.escape(self.desc)
+        return f"<span class='description'>{desc_markup}</span>"
+
+    def add_html(self, markup: Indenter) -> None:
+        markup.add("<li>").up()
+        markup.add(self.title_html())
+        add_date_html(self.date, self, markup)
+        markup.add(self.desc_line())
+        add_links_html(self.links, markup)
+        markup.down().add("</li>")
+
+    @staticmethod
+    def item_from_json(item_data: Dict[str, Any],
+                       all_data: Dict[str, Any]) -> "WritingItem":
+        year = year_from_json(item_data["year"])
+        links = links_from_json(item_data)
+        url = item_data["url"] if "url" in item_data else None
+        return WritingItem(year, item_data["title"], url, links,
+                           item_data["desc"])
