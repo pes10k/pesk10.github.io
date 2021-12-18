@@ -10,7 +10,10 @@
       "title": "Global Privacy Control (GPC)",
       "url": "https://globalprivacycontrol.github.io/gpc-spec/",
       "year": 2021,
-      "desc": "Proposed spec to allow browser users to assert legal privacy rights in a privacy preserving manner."
+      "desc": "Proposed spec to allow browser users to assert legal privacy rights in a privacy preserving manner.",
+      "links": {
+        "website": "https://globalprivacycontrol.org/"
+      }
     },
     {
       "title": "Improving Web Privacy And Security with a Cost-Benefit Analysis of the Web API",
@@ -18,7 +21,7 @@
       "year": 2018,
       "desc": "My thesis, presenting a thorough measurement of WebAPI use, and ways those findings can be used to better protect the privacy and security of web users. Written for the completion of my PhD.",
       "links": {
-        "slides": "static/slides/defense-slides.pdf"
+        "slides (pdf)": "static/slides/defense-slides.pdf"
       }
     },
     {
@@ -27,7 +30,7 @@
       "year": 2014,
       "desc": "Literature review of performance and security developments in using Yao's Protocol for secure function evaluation. Written for my degree's \"Written Critique and Presentation\" requirement.",
       "links": {
-        "slides": "static/slides/Yaos_Garbled_Circuits_-_Recent_Directions_and_Implementations_slides.pdf"
+        "slides (pdf)": "static/slides/Yaos_Garbled_Circuits_-_Recent_Directions_and_Implementations_slides.pdf"
       }
     }
   ]

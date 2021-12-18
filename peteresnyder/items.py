@@ -379,8 +379,8 @@ class WritingItem(ListItem):
         markup.add("<li>").up()
         markup.add(self.title_html())
         add_date_html(self.date, self, markup)
-        markup.add(self.desc_line())
         add_links_html(self.links, markup)
+        markup.add(self.desc_line())
         markup.down().add("</li>")
 
     @staticmethod
