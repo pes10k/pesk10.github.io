@@ -1,16 +1,32 @@
 {
+  "abbrs": {
+    "authors": {
+      "@me": "Peter Snyder"
+    }
+  },
   "items": [
     {
       "title": "W3C Security and Privacy Questionnaire",
       "url": "https://www.w3.org/TR/security-privacy-questionnaire/",
       "year": "@now",
-      "desc": "W3C guidance document for specification authors, on how to identify and mitigate privacy and security risks in Web standards proposals"
+      "desc": "W3C guidance document for specification authors, on how to identify and mitigate privacy and security risks in Web standards proposals.",
+      "authors": [
+        "Theresa O’Connor",
+        "@me"
+      ]
     },
     {
       "title": "Global Privacy Control (GPC)",
       "url": "https://globalprivacycontrol.github.io/gpc-spec/",
       "year": 2021,
       "desc": "Proposed spec to allow browser users to assert legal privacy rights in a privacy preserving manner.",
+      "authors": [
+        "Robin Berjon",
+        "Sebastian Zimmeck",
+        "Ashkan Soltani",
+        "David Harbage",
+        "@me"
+      ],
       "links": {
         "website": "https://globalprivacycontrol.org/"
       }

@@ -93,7 +93,8 @@ a:hover {
   display: block;
 }
 
-#other-writing-container .pub-title {
+#other-writing-container .pub-title,
+#coding .pub-title {
   display: inline-block;
 }
 
@@ -102,7 +103,8 @@ a:hover {
   clear: right;
 }
 
-#other-writing-container .description {
+#other-writing-container .description,
+#coding .description {
   display: block;
   clear: both;
 }

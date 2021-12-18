@@ -20,7 +20,13 @@ def is_local_file_ref(ref: Optional[str]) -> bool:
     return True
 
 
+def add_desc_html(desc: str, markup: Indenter) -> None:
+    markup.add(f"<span class='description'>{desc}</span>")
+
+
 def add_authors_html(authors: List[Author], markup: Indenter) -> None:
+    if len(authors) == 0:
+        return
     markup.add("<ol class='authors'>").up()
     for author in authors:
         markup.add(f"<li>{author.to_html()}</li>")
@@ -57,7 +63,12 @@ def add_date_html(date: Union[Date, Year], list_item: "ListItem",
 def authors_from_json(item_data: Dict[str, Any],
                       all_data: Dict[str, Any]) -> List[Author]:
     authors = []
-    for author in item_data["authors"]:
+    try:
+        authors_data = item_data["authors"]
+    except KeyError:
+        return authors
+
+    for author in authors_data:
         if author[0] == "@":
             author_title = all_data["abbrs"]["authors"][author]
             authors.append(Author(author_title, author))
@@ -188,11 +199,13 @@ class BlogItem(ListItem):
 
     source: Source
     authors: List[Author]
+    desc = str
 
-    def __init__(self, date: Date, title: str, url: Url,
-                 source: Source, authors: List[Author]) -> None:
+    def __init__(self, date: Date, title: str, url: Url, source: Source,
+                 authors: List[Author], desc: str) -> None:
         self.authors = authors
         self.source = source
+        self.desc = desc
         super().__init__(date, title, url)
 
     def add_html(self, markup: Indenter) -> None:
@@ -200,6 +213,7 @@ class BlogItem(ListItem):
         markup.add(self.title_html())
         add_authors_html(self.authors, markup)
         add_dest_html(self.source, self, markup)
+        add_desc_html(self.desc, markup)
         markup.down().add("</li>")
 
     @staticmethod
@@ -208,8 +222,9 @@ class BlogItem(ListItem):
         date = date_from_json(item_data)
         authors = authors_from_json(item_data, all_data)
         source = source_from_json(item_data, all_data)
+        desc = item_data["desc"]
         return BlogItem(date, item_data["title"], item_data["url"],
-                        source, authors)
+                        source, authors, desc)
 
 
 @dataclasses.dataclass
@@ -364,23 +379,22 @@ class WritingItem(ListItem):
 
     links: List[Link]
     desc: str
+    authors: List[Author]
 
     def __init__(self, year: Year, title: str, url: Url, links: List[Link],
-                 desc: str) -> None:
+                 desc: str, authors: List[Author]) -> None:
         self.links = links
         self.desc = desc
+        self.authors = authors
         super().__init__(year, title, url)
-
-    def desc_line(self) -> Html:
-        desc_markup = html.escape(self.desc)
-        return f"<span class='description'>{desc_markup}</span>"
 
     def add_html(self, markup: Indenter) -> None:
         markup.add("<li>").up()
         markup.add(self.title_html())
         add_date_html(self.date, self, markup)
         add_links_html(self.links, markup)
-        markup.add(self.desc_line())
+        add_authors_html(self.authors, markup)
+        add_desc_html(self.desc, markup)
         markup.down().add("</li>")
 
     @staticmethod
@@ -389,5 +403,6 @@ class WritingItem(ListItem):
         year = year_from_json(item_data["year"])
         links = links_from_json(item_data)
         url = item_data["url"] if "url" in item_data else None
+        authors = authors_from_json(item_data, all_data)
         return WritingItem(year, item_data["title"], url, links,
-                           item_data["desc"])
+                           item_data["desc"], authors)

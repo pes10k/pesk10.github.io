@@ -148,86 +148,93 @@
                         on web and application security issues.</li>
                 </ul>
 
-                <h2><a id="code">Significant Programs and Code</a></h2>
-                <ul class="item-pairs">
-                    <li>
-                        <span class="item-pair-label"><a href="https://github.com/brave/brave-browser/wiki/PageGraph">PageGraph</a></span>
-                        PageGraph is an under-development, research effort to instrument Brave, blink and v8, to allow
-                        for complete attribution of document modifications, network requests, script execution, and privacy-relevant
-                        Web API accesses.
-                        <ul class="pub-links">
-                            <li><a href="https://github.com/brave/brave-browser/wiki/PageGraph">build instructions</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <span class="item-pair-label"><a href="https://github.com/brave/browser-laptop">Fingerprinting Protection Improvements in Brave Browser</a></span>
-                        Improved the technique used to block fingerprinting related Web API methods
-                        to reduce the impact on non-fingerprinting related code, and expanded the set
-                        of blocked Web API methods to cover five more, previously allowed, methods used for
-                        fingerprinting users.
-                        <ul class="pub-links">
-                            <li><a href="https://github.com/brave/browser-laptop/commit/0e40245c3c9da18777db8e11471dec0096181cd7">improved feature blocking patch</a></li>
-                            <li><a href="https://github.com/brave/browser-laptop/pull/11140">blocking additional fingerprinting methods patch</a></li>
-                            <li><a href="https://github.com/brave/browser-laptop/pull/11708">fingerprinting bypasses</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <span class="item-pair-label"><a href="https://github.com/snyderp/web-api-manager">Web API Manager Browser Extension</a></span>
-                        WebExtension, cross-browser extension that allows users to improve their privacy and security
-                        online by controlling what browser functionality web hosts have access to. Web API functionality access controls can be
-                        defined in general, or on a per host level, and can allow, for example, only trusted hosts to have access to privacy-risky
-                        browser functionality like high resolution timers, WebGL and WebRTC.
-                        <ul class="pub-links">
-                            <li><a href="https://addons.mozilla.org/en-US/firefox/addon/webapi-manager/">firefox</a></li>
-                            <li><a href="https://chrome.google.com/webstore/detail/webapi-manager/hojoljbhkebfjalcbnfmoiljfidcmcmj">chrome</a></li>
-                            <li><a href="https://github.com/snyderp/web-api-manager">code</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <span class="item-pair-label"><a href="https://cloudsweeper.cs.uic.edu/">Cloudsweeper</a></span>
-                        Webservice tool to measure and mitigate the frequency of plaintext password sharing in Gmail
-                        archives. The public tool allows users to redact or encrypt-in-place found passwords. The site has had over 2,500
-                        users and has secured over 38,000 messages
-                    </li>
-                    <li>
-                        <span class="item-pair-label"><a href="https://github.com/bitslab/cdf">CDF: Abstractions for
-                                Security Guarantees in Interactive Web Applications</a></span>
-                        Built client and server-side tools for implementing CDF, a document format for building dynamic,
-                        interactive web applications that provide increased security and privacy guarantees for users of
-                        commodity
-                        web browsers.
-                        <ul class="pub-links">
-                            <li><a href="https://github.com/bitslab/cdf">code</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <span class="item-pair-label"><a href="https://github.com/snyderp/nes-machine-learning">Machine
-                        Learning for Automatic 8bit Song Generation</a></span>
-                        Library to write original NES chip-style soundtracks using a corpus of 39 classic NES games and
-                        machine learning.
-                        <ul class="pub-links">
-                            <li><a href="https://github.com/snyderp/nes-machine-learning">source</a></li>
-                            <li><a href="https://github.com/snyderp/nes-machine-learning/blob/master/docs/Presentation/Presentation.ppt?raw=true">slides</a> </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <span class="item-pair-label"><a href="https://github.com/snyderp/PESGraph">Objective-C Dijkstra implementation</a></span>
-                        Library to perform Dijkstra in Objective-C (for iOS and OSX).
-                        <ul class="pub-links">
-                            <li><a href="https://github.com/snyderp/PESGraph">source</a></li>
-                            <li><a href="https://cocoapods.org/pods/PESGraph">cocoapods</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <span class="item-pair-label"><a href="https://addons.mozilla.org/en-US/firefox/addon/formbug/">FormBug</a></span>
-                        A Firefox extension to make dealing and developing form based applications easier. I just
-                        maintain it now, but wrote it back when I was doing web development work.
-                        <ul class="pub-links">
-                            <li><a href="https://github.com/snyderp/FormBug">source</a></li>
-                            <li><a href="https://addons.mozilla.org/en-US/firefox/addon/formbug/">firefox addon</a></li>
-                        </ul>
-                    </li>
-                </ul>
+                <section id="coding">
+                    <h2><a id="code">Significant Programs and Code</a></h2>
+                    <ul class="item-pairs">
+                        <li>
+                            <span class="pub-title"><a href="https://github.com/brave/brave-core/">Brave Browser</a></span>
+                            <span class="pub-links">
+                                <span class="label label-default pub-link"><a href="https://github.com/brave/brave-core/pulls?q=is%3Apr+author%3Apes10k+is%3Aclosed">closed PRs</a></span>
+                            </span>
+                            <span class="description">Misc bugfixes and minor features I've added to the Brave browser while working at Brave.</span>
+                        </li>
+                        <li>
+                            <span class="pub-title"><a href="https://github.com/brave/brave-browser/wiki/PageGraph">PageGraph</a></span>
+                            <span class="pub-links">
+                                <span class="label label-default pub-link"><a href="https://github.com/brave/brave-browser/wiki/PageGraph">build instructions</a></span>
+                            </span>
+                            <span class="description">PageGraph is an under-development, research effort to instrument Brave, blink and v8, to allow
+                            for complete attribution of document modifications, network requests, script execution, and privacy-relevant
+                            Web API accesses.</span>
+                        </li>
+                        <li>
+                            <span class="pub-title"><a href="https://github.com/brave/browser-laptop">Fingerprinting Protection Improvements in Brave Browser</a></span>
+                            <span class="pub-links">
+                                <span class="label label-default pub-link"><a href="https://github.com/brave/browser-laptop/commit/0e40245c3c9da18777db8e11471dec0096181cd7">improved blocking technique</a></span>
+                                <span class="label label-default pub-link"><a href="https://github.com/brave/browser-laptop/pull/11140">blocking additional methods</a></span>
+                                <span class="label label-default pub-link"><a href="https://github.com/brave/browser-laptop/pull/11708">fingerprinting bypasses</a></span>
+                            </span>
+                            <span class="description">Improved the technique used to block fingerprinting related Web API methods
+                            to reduce the impact on non-fingerprinting related code, and expanded the set
+                            of blocked Web API methods to cover five more, previously allowed, methods used for
+                            fingerprinting users.</span>
+                        </li>
+                        <li>
+                            <span class="pub-title"><a href="https://github.com/snyderp/web-api-manager">Web API Manager Browser Extension</a></span>
+                            <span class="pub-links">
+                                <span class="label label-default pub-link"><a href="https://addons.mozilla.org/en-US/firefox/addon/webapi-manager/">firefox</a></span>
+                                <span class="label label-default pub-link"><a href="https://chrome.google.com/webstore/detail/webapi-manager/hojoljbhkebfjalcbnfmoiljfidcmcmj">chrome</a></span>
+                                <span class="label label-default pub-link"><a href="https://github.com/snyderp/web-api-manager">code</a></span>
+                            </span>
+                            <span class="description">WebExtension, cross-browser extension that allows users to improve their privacy and security
+                            online by controlling what browser functionality web hosts have access to. Web API functionality access controls can be
+                            defined in general, or on a per host level, and can allow, for example, only trusted hosts to have access to privacy-risky
+                            browser functionality like high resolution timers, WebGL and WebRTC.</span>
+                        </li>
+                        <li>
+                            <span class="pub-title"><a href="https://cloudsweeper.cs.uic.edu/">Cloudsweeper</a></span>
+                            <span class="description">Webservice tool to measure and mitigate the frequency of plaintext password sharing in Gmail
+                            archives. The public tool allows users to redact or encrypt-in-place found passwords. The site has had over 2,500
+                            users and has secured over 38,000 messages</span>
+                        </li>
+                        <li>
+                            <span class="pub-title"><a href="https://github.com/bitslab/cdf">CDF: Abstractions for
+                                    Security Guarantees in Interactive Web Applications</a></span>
+                            <span class="pub-links">
+                                <span class="label label-default pub-link"><a href="https://github.com/bitslab/cdf">code</a></span>
+                            </span>
+                            <span class="description">Built client and server-side tools for implementing CDF, a document format for building dynamic,
+                            interactive web applications that provide increased security and privacy guarantees for users of
+                            commodity web browsers.</span>
+                        <li>
+                            <span class="pub-title"><a href="https://github.com/snyderp/nes-machine-learning">Machine
+                            Learning for Automatic 8bit Song Generation</a></span>
+                            <span class="pub-links">
+                                <span class="label label-default pub-link"><a href="https://github.com/snyderp/nes-machine-learning">source</a></span>
+                                <span class="label label-default pub-link"><a href="https://github.com/snyderp/nes-machine-learning/blob/master/docs/Presentation/Presentation.ppt?raw=true">slides</a></span>
+                            </span>
+                            <span class="description">Library to write original NES chip-style soundtracks using a corpus of 39 classic NES games and
+                                machine learning.</span>
+                        </li>
+                        <li>
+                            <span class="pub-title"><a href="https://github.com/snyderp/PESGraph">Objective-C Dijkstra implementation</a></span>
+                            <span class="pub-links">
+                                <span class="label label-default pub-link"><a href="https://github.com/snyderp/PESGraph">source</a></span>
+                                <span class="label label-default pub-link"><a href="https://cocoapods.org/pods/PESGraph">cocoapods</a></span>
+                            </span>
+                            <span class="description">Library to perform Dijkstra in Objective-C (for iOS and OSX).</span>
+                        </li>
+                        <li>
+                            <span class="pub-title"><a href="https://addons.mozilla.org/en-US/firefox/addon/formbug/">FormBug</a></span>
+                            <span class="pub-links">
+                                <span class="label label-default pub-link"><a href="https://github.com/snyderp/FormBug">source</a></span>
+                                <span class="label label-default pub-link"><a href="https://addons.mozilla.org/en-US/firefox/addon/formbug/">firefox addon</a></span>
+                            </span>
+                            <span class="description">A Firefox extension to make dealing and developing form based applications easier. I just
+                                maintain it now, but wrote it back when I was doing web development work.</span>
+                        </li>
+                    </ul>
+                </section>
 
                 <section id="community-container">
                     <h2><a id="community">Community Involvement</a></h2>
