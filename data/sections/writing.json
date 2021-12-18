@@ -2,7 +2,7 @@
   "items": [
     {
       "title": "W3C Security and Privacy Questionnaire",
-      "url": "https://w3ctag.github.io/security-questionnaire/",
+      "url": "https://www.w3.org/TR/security-privacy-questionnaire/",
       "year": "@now",
       "desc": "W3C guidance document for specification authors, on how to identify and mitigate privacy and security risks in Web standards proposals"
     },
