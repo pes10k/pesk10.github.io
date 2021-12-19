@@ -207,3 +207,9 @@ code {
 .publications-press .year:after {
   content: ", ";
 }
+
+@media (min-width: 575.98px) {
+  .description {
+    width: 75%;
+  }
+}
