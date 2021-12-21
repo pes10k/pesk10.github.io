@@ -88,10 +88,21 @@
       "@nsf": {
         "title": "National Science Foundation",
         "url": "https://www.nsf.gov/"
+      },
+      "@bloomberglaw": {
+        "title": "Bloomberg Law",
+        "url": "https://news.bloomberglaw.com/"
       }
     }
   },
   "items": [
+    {
+      "title": "Global Privacy Control Popularity Grows as Legal Status Up in Air",
+      "url": "https://news.bloomberglaw.com/privacy-and-data-security/global-privacy-control-popularity-grows-as-legal-status-up-in-air",
+      "source": "@bloomberglaw",
+      "date": "2021-12-21T00:00:00",
+      "type": "news"
+    },
     {
       "title": "Tool protects users' private data while they browse",
       "url": "https://www.nsf.gov/discoveries/disc_summ.jsp?cntn_id=304099",
