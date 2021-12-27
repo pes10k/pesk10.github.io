@@ -14,7 +14,7 @@
 
 <body>
     <nav class="navbar navbar-default">
-        <div class="container-fluid">
+        <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-target="#main-nav" data-toggle="collapse"
                     aria-expanded="false">
@@ -48,11 +48,10 @@
                     <h1>Peter Snyder <small>Senior Privacy Researcher and Director of Privacy at <a href="//brave.com">Brave Software</a></small></h1>
                     <ul class="pub-links">
                         <li><a href="mailto:pes@brave.com">pes@brave.com</a></li>
-                        <li><a href="static/misc/peter-snyder-cv.pdf">CV</a></li>
-                        <li><a href="https://github.com/pes10k">GH</a></li>
+                        <li><a href="mailto:snyderp@gmail.com">snyderp@gmail.com</a></li>
+                        <li><a href="https://github.com/pes10k">GitHub</a></li>
+                        <li><a href="https://scholar.google.com/citations?user=vdLx5woAAAAJ&hl=en">Google Scholar</a></li>
                     </ul>
-
-                    <a href="static/images/peter_snyder.jpg" class="visible-xs-block visible-sm-block">Photo of Peter Snyder</a>
                 </div>
 
                 <div class="description">
@@ -60,7 +59,8 @@
                         I am the senior privacy researcher at <a href="//brave.com">Brave Software</a>,
                         where I work on new ways to improve privacy and security on the Web,
                         and to fix new threats to Brave browser users.
-                        I work under <a href="//www.doc.ic.ac.uk/~livshits/">Ben Livshits</a>,
+                        I work under <a href="https://haddadi.github.io/about/">Hamed Haddadi</a>>,
+                        <a href="//www.doc.ic.ac.uk/~livshits/">Ben Livshits</a>,
                         <a href="//brendaneich.com/">Brendan Eich</a> and alongside
                         a wonderful team of researchers, engineers and privacy experts.
                     </p>
@@ -74,7 +74,7 @@
                     <p>
                         Before joining Brave, I worked on my PhD in the <a href="https://www.cs.uic.edu/">Computer Science department
                         at the University of Illinois at Chicago</a> in the <a href="https://bits.lab.uic.edu/">BITS Lab</a>,
-                        working under the kind and knowledgable guidance of <a href="https://www.cs.uic.edu/~ckanich/">Chris Kanich</a>.
+                        working under the kind and knowledgeable guidance of <a href="https://www.cs.uic.edu/~ckanich/">Chris Kanich</a>.
                     </p>
                 </div>
 
@@ -934,87 +934,95 @@
 
                 <section id="coding">
                     <h2><a id="code">Significant Programs and Code</a></h2>
-                    <ul class="item-pairs">
+                    <ul class='publications'>
                         <li>
-                            <a class="pub-title" href="https://github.com/brave/brave-core/">Brave Browser</a>
-                            <span class="pub-links">
-                                <span class="label label-default pub-link"><a href="https://github.com/brave/brave-core/pulls?q=is%3Apr+author%3Apes10k+is%3Aclosed">closed PRs</a></span>
+                            <a class='pub-title' href='https://github.com/brave/brave-core/'>Brave Browser</a>
+                            <span class='venue'>
+                                <span class='year'>2022</span>
                             </span>
-                            <span class="description">Misc bugfixes and minor features I've added to the Brave browser while working at Brave.</span>
+                            <span class='pub-links'>
+                                <span class='label label-default pub-link'><a href='https://github.com/brave/brave-core/pulls?q=is%3Apr+author%3Apes10k+is%3Aclosed'>PRs</a></span>
+                            </span>
+                            <span class='description'>Features and bugfixes I've added to the Brave browser while working at Brave.</span>
                         </li>
                         <li>
-                            <a class="pub-title" href="https://github.com/brave/brave-browser/wiki/PageGraph">PageGraph</a>
-                            <span class="pub-links">
-                                <span class="label label-default pub-link"><a href="https://github.com/brave/brave-browser/wiki/PageGraph">build instructions</a></span>
+                            <a class='pub-title' href='https://github.com/brave/brave-browser/issues?q=is%3Aopen+is%3Aissue+label%3Afeature%2Fshields%2Ffingerprint'>Fingerprinting Protections</a>
+                            <span class='venue'>
+                                <span class='year'>2021</span>
                             </span>
-                            <span class="description">PageGraph is an under-development, research effort to instrument Brave, blink and v8, to allow
-                            for complete attribution of document modifications, network requests, script execution, and privacy-relevant
-                            Web API accesses.</span>
+                            <span class='pub-links'>
+                                <span class='label label-default pub-link'><a href='https://github.com/brave/browser-laptop/commit/0e40245c3c9da18777db8e11471dec0096181cd7'>technique change</a></span>
+                                <span class='label label-default pub-link'><a href='https://github.com/brave/browser-laptop/pull/11140'>additional APIs</a></span>
+                                <span class='label label-default pub-link'><a href='https://github.com/brave/browser-laptop/pull/11708'>hardening</a></span>
+                            </span>
+                            <span class='description'>Improved the technique used to block fingerprinting related Web API methods to reduce the impact on non-fingerprinting related code, and expanded the set of blocked Web API methods to cover five more, previously allowed, methods used for fingerprinting users.</span>
                         </li>
                         <li>
-                            <a class="pub-title" href="https://github.com/brave/browser-laptop">Fingerprinting Protection Improvements in Brave Browser</a>
-                            <span class="pub-links">
-                                <span class="label label-default pub-link"><a href="https://github.com/brave/browser-laptop/commit/0e40245c3c9da18777db8e11471dec0096181cd7">improved blocking technique</a></span>
-                                <span class="label label-default pub-link"><a href="https://github.com/brave/browser-laptop/pull/11140">blocking additional methods</a></span>
-                                <span class="label label-default pub-link"><a href="https://github.com/brave/browser-laptop/pull/11708">fingerprinting bypasses</a></span>
+                            <a class='pub-title' href='https://github.com/pes10k/web-api-manager'>Web API Manager Browser Extension</a>
+                            <span class='venue'>
+                                <span class='year'>2019</span>
                             </span>
-                            <span class="description">Improved the technique used to block fingerprinting related Web API methods
-                            to reduce the impact on non-fingerprinting related code, and expanded the set
-                            of blocked Web API methods to cover five more, previously allowed, methods used for
-                            fingerprinting users.</span>
+                            <span class='pub-links'>
+                                <span class='label label-default pub-link'><a href='https://addons.mozilla.org/en-US/firefox/addon/webapi-manager/'>firefox</a></span>
+                                <span class='label label-default pub-link'><a href='https://chrome.google.com/webstore/detail/webapi-manager/hojoljbhkebfjalcbnfmoiljfidcmcmj'>chrome</a></span>
+                                <span class='label label-default pub-link'><a href='https://github.com/snyderp/web-api-manager'>source</a></span>
+                            </span>
+                            <span class='description'>WebExtension, cross-browser extension that allows users to improve their privacy and security online by controlling what browser functionality web hosts have access to. Web API functionality access controls can be defined in general, or on a per host level, and can allow, for example, only trusted hosts to have access to privacy-risky browser functionality like high resolution timers, WebGL and WebRTC.</span>
                         </li>
                         <li>
-                            <a class="pub-title" href="https://github.com/snyderp/web-api-manager">Web API Manager Browser Extension</a>
-                            <span class="pub-links">
-                                <span class="label label-default pub-link"><a href="https://addons.mozilla.org/en-US/firefox/addon/webapi-manager/">firefox</a></span>
-                                <span class="label label-default pub-link"><a href="https://chrome.google.com/webstore/detail/webapi-manager/hojoljbhkebfjalcbnfmoiljfidcmcmj">chrome</a></span>
-                                <span class="label label-default pub-link"><a href="https://github.com/snyderp/web-api-manager">code</a></span>
+                            <a class='pub-title' href='https://github.com/bitslab/cdf'>CDF: Abstractions for Security Guarantees in Interactive Web Applications</a>
+                            <span class='venue'>
+                                <span class='year'>2017</span>
                             </span>
-                            <span class="description">WebExtension, cross-browser extension that allows users to improve their privacy and security
-                            online by controlling what browser functionality web hosts have access to. Web API functionality access controls can be
-                            defined in general, or on a per host level, and can allow, for example, only trusted hosts to have access to privacy-risky
-                            browser functionality like high resolution timers, WebGL and WebRTC.</span>
+                            <span class='pub-links'>
+                                <span class='label label-default pub-link'><a href='https://github.com/bitslab/cdf'>source</a></span>
+                                <span class='label label-default pub-link'><a href='static/papers/cdf-conpro-2017.pdf'>paper</a></span>
+                            </span>
+                            <span class='description'>Built client and server-side tools for implementing CDF, a document format for building dynamic, interactive web applications that provide increased security and privacy guarantees for users of commodity web browsers.</span>
                         </li>
                         <li>
-                            <a class="pub-title" href="https://cloudsweeper.cs.uic.edu/">Cloudsweeper</a>
-                            <span class="description">Webservice tool to measure and mitigate the frequency of plaintext password sharing in Gmail
-                            archives. The public tool allows users to redact or encrypt-in-place found passwords. The site has had over 2,500
-                            users and has secured over 38,000 messages</span>
+                            <a class='pub-title' href='https://github.com/pes10k/FormBug'>FormBug</a>
+                            <span class='venue'>
+                                <span class='year'>2015</span>
+                            </span>
+                            <span class='pub-links'>
+                                <span class='label label-default pub-link'><a href='https://github.com/pes10k/FormBug'>source</a></span>
+                                <span class='label label-default pub-link'><a href='https://addons.mozilla.org/en-US/firefox/addon/formbug/'>firefox</a></span>
+                            </span>
+                            <span class='description'>A Firefox extension to make dealing and developing form based applications easier. I just maintain it now, but wrote it back when I was doing web development work.</span>
                         </li>
                         <li>
-                            <a class="pub-title" href="https://github.com/bitslab/cdf">CDF: Abstractions for Security Guarantees in Interactive Web Applications</a>
-                            <span class="pub-links">
-                                <span class="label label-default pub-link"><a href="https://github.com/bitslab/cdf">code</a></span>
+                            <a class='pub-title' href='https://github.com/pes10k/PESGraph'>Dijkstra&#x27;s Algorithm (Objective-C implementation)</a>
+                            <span class='venue'>
+                                <span class='year'>2014</span>
                             </span>
-                            <span class="description">Built client and server-side tools for implementing CDF, a document format for building dynamic,
-                            interactive web applications that provide increased security and privacy guarantees for users of
-                            commodity web browsers.</span>
+                            <span class='pub-links'>
+                                <span class='label label-default pub-link'><a href='https://github.com/pes10k/PESGraph'>source</a></span>
+                                <span class='label label-default pub-link'><a href='https://cocoapods.org/pods/PESGraph'>cocoapods</a></span>
+                            </span>
+                            <span class='description'>Library to perform Dijkstra in Objective-C (for iOS and OSX).</span>
                         </li>
                         <li>
-                            <a class="pub-title" href="https://github.com/snyderp/nes-machine-learning">Machine Learning for Automatic 8bit Song Generation</a>
-                            <span class="pub-links">
-                                <span class="label label-default pub-link"><a href="https://github.com/snyderp/nes-machine-learning">source</a></span>
-                                <span class="label label-default pub-link"><a href="https://github.com/snyderp/nes-machine-learning/blob/master/docs/Presentation/Presentation.ppt?raw=true">slides</a></span>
+                            <a class='pub-title' href='https://cloudsweeper.cs.uic.edu/'>Cloudsweeper</a>
+                            <span class='venue'>
+                                <span class='year'>2013</span>
                             </span>
-                            <span class="description">Library to write original NES chip-style soundtracks using a corpus of 39 classic NES games and
-                                machine learning.</span>
+                            <span class='pub-links'>
+                                <span class='label label-default pub-link'><a href='static/papers/cloudsweeper-ccsw-2013.pdf'>paper</a></span>
+                                <span class='label label-default pub-link'><a href='https://github.com/kaytwo/drano'>source</a></span>
+                            </span>
+                            <span class='description'>Web app to measure and mitigate the frequency of plaintext password sharing in Gmail archives. The public tool allows users to redact or encrypt-in-place found passwords. The site has had over 2,500 users and has secured over 38,000 messages</span>
                         </li>
                         <li>
-                            <a class="pub-title" href="https://github.com/snyderp/PESGraph">Objective-C Dijkstra implementation</a>
-                            <span class="pub-links">
-                                <span class="label label-default pub-link"><a href="https://github.com/snyderp/PESGraph">source</a></span>
-                                <span class="label label-default pub-link"><a href="https://cocoapods.org/pods/PESGraph">cocoapods</a></span>
+                            <a class='pub-title' href='https://github.com/pes10k/nes-machine-learning'>Machine Learning for Automatic 8bit Song Generation</a>
+                            <span class='venue'>
+                                <span class='year'>2013</span>
                             </span>
-                            <span class="description">Library to perform Dijkstra in Objective-C (for iOS and OSX).</span>
-                        </li>
-                        <li>
-                            <a class="pub-title" href="https://addons.mozilla.org/en-US/firefox/addon/formbug/">FormBug</a>
-                            <span class="pub-links">
-                                <span class="label label-default pub-link"><a href="https://github.com/snyderp/FormBug">source</a></span>
-                                <span class="label label-default pub-link"><a href="https://addons.mozilla.org/en-US/firefox/addon/formbug/">firefox addon</a></span>
+                            <span class='pub-links'>
+                                <span class='label label-default pub-link'><a href='https://github.com/pes10k/nes-machine-learning'>source</a></span>
+                                <span class='label label-default pub-link'><a href='https://github.com/snyderp/nes-machine-learning/blob/master/docs/Presentation/Presentation.ppt?raw=true'>slides (ppt)</a></span>
                             </span>
-                            <span class="description">A Firefox extension to make dealing and developing form based applications easier. I just
-                                maintain it now, but wrote it back when I was doing web development work.</span>
+                            <span class='description'>Library to write original NES chip-style soundtracks using a corpus of 39 classic NES games and machine learning.</span>
                         </li>
                     </ul>
                 </section>

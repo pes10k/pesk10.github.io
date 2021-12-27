@@ -5,11 +5,11 @@ import sys
 from typing import Any, Dict
 
 from peteresnyder.indent import Indenter
-from peteresnyder.items import BlogItem, InvolvementItem
+from peteresnyder.items import BlogItem, CodeItem, InvolvementItem
 from peteresnyder.items import PressItem, PublicationItem
 from peteresnyder.items import TalksItem, WritingItem
 
-BASE_PATH = Path(sys.argv[0]).parent
+BASE_PATH = Path(sys.argv[0]).parent.resolve()
 DATA_DIR = Path(".", "data")
 TEMPLATE_DIR = DATA_DIR / Path("templates")
 SECTIONS_DIR = DATA_DIR / Path("sections")
@@ -21,7 +21,8 @@ FILE_TYPE_MAPPING: Dict[str, Any] = {
     "involvement": [InvolvementItem, 7],
     "publications": [PublicationItem, 5],
     "talks": [TalksItem, 5],
-    "writing": [WritingItem, 5]
+    "writing": [WritingItem, 5],
+    "code": [CodeItem, 5],
 }
 
 for section_file in SECTIONS_DIR.iterdir():

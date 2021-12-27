@@ -1,0 +1,87 @@
+{
+  "abbrs": {
+  },
+  "items": [
+    {
+      "title": "Brave Browser",
+      "url": "https://github.com/brave/brave-core/",
+      "desc": "Features and bugfixes I've added to the Brave browser while working at Brave.",
+      "year": 2022,
+      "links": {
+        "PRs": "https://github.com/brave/brave-core/pulls?q=is%3Apr+author%3Apes10k+is%3Aclosed"
+      }
+    },
+    {
+      "title": "Fingerprinting Protections",
+      "url": "https://github.com/brave/brave-browser/issues?q=is%3Aopen+is%3Aissue+label%3Afeature%2Fshields%2Ffingerprint",
+      "desc": "Improved the technique used to block fingerprinting related Web API methods to reduce the impact on non-fingerprinting related code, and expanded the set of blocked Web API methods to cover five more, previously allowed, methods used for fingerprinting users.",
+      "year": 2021,
+      "links": {
+        "technique change": "https://github.com/brave/browser-laptop/commit/0e40245c3c9da18777db8e11471dec0096181cd7",
+        "additional APIs": "https://github.com/brave/browser-laptop/pull/11140",
+        "hardening": "https://github.com/brave/browser-laptop/pull/11708"
+      }
+    },
+    {
+      "title": "Web API Manager Browser Extension",
+      "url": "https://github.com/pes10k/web-api-manager",
+      "desc": "WebExtension, cross-browser extension that allows users to improve their privacy and security online by controlling what browser functionality web hosts have access to. Web API functionality access controls can be defined in general, or on a per host level, and can allow, for example, only trusted hosts to have access to privacy-risky browser functionality like high resolution timers, WebGL and WebRTC.",
+      "year": 2019,
+      "links": {
+        "firefox": "https://addons.mozilla.org/en-US/firefox/addon/webapi-manager/",
+        "chrome": "https://chrome.google.com/webstore/detail/webapi-manager/hojoljbhkebfjalcbnfmoiljfidcmcmj",
+        "source": "https://github.com/snyderp/web-api-manager"
+      }
+    },
+    {
+      "title": "CDF: Abstractions for Security Guarantees in Interactive Web Applications",
+      "url": "https://github.com/bitslab/cdf",
+      "desc": "Built client and server-side tools for implementing CDF, a document format for building dynamic, interactive web applications that provide increased security and privacy guarantees for users of commodity web browsers.",
+      "year": 2017,
+      "links": {
+        "source": "https://github.com/bitslab/cdf",
+        "paper": "static/papers/cdf-conpro-2017.pdf"
+      }
+    },
+    {
+      "title": "FormBug",
+      "url": "https://github.com/pes10k/FormBug",
+      "desc": "A Firefox extension to make dealing and developing form based applications easier. I just maintain it now, but wrote it back when I was doing web development work.",
+      "year": 2015,
+      "links": {
+        "source": "https://github.com/pes10k/FormBug",
+        "firefox": "https://addons.mozilla.org/en-US/firefox/addon/formbug/"
+      }
+    },
+    {
+      "title": "Dijkstra's Algorithm (Objective-C implementation)",
+      "url": "https://github.com/pes10k/PESGraph",
+      "desc": "Library to perform Dijkstra in Objective-C (for iOS and OSX).",
+      "year": 2014,
+      "links": {
+        "source": "https://github.com/pes10k/PESGraph",
+        "cocoapods": "https://cocoapods.org/pods/PESGraph"
+      }
+    },
+    {
+      "title": "Cloudsweeper",
+      "url": "https://cloudsweeper.cs.uic.edu/",
+      "desc": "Web app to measure and mitigate the frequency of plaintext password sharing in Gmail archives. The public tool allows users to redact or encrypt-in-place found passwords. The site has had over 2,500 users and has secured over 38,000 messages",
+      "year": 2013,
+      "links": {
+        "paper": "static/papers/cloudsweeper-ccsw-2013.pdf",
+        "source": "https://github.com/kaytwo/drano"
+      }
+    },
+    {
+      "title": "Machine Learning for Automatic 8bit Song Generation",
+      "url": "https://github.com/pes10k/nes-machine-learning",
+      "desc": "Library to write original NES chip-style soundtracks using a corpus of 39 classic NES games and machine learning.",
+      "year": 2013,
+      "links": {
+        "source": "https://github.com/pes10k/nes-machine-learning",
+        "slides (ppt)": "https://github.com/snyderp/nes-machine-learning/blob/master/docs/Presentation/Presentation.ppt?raw=true"
+      }
+    }
+  ]
+}

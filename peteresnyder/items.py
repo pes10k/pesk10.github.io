@@ -6,7 +6,7 @@ import json
 from operator import attrgetter
 from pathlib import Path
 from typing import Any, cast, Dict, Generic, Literal, List
-from typing import Optional, TypeVar, Union
+from typing import Optional, Type, TypeVar, Union
 
 from .indent import Indenter
 from .types import Author, Date, Html, Link, Source, Url, Venue, Year
@@ -62,7 +62,7 @@ def add_date_html(date: Union[Date, Year], list_item: "ListItem",
 
 def authors_from_json(item_data: Dict[str, Any],
                       all_data: Dict[str, Any]) -> List[Author]:
-    authors = []
+    authors: List[Author] = []
     try:
         authors_data = item_data["authors"]
     except KeyError:
@@ -83,12 +83,14 @@ def source_from_json(item_data: Dict[str, Any],
     source_data = all_data["abbrs"]["sources"][source_abbr]
     return Source(source_data["title"], source_data["url"], source_abbr)
 
+
 def year_from_json(item_data: Union[str, int]) -> int:
     if isinstance(item_data, str):
         if item_data != "@now":
-            raise(f'Invalid year value in json: {item_data}')
+            raise BaseException(f'Invalid year value in json: {item_data}')
         return datetime.datetime.now().year
     return item_data
+
 
 def venue_from_json(item_data: Dict[str, Any],
                     all_data: Dict[str, Any]) -> Venue:
@@ -199,7 +201,7 @@ class BlogItem(ListItem):
 
     source: Source
     authors: List[Author]
-    desc = str
+    desc = Type[str]
 
     def __init__(self, date: Date, title: str, url: Url, source: Source,
                  authors: List[Author], desc: str) -> None:
@@ -213,7 +215,7 @@ class BlogItem(ListItem):
         markup.add(self.title_html())
         add_authors_html(self.authors, markup)
         add_dest_html(self.source, self, markup)
-        add_desc_html(self.desc, markup)
+        add_desc_html(str(self.desc), markup)
         markup.down().add("</li>")
 
     @staticmethod
@@ -406,3 +408,34 @@ class WritingItem(ListItem):
         authors = authors_from_json(item_data, all_data)
         return WritingItem(year, item_data["title"], url, links,
                            item_data["desc"], authors)
+
+
+class CodeItem(ListItem):
+    html_classes = ["publications"]
+    file_fields = ["links"]
+
+    links: List[Link]
+    desc: str
+
+    def __init__(self, year: Year, title: str, url: Url, links: List[Link],
+                 desc: str) -> None:
+        self.links = links
+        self.desc = desc
+        super().__init__(year, title, url)
+
+    def add_html(self, markup: Indenter) -> None:
+        markup.add("<li>").up()
+        markup.add(self.title_html())
+        add_date_html(self.date, self, markup)
+        add_links_html(self.links, markup)
+        add_desc_html(self.desc, markup)
+        markup.down().add("</li>")
+
+    @staticmethod
+    def item_from_json(item_data: Dict[str, Any],
+                       all_data: Dict[str, Any]) -> "CodeItem":
+        year = year_from_json(item_data["year"])
+        links = links_from_json(item_data)
+        url = item_data["url"] if "url" in item_data else None
+        return CodeItem(year, item_data["title"], url, links,
+                        item_data["desc"])
