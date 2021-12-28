@@ -13,7 +13,10 @@
       "authors": [
         "Theresa O’Connor",
         "@me"
-      ]
+      ],
+      "links": {
+        "source": "https://github.com/w3ctag/security-questionnaire/"
+      }
     },
     {
       "title": "Global Privacy Control (GPC)",
@@ -28,7 +31,8 @@
         "@me"
       ],
       "links": {
-        "website": "https://globalprivacycontrol.org/"
+        "website": "https://globalprivacycontrol.org/",
+        "source": "https://github.com/globalprivacycontrol/gpc-spec/"
       }
     },
     {
