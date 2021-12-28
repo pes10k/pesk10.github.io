@@ -108,7 +108,8 @@ def date_from_json(item_data: Dict[str, Any]) -> datetime.datetime:
 def links_from_json(item_data: Dict[str, Any]) -> List[Link]:
     try:
         links_data = item_data["links"]
-        return [Link(k, v) for k, v in links_data.items()]
+        links = [Link(k, v) for k, v in links_data.items()]
+        return sorted(links, key=lambda x: x.title)
     except KeyError:
         return []
 
