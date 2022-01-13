@@ -55,6 +55,18 @@
   },
   "items": [
     {
+      "title": "Measuring the Privacy vs. Compatibility Trade-off in Preventing Third-Party Stateful Tracking",
+      "year": 2022,
+      "venue": "@www",
+      "authors": [
+        "@jordan",
+        "@me",
+        "Shaown Sarker",
+        "@alex",
+        "@ben"
+      ]
+    },
+    {
       "title": "SugarCoat: Programmatically Generating Privacy-Preserving, Web-Compatible Resource Replacements for Content Blocking",
       "url": "static/papers/sugarcoat-ccs-2021.pdf",
       "year": 2021,
