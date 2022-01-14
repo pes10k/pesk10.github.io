@@ -56,6 +56,7 @@
   "items": [
     {
       "title": "Measuring the Privacy vs. Compatibility Trade-off in Preventing Third-Party Stateful Tracking",
+      "url": "static/papers/storage-policies-www-2022.pdf",
       "year": 2022,
       "venue": "@www",
       "authors": [
@@ -64,7 +65,10 @@
         "Shaown Sarker",
         "@alex",
         "@ben"
-      ]
+      ],
+      "links": {
+        "arxiv": "https://arxiv.org/abs/2011.01267"
+      }
     },
     {
       "title": "SugarCoat: Programmatically Generating Privacy-Preserving, Web-Compatible Resource Replacements for Content Blocking",
