@@ -1,6 +1,10 @@
 {
   "abbrs": {
     "venues": {
+      "@pepr": {
+        "title": "Conference on Privacy Engineering Practice and Respect",
+        "abbr": "PEPR"
+      },
       "@sigcom-ccr": {
         "title": "SIGCOMM Computer Communication Review",
         "abbr": "SIGCOMM CCR"
@@ -51,7 +55,7 @@
   },
   "items": [
     {
-      "venue": "@madweb",
+      "venue": "@usenix",
       "position": "@pc",
       "year": 2022
     },
@@ -61,7 +65,12 @@
       "year": 2022
     },
     {
-      "venue": "@usenix",
+      "venue": "@pepr",
+      "position": "@pc",
+      "year": 2022
+    },
+    {
+      "venue": "@madweb",
       "position": "@pc",
       "year": 2022
     },
