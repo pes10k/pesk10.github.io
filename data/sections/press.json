@@ -1,6 +1,10 @@
 {
   "abbrs": {
     "sources": {
+      "@adage": {
+        "title": "AdAge",
+        "url": "https://adage.com/"
+      },
       "@digitaltrends": {
         "title": "DigitalTrends",
         "url": "https://www.digitaltrends.com/"
@@ -92,10 +96,28 @@
       "@bloomberglaw": {
         "title": "Bloomberg Law",
         "url": "https://news.bloomberglaw.com/"
+      },
+      "@nyt": {
+        "title": "The New York Times",
+        "url": "https://www.nytimes.com/"
       }
     }
   },
   "items": [
+    {
+      "title": "Google Introduces a New System for Tracking Chrome Browser Users",
+      "url": "https://www.nytimes.com/2022/01/25/business/google-topics-chrome-tracking.html",
+      "source": "@nyt",
+      "date": "2022-01-25T00:00:00",
+      "type": "news"
+    },
+    {
+      "title": "Google Reveals Latest Attempt at Cookies Replacement",
+      "url": "https://adage.com/article/digital-marketing-ad-tech-news/google-reveals-latest-attempt-cookies-replacement/2394876",
+      "source": "@adage",
+      "date": "2022-01-25T00:00:00",
+      "type": "news"
+    },
     {
       "title": "Global Privacy Control Popularity Grows as Legal Status Up in Air",
       "url": "https://news.bloomberglaw.com/privacy-and-data-security/global-privacy-control-popularity-grows-as-legal-status-up-in-air",

@@ -20,7 +20,7 @@ FILE_TYPE_MAPPING: Dict[str, Any] = {
     "blog": [BlogItem, 5],
     "involvement": [InvolvementItem, 7],
     "publications": [PublicationItem, 5],
-    "talks": [TalksItem, 5],
+    "talks": [TalksItem, 4],
     "writing": [WritingItem, 5],
     "code": [CodeItem, 5],
 }
