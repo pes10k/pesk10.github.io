@@ -71,10 +71,6 @@ a:hover {
   }
 }
 
-.pub-title:after {
-  content: ". ";
-}
-
 .pub-title {
   text-transform: capitalize;
   display: block;

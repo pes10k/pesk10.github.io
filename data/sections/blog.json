@@ -55,7 +55,7 @@
       "title": "Why Brave Disables FLoC",
       "url": "https://brave.com/why-brave-disables-floc/",
       "date": "2021-04-12T00:00:00",
-      "desc": "Description of the privacy harms and categorical errors in Google's <abbr title='Federated Learning of Cohorts'>FLoC</abbr> proposal.",
+      "desc": "Description of the privacy harms and categorical errors in Google's <abbr title='Federated Learning of Cohorts'>FLoC</abbr> proposal",
       "authors": [
         "@me",
         "@brendan"
