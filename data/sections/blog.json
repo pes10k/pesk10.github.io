@@ -28,8 +28,7 @@
       "date": "2021-12-15T00:00:00",
       "desc": "Blog series of updates on new privacy features in Brave, and new privacy concerns Brave targets.",
       "authors": [
-        "@me",
-        "various others"
+        "@me"
       ],
       "source": "@brave"
     },

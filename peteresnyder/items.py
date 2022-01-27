@@ -33,6 +33,22 @@ def add_authors_html(authors: List[Author], markup: Indenter) -> None:
     markup.down().add("</ol>")
 
 
+def add_coauthors_html(authors: List[Author], markup: Indenter) -> None:
+    non_me_authors = []
+    for an_author in authors:
+        if an_author.abbr != "@me":
+            non_me_authors.append(an_author)
+    if len(non_me_authors) == 0:
+        return
+    markup.add("<div class='co-authors-sec'>").up()
+    markup.add("<span class='co-authors-desc'>Written with:</span>")
+    markup.add("<ol class='authors co-authors'>").up()
+    for author in non_me_authors:
+        markup.add(f"<li>{author.to_html()}</li>")
+    markup.down().add("</ol>")
+    markup.down().add("</div>")
+
+
 def add_links_html(links: List[Link], markup: Indenter) -> None:
     if len(links) == 0:
         return
@@ -214,7 +230,7 @@ class BlogItem(ListItem):
     def add_html(self, markup: Indenter) -> None:
         markup.add("<li>").up()
         markup.add(self.title_html())
-        add_authors_html(self.authors, markup)
+        add_coauthors_html(self.authors, markup)
         add_dest_html(self.source, self, markup)
         if self.desc:
             add_desc_html(str(self.desc), markup)

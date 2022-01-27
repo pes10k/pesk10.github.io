@@ -86,10 +86,9 @@ a:hover {
 }
 
 #other-writing-container .authors {
-  display: block;
+  display: inline-block;
 }
 
-#other-writing-container .pub-title,
 #coding .pub-title {
   display: inline-block;
 }
@@ -208,4 +207,8 @@ code {
   .description {
     width: 75%;
   }
+}
+
+.publications-blog .pub-title {
+  display: block;
 }
