@@ -1,6 +1,10 @@
 {
   "abbrs": {
     "sources": {
+      "@bbc": {
+        "title": "BBC",
+        "url": "https://www.bbc.com/"
+      },
       "@adage": {
         "title": "AdAge",
         "url": "https://adage.com/"
@@ -104,6 +108,13 @@
     }
   },
   "items": [
+    {
+      "title": "Google Slammed Over Ad-cookie Replacement Flip-Flop",
+      "url": "https://www.bbc.com/news/technology-60138876",
+      "source": "@bbc",
+      "date": "2022-01-26T00:00:00",
+      "type": "news"
+    },
     {
       "title": "Google Introduces a New System for Tracking Chrome Browser Users",
       "url": "https://www.nytimes.com/2022/01/25/business/google-topics-chrome-tracking.html",

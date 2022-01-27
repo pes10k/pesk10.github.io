@@ -34,6 +34,24 @@
       "source": "@brave"
     },
     {
+      "title": "Google's Topics API: Rebranding FLoC Without Addressing Key Privacy Issues",
+      "url": "https://brave.com/web-standards-at-brave/7-googles-topics-api/",
+      "date": "2022-01-26T00:00:00",
+      "authors": [
+        "@me"
+      ],
+      "source": "@standards"
+    },
+    {
+      "title": "Privacy And Competition Concerns with Google's Privacy Sandbox",
+      "url": "https://brave.com/web-standards-at-brave/6-privacy-sandbox-concerns/",
+      "date": "2022-01-26T00:00:00",
+      "authors": [
+        "@me"
+      ],
+      "source": "@standards"
+    },
+    {
       "title": "Why Brave Disables FLoC",
       "url": "https://brave.com/why-brave-disables-floc/",
       "date": "2021-04-12T00:00:00",

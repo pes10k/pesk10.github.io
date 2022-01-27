@@ -202,10 +202,10 @@ class BlogItem(ListItem):
 
     source: Source
     authors: List[Author]
-    desc = Type[str]
+    desc = Optional[Type[str]]
 
     def __init__(self, date: Date, title: str, url: Url, source: Source,
-                 authors: List[Author], desc: str) -> None:
+                 authors: List[Author], desc: Optional[str]) -> None:
         self.authors = authors
         self.source = source
         self.desc = desc
@@ -216,7 +216,8 @@ class BlogItem(ListItem):
         markup.add(self.title_html())
         add_authors_html(self.authors, markup)
         add_dest_html(self.source, self, markup)
-        add_desc_html(str(self.desc), markup)
+        if self.desc:
+            add_desc_html(str(self.desc), markup)
         markup.down().add("</li>")
 
     @staticmethod
@@ -225,7 +226,7 @@ class BlogItem(ListItem):
         date = date_from_json(item_data)
         authors = authors_from_json(item_data, all_data)
         source = source_from_json(item_data, all_data)
-        desc = item_data["desc"]
+        desc = item_data["desc"] if "desc" in item_data else None
         return BlogItem(date, item_data["title"], item_data["url"],
                         source, authors, desc)
 
