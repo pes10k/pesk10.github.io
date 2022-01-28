@@ -1,6 +1,10 @@
 {
   "abbrs": {
     "sources": {
+      "@inc": {
+        "title": "Inc.",
+        "url": "https://www.inc.com/"
+      },
       "@bbc": {
         "title": "BBC",
         "url": "https://www.bbc.com/"
@@ -108,6 +112,13 @@
     }
   },
   "items": [
+    {
+      "title": "Google Just Gave You the Best Reason Yet to Finally Quit Using Chrome",
+      "url": "https://www.inc.com/jason-aten/google-just-gave-you-best-reason-yet-to-finally-quit-using-chrome.html",
+      "source": "@inc",
+      "date": "2022-01-26T00:00:00",
+      "type": "news"
+    },
     {
       "title": "Google Slammed Over Ad-cookie Replacement Flip-Flop",
       "url": "https://www.bbc.com/news/technology-60138876",
