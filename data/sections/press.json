@@ -108,10 +108,21 @@
       "@nyt": {
         "title": "The New York Times",
         "url": "https://www.nytimes.com/"
+      },
+      "@tt": {
+        "title": "BBC Tech Tent",
+        "url": "https://www.bbc.co.uk/programmes/p01plr2p"
       }
     }
   },
   "items": [
+    {
+      "title": "A Major Chip Deal Collapses",
+      "url": "https://www.bbc.co.uk/sounds/play/w3ct1nj8",
+      "source": "@tt",
+      "date": "2022-02-11T00:00:00",
+      "type": "podcast"
+    },
     {
       "title": "Should You Share Your Data With Tech Companies?",
       "url": "https://www.consumerreports.org/privacy/should-you-share-usage-analytics-data-with-tech-companies-a3858502782/",
