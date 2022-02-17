@@ -85,17 +85,8 @@ a:hover {
   display: inline;
 }
 
-#other-writing-container .authors {
-  display: inline-block;
-}
-
 #coding .pub-title {
   display: inline-block;
-}
-
-#other-writing-container .venue {
-  display: inline-block;
-  clear: right;
 }
 
 #other-writing-container .description,
@@ -216,6 +207,16 @@ code {
 .publications-press .venue {
   display: inline-block;
 }
+
+.publications-other-writing .authors {
+  display: block;
+}
+
+.publications-other-writing .venue {
+  display: inline-block;
+  clear: right;
+}
+
 
 .publications-blog .pub-title {
   display: block;

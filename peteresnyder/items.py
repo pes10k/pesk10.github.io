@@ -403,7 +403,7 @@ class TalksItem(ListItem):
 
 
 class WritingItem(ListItem):
-    html_classes = ["publications"]
+    html_classes = ["publications", "publications-other-writing"]
     file_fields = ["url", "links"]
 
     links: List[Link]
@@ -420,9 +420,9 @@ class WritingItem(ListItem):
     def add_html(self, markup: Indenter) -> None:
         markup.add("<li>").up()
         markup.add(self.title_html())
+        add_authors_html(self.authors, markup)
         add_date_html(self.date, self, markup)
         add_links_html(self.links, markup)
-        add_authors_html(self.authors, markup)
         add_desc_html(self.desc, markup)
         markup.down().add("</li>")
 
