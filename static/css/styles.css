@@ -198,8 +198,7 @@ code {
   content: " ";
 }
 
-.publications-talks .venue span:after,
-.publications-press .year:after {
+.publications-talks .venue span:after {
   content: ", ";
 }
 
@@ -207,6 +206,15 @@ code {
   .description {
     width: 75%;
   }
+}
+
+.publications-press .pub-title {
+  display: block;
+}
+
+.publications-press .pub-type,
+.publications-press .venue {
+  display: inline-block;
 }
 
 .publications-blog .pub-title {

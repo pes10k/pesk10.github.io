@@ -317,7 +317,11 @@ class InvolvementItem(BaseItem):
 
 
 class PressItem(ListItem):
-    ITEM_TYPES = ["news", "podcast", "radio"]
+    ITEM_TYPE_CLASSES = {
+        "news": "success",
+        "podcast": "primary",
+        "radio": "warning"
+    }
     html_classes = ["publications", "publications-press"]
 
     source: Source
@@ -325,21 +329,26 @@ class PressItem(ListItem):
 
     def __init__(self, date: datetime.datetime, title: str, url: Url,
                  source: Source, item_type: str) -> None:
-        if item_type not in PressItem.ITEM_TYPES:
+        if item_type not in PressItem.ITEM_TYPE_CLASSES:
             raise ValueError(f"{item_type} is not a valid PressItem type")
         self.source = source
         self.type = item_type
         super().__init__(date, title, url)
 
-    def type_line(self) -> Html:
+    def add_type_markup(self, markup: Indenter) -> None:
         type_markup = html.escape(self.type)
-        return f"<span class='pub-type'>{type_markup}</span>"
+        markup.add("<span class='press-type'>").up()
+        type_class = PressItem.ITEM_TYPE_CLASSES[self.type]
+        pill_classes = f"label label-{type_class}"
+        pill_html = f"<span class='{pill_classes}'>{type_markup}</span>"
+        markup.add(pill_html).down()
+        markup.add("</span>")
 
     def add_html(self, markup: Indenter) -> None:
         markup.add("<li>").up()
         markup.add(self.title_html())
+        self.add_type_markup(markup)
         add_dest_html(self.source, self, markup)
-        markup.add(self.type_line())
         markup.down().add("</li>")
 
     @staticmethod
