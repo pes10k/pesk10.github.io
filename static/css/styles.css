@@ -193,11 +193,7 @@ code {
   content: ", ";
 }
 
-@media (min-width: 575.98px) {
-  .description {
-    width: 75%;
-  }
-}
+/* Press section */
 
 .publications-press .pub-title {
   display: block;
@@ -208,6 +204,8 @@ code {
   display: inline-block;
 }
 
+/* Other writing section */
+
 .publications-other-writing .authors {
   display: block;
 }
@@ -217,7 +215,17 @@ code {
   clear: right;
 }
 
+/* Blog section */
+.publications-blog .authors {
+  display: inline-block;
+}
 
 .publications-blog .pub-title {
   display: block;
+}
+
+@media (min-width: 575.98px) {
+  .description {
+    width: 75%;
+  }
 }
