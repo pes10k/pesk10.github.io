@@ -12,6 +12,14 @@ Date = Union[Year, datetime.datetime]
 
 
 @dataclasses.dataclass
+class TalkType:
+    title: str
+
+    def to_html(self) -> Html:
+        return f"<span class='pub-type'>{html.escape(self.title)}</span>"
+
+
+@dataclasses.dataclass
 class Author:
     title: str
     abbr: Optional[str] = None

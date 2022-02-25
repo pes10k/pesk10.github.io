@@ -1,5 +1,13 @@
 {
   "abbrs": {
+    "types": {
+      "@inv": {
+        "title": "invited talk"
+      },
+      "@conf": {
+        "title": "conference presentation"
+      }
+    },
     "venues": {
       "@madweb": {
         "title": "Workshop on Measurements, Attacks, and Defenses for the Web",
@@ -21,9 +29,19 @@
   },
   "items": [
     {
-      "title": "Online Tracking, What Can Be Done About it, and Who’s Doing it",
+      "title": "SugarCoat: Programmatically Generating Privacy-Preserving, Web-Compatible Resource Replacements for Content Blocking",
+      "type": "@inv",
+      "year": 2022,
+      "venue": "NGN Webinar (Imperial College London)",
+      "links": {
+        "announcement": "https://www.jiscmail.ac.uk/cgi-bin/wa-jisc.exe?A2=NGN;1cb3f54e.2201",
+        "slides (pdf)": "static/slides/ngn-2022-sugarcoat.pdf"
+      }
+    },
+    {
+      "title": "Online Tracking, What Can Be Done About it, and Who's Doing it",
       "url": "https://web.stanford.edu/class/cs253/",
-      "type": "invited talk",
+      "type": "@inv",
       "year": 2021,
       "venue": "CS253 - Web Security @ Stanford",
       "links": {
@@ -34,14 +52,14 @@
     {
       "title": "Improving the Coverage and Compatibility of Web Content Blocking in Brave Browsers",
       "url": "https://securitylunch.stanford.edu/2021/fall/",
-      "type":"invited talk",
+      "type":"@inv",
       "year": 2021,
       "venue": "Stanford Security Lunch"
     },
     {
       "title": "Best-of-Breed Content Blocking in Brave: Three Projects to Improve the Depth, Breath, and Usefulness of Blocking at Scale",
       "url": "https://madweb.work/program20/",
-      "type": "invited talk",
+      "type": "@inv",
       "year": 2020,
       "venue": "@madweb",
       "links": {
@@ -51,7 +69,7 @@
     {
       "title": "Brave, Fingerprinting, and Privacy on the Web",
       "url": "https://web.stanford.edu/class/cs253/",
-      "type": "invited talk",
+      "type": "@inv",
       "year": 2019,
       "venue": "CS253 - Web Security @ Stanford",
       "links": {
@@ -62,7 +80,7 @@
     {
       "title": "Privacy, Standards and Anti-Patterns",
       "url": "https://datatracker.ietf.org/meeting/105/materials/agenda-105-pearg-01",
-      "type": "invited talk",
+      "type": "@inv",
       "year": 2019,
       "venue": "@pearg",
       "links": {
@@ -72,7 +90,7 @@
     {
       "title": "Brave, Privacy and Standards",
       "url": "https://www.w3.org/2019/05/15-w3c-track/speakers.html#pete",
-      "type": "invited talk",
+      "type": "@inv",
       "year": 2019,
       "venue": "@www",
       "links": {
@@ -82,7 +100,7 @@
     {
       "title": "Web Privacy Beyond Extensions: New Browsers Are Pursuing Deep Privacy Protections",
       "url": "https://www.usenix.org/conference/enigma2019/presentation/snyder",
-      "type": "conference talk",
+      "type": "@conf",
       "year": 2019,
       "venue": "USENIX Enigma",
       "links": {
@@ -91,7 +109,7 @@
     },
     {
       "title": "No Please, After You: Detecting Fraud in Affiliate Marketing Networks",
-      "type": "invited talk",
+      "type": "@inv",
       "venue": "Department of Information Engineering at Chinese University of Hong Kong",
       "year": 2015,
       "links" : {

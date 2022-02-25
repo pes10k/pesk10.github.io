@@ -9,7 +9,7 @@ from typing import Any, cast, Dict, Generic, Literal, List
 from typing import Optional, Type, TypeVar, Union
 
 from .indent import Indenter
-from .types import Author, Date, Html, Link, Source, Url, Venue, Year
+from .types import Author, Date, Html, Link, Source, TalkType, Url, Venue, Year
 
 
 def is_local_file_ref(ref: Optional[str]) -> bool:
@@ -106,6 +106,14 @@ def year_from_json(item_data: Union[str, int]) -> int:
             raise BaseException(f'Invalid year value in json: {item_data}')
         return datetime.datetime.now().year
     return item_data
+
+
+def talk_type_from_json(item_data: Dict[str, Any],
+                        all_data: Dict[str, Any]) -> TalkType:
+    raw_talk_type = item_data["type"]
+    if raw_talk_type[0] == "@":
+        return TalkType(**all_data["abbrs"]["types"][raw_talk_type])
+    return TalkType(raw_talk_type)
 
 
 def venue_from_json(item_data: Dict[str, Any],
@@ -361,32 +369,25 @@ class PressItem(ListItem):
 
 
 class TalksItem(ListItem):
-    ITEM_TYPES = ["invited talk", "conference talk"]
     html_classes = ["publications", "publications-talks"]
     file_fields = ["url", "links"]
 
-    type: str
+    type: TalkType
     links: List[Link]
     venue: Venue
 
-    def __init__(self, year: Year, title: str, item_type: str,
+    def __init__(self, year: Year, title: str, item_type: TalkType,
                  url: Optional[Url], links: List[Link], venue: Venue) -> None:
         self.links = links
         self.venue = venue
-        if item_type not in TalksItem.ITEM_TYPES:
-            raise ValueError(f"{item_type} is not a valid TalksItem type")
         self.type = item_type
         super().__init__(year, title, url)
-
-    def type_line(self) -> Html:
-        type_markup = html.escape(self.type)
-        return f"<span class='pub-type'>{type_markup}</span>"
 
     def add_html(self, markup: Indenter) -> None:
         markup.add("<li>").up()
         markup.add(self.title_html())
         add_dest_html(self.venue, self, markup)
-        markup.add(self.type_line())
+        markup.add(self.type.to_html())
         add_links_html(self.links, markup)
         markup.down().add("</li>")
 
@@ -395,10 +396,10 @@ class TalksItem(ListItem):
                        all_data: Dict[str, Any]) -> "TalksItem":
         year = year_from_json(item_data["year"])
         links = links_from_json(item_data)
-        item_type = item_data["type"]
+        talk_type = talk_type_from_json(item_data, all_data)
         venue = venue_from_json(item_data, all_data)
         url = item_data["url"] if "url" in item_data else None
-        return TalksItem(year, item_data["title"], item_type, url, links,
+        return TalksItem(year, item_data["title"], talk_type, url, links,
                          venue)
 
 
