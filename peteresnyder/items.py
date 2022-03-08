@@ -213,12 +213,15 @@ class ListItem(BaseItem):
 
     def date_html(self) -> Html:
         date_line = ""
+        date_value = ""
         try:
             date_as_datetime = cast(datetime.datetime, self.date)
             date_line = date_as_datetime.strftime("%b %d, %Y")
+            date_value = date_as_datetime.strftime("%Y-%m-%d")
         except AttributeError:
             date_line = str(self.date)
-        return f"<span class='year'>{date_line}</span>"
+            date_value = date_line
+        return f"<time datetime='{date_value}'>{date_line}</time>"
 
 
 class BlogItem(ListItem):

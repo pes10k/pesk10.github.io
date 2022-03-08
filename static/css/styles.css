@@ -183,9 +183,9 @@ code {
   font-weight: bold;
 }
 
-.publications .venue > a ~ .year::before,
-.publications .venue > span ~ .year::before,
-.publications .venue > abbr ~ .year::before {
+.publications .venue > a ~ .time::before,
+.publications .venue > span ~ .time::before,
+.publications .venue > abbr ~ .time::before {
   content: " ";
 }
 
