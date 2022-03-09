@@ -1,18 +1,20 @@
 {
   "abbrs": {
     "authors": {
-      "@me": "Peter Snyder"
+      "@me": "Peter Snyder",
+      "@shivan": "Shivan Kaul Sahib",
+      "@alex": "Alex Davidson"
     }
   },
   "items": [
     {
       "title": "STAR: Distributed Secret Sharing for Private Threshold Aggregation Reporting",
-      "url": "https://www.ietf.org/archive/id/draft-dss-star-00.txt",
+      "url": "https://datatracker.ietf.org/doc/draft-dss-star/",
       "year": "@now",
       "desc": "IETF spec proposal for a cryptographic system for a high performance, low trust system form enforcing k-anonymity protections.",
       "authors": [
-        "Alex Davidson",
-        "Shivan Kaul Sahib",
+        "@alex",
+        "@shivan",
         "@me"
       ]
     },
