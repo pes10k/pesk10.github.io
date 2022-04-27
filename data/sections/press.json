@@ -112,10 +112,28 @@
       "@tt": {
         "title": "BBC Tech Tent",
         "url": "https://www.bbc.co.uk/programmes/p01plr2p"
+      },
+      "@drum": {
+        "title": "The Drum",
+        "url": "https://www.thedrum.com/"
       }
     }
   },
   "items": [
+    {
+      "title": "Privacy-centric search engines DuckDuckGo and Brave are spiking, per new study",
+      "url": "https://www.thedrum.com/news/2022/04/27/privacy-centric-search-engines-duckduckgo-and-brave-are-spiking-new-study",
+      "source": "@drum",
+      "date": "2022-04-27T00:00:00",
+      "type": "news"
+    },
+    {
+      "title": "Brave, DuckDuckGo to unplug Google's AMP where possible",
+      "url": "https://www.theregister.com/2022/04/21/brave_duckduckgo_google_amp/",
+      "source": "@register",
+      "date": "2022-04-21T00:00:00",
+      "type": "news"
+    },
     {
       "title": "DuckDuckGo's private Mac browser can't replace Chrome or Safari, yet",
       "url": "https://www.fastcompany.com/90741496/duckduckgos-private-mac-browser-cant-replace-chrome-or-safari-yet",
