@@ -8,7 +8,10 @@
       "@alex": "Alexandros Kapravelos",
       "@chris": "Chris Kanich",
       "@cyn": "Cynthia Taylor",
-      "@damon": "Damon McCoy"
+      "@damon": "Damon McCoy",
+      "@michael": "Michael Smith",
+      "@hamed": "Hamed Haddadi",
+      "@deian": "Deian Stefan"
     },
     "venues": {
       "@www": {
@@ -50,10 +53,30 @@
       "@ccsw": {
         "title": "Cloud Computing Security Workshop at CCS",
         "abbr": "CCSW"
+      },
+      "@pets": {
+        "title": "Privacy Enhancing Technologies",
+        "abbr": "PETS"
       }
     }
   },
   "items": [
+    {
+      "title": "Blocked or Broken? Automatically Detecting When Privacy Interventions Break Websites",
+      "year": 2022,
+      "venue": "@pets",
+      "authors": [
+        "@michael",
+        "@me",
+        "Moritz Haller",
+        "@ben",
+        "@hamed",
+        "@deian"
+      ],
+      "links": {
+        "arxiv": "https://arxiv.org/abs/2203.03528"
+      }
+    },
     {
       "title": "Measuring the Privacy vs. Compatibility Trade-off in Preventing Third-Party Stateful Tracking",
       "url": "static/papers/storage-policies-www-2022.pdf",
@@ -76,10 +99,10 @@
       "year": 2021,
       "venue": "@ccs",
       "authors": [
-        "Michael Smith",
+        "@michael",
         "@me",
         "@ben",
-        "Deian Stefan"
+        "@deian"
       ],
       "links": {
         "code": "https://github.com/SugarCoatWeb/sugarcoat",
