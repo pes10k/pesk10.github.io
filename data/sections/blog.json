@@ -33,6 +33,15 @@
       "source": "@brave"
     },
     {
+      "title": "First-Party Sets: Tearing Down Privacy Defenses Just as They're Being Built",
+      "url": "https://brave.com/web-standards-at-brave/8-first-party-sets/",
+      "date": "2022-05-19T00:00:00",
+      "authors": [
+        "@me"
+      ],
+      "source": "@standards"
+    },
+    {
       "title": "Google's Topics API: Rebranding FLoC Without Addressing Key Privacy Issues",
       "url": "https://brave.com/web-standards-at-brave/7-googles-topics-api/",
       "date": "2022-01-26T00:00:00",
