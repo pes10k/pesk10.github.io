@@ -63,6 +63,7 @@
   "items": [
     {
       "title": "Blocked or Broken? Automatically Detecting When Privacy Interventions Break Websites",
+      "url": "static/papers/compat-pets-2022.pdf",
       "year": 2022,
       "venue": "@pets",
       "authors": [
@@ -74,7 +75,8 @@
         "@deian"
       ],
       "links": {
-        "arxiv": "https://arxiv.org/abs/2203.03528"
+        "arxiv": "https://arxiv.org/abs/2203.03528",
+        "code": "https://github.com/brave-experiments/webcompat-measurement-pipeline"
       }
     },
     {
