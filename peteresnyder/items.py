@@ -331,7 +331,8 @@ class PressItem(ListItem):
     ITEM_TYPE_CLASSES = {
         "news": "success",
         "podcast": "primary",
-        "radio": "warning"
+        "radio": "warning",
+        "video": "info"
     }
     html_classes = ["publications", "publications-press"]
 
