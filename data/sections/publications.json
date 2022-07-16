@@ -11,7 +11,8 @@
       "@damon": "Damon McCoy",
       "@michael": "Michael Smith",
       "@hamed": "Hamed Haddadi",
-      "@deian": "Deian Stefan"
+      "@deian": "Deian Stefan",
+      "@alex-d": "Alex Davidson"
     },
     "venues": {
       "@www": {
@@ -61,6 +62,25 @@
     }
   },
   "items": [
+    {
+      "title": "STAR: Secret Sharing for Private Threshold Aggregation Reporting",
+      "url": "static/papers/star-ccs-2022.pdf",
+      "year": 2022,
+      "venue": "@ccs",
+      "authors": [
+        "@alex-d",
+        "@me",
+        "E. B. Quirk",
+        "Joseph Genereux",
+        "@ben",
+        "@hamed"
+      ],
+      "links": {
+        "arxiv": "https://arxiv.org/abs/2109.10074",
+        "code": "https://github.com/brave/sta-rs",
+        "ietf proposal": "https://datatracker.ietf.org/doc/draft-dss-star/"
+      }
+    },
     {
       "title": "Blocked or Broken? Automatically Detecting When Privacy Interventions Break Websites",
       "url": "static/papers/compat-pets-2022.pdf",
