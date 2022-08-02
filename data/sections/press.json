@@ -125,6 +125,13 @@
   },
   "items": [
     {
+      "title": "The Dangers of Browser Extensions",
+      "url": "https://www.youtube.com/watch?v=j0ieRrwae5w",
+      "source": "@nbtv",
+      "date": "2022-08-01T00:00:00",
+      "type": "video"
+    },
+    {
       "title": "Google postpones Chrome's third-party cookie bonfire yet again",
       "url": "https://www.theregister.com/2022/07/28/google_postpones_thirdparty_cookie_phaseout/",
       "source": "@register",
