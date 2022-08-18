@@ -63,6 +63,23 @@
   },
   "items": [
     {
+      "title": "Measuring UID Smuggling in the Wild",
+      "year": 2022,
+      "venue": "@imc",
+      "authors": [
+        "Audrey Randall",
+        "@me",
+        "Alisha Ukani",
+        "Alex C. Snoeren",
+        "Geoffrey M. Voelker",
+        "Stefan Savage",
+        "Aaron Schulman"
+      ],
+      "links": {
+        "arxiv": "https://arxiv.org/pdf/2203.10188.pdf"
+      }
+    },
+    {
       "title": "STAR: Secret Sharing for Private Threshold Aggregation Reporting",
       "url": "static/papers/star-ccs-2022.pdf",
       "year": 2022,
@@ -79,23 +96,6 @@
         "arxiv": "https://arxiv.org/abs/2109.10074",
         "code": "https://github.com/brave/sta-rs",
         "ietf proposal": "https://datatracker.ietf.org/doc/draft-dss-star/"
-      }
-    },
-    {
-      "title": "Measuring UID Smuggling in the Wild",
-      "year": 2022,
-      "venue": "@imc",
-      "authors": [
-        "Audrey Randall",
-        "@me",
-        "Alisha Ukani",
-        "Alex C. Snoeren",
-        "Geoffrey M. Voelker",
-        "Stefan Savage",
-        "Aaron Schulman"
-      ],
-      "links": {
-        "arxiv": "https://arxiv.org/pdf/2203.10188.pdf"
       }
     },
     {
