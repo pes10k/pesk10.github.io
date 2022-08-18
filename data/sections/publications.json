@@ -76,7 +76,8 @@
         "Aaron Schulman"
       ],
       "links": {
-        "arxiv": "https://arxiv.org/pdf/2203.10188.pdf"
+        "arxiv": "https://arxiv.org/pdf/2203.10188.pdf",
+        "code": "https://github.com/brave-experiments/brave-redirection-recorder"
       }
     },
     {
