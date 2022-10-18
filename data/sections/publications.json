@@ -64,6 +64,7 @@
   "items": [
     {
       "title": "Measuring UID Smuggling in the Wild",
+      "url": "static/papers/uids-imc-2022.pdf",
       "year": 2022,
       "venue": "@imc",
       "authors": [
