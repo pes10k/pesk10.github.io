@@ -97,8 +97,12 @@
       "links": {
         "arxiv": "https://arxiv.org/abs/2109.10074",
         "code": "https://github.com/brave/sta-rs",
-        "ietf proposal": "https://datatracker.ietf.org/doc/draft-dss-star/"
-      }
+        "ietf proposal": "https://datatracker.ietf.org/doc/draft-dss-star/",
+        "slides": "static/slides/star-ccs-2022.pdf"
+      },
+      "notes": [
+        "best paper"
+      ]
     },
     {
       "title": "Blocked or Broken? Automatically Detecting When Privacy Interventions Break Websites",

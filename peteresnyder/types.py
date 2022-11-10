@@ -77,6 +77,18 @@ LINK_VALIDATORS: Dict[str, LinkValidator] = {
 
 
 @dataclasses.dataclass
+class PubNote:
+    title: str
+
+    def to_html(self) -> Html:
+        return (
+            "<span class='label label-primary'>" +
+            html.escape(self.title) +
+            "</span>"
+        )
+
+
+@dataclasses.dataclass
 class Link:
     title: str
     url: Url

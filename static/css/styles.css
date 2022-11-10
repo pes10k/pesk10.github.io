@@ -120,16 +120,16 @@ a:hover {
   content: ". ";
 }
 
-.pub-link {
+.pub-links > .label {
   margin-right: .5em;
 }
 
-.pub-link a {
+.pub-links > .label a {
   color: white;
   text-decoration: none;
 }
 
-.pub-link a:hover {
+.pub-links > .label a:hover {
   text-decoration: underline;
 }
 

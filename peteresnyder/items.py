@@ -9,7 +9,8 @@ from typing import Any, cast, Dict, Generic, Literal, List
 from typing import Optional, Type, TypeVar, Union
 
 from .indent import Indenter
-from .types import Author, Date, Html, Link, Source, TalkType, Url, Venue, Year
+from .types import Author, Date, Html, Link, PubNote, Source, TalkType, Url
+from .types import Venue, Year
 
 
 def is_local_file_ref(ref: Optional[str]) -> bool:
@@ -58,6 +59,24 @@ def add_links_html(links: List[Link], markup: Indenter) -> None:
     markup.add("<span class='pub-links'>").up()
     for link in links:
         markup.add(f"{start_tag}{link.to_html()}{end_tag}")
+    markup.down().add("</span>")
+
+
+def add_notes_and_links_html(notes: List[PubNote], links: List[Link],
+                             markup: Indenter) -> None:
+    if len(links) == 0 and len(notes) == 0:
+        return
+
+    markup.add("<span class='pub-links'>").up()
+    if len(notes) > 0:
+        for note in notes:
+            markup.add(note.to_html())
+
+    if len(links) > 0:
+        start_tag = "<span class='label label-default pub-link'>"
+        end_tag = "</span>"
+        for link in links:
+            markup.add(f"{start_tag}{link.to_html()}{end_tag}")
     markup.down().add("</span>")
 
 
@@ -127,6 +146,13 @@ def venue_from_json(item_data: Dict[str, Any],
 def date_from_json(item_data: Dict[str, Any]) -> datetime.datetime:
     date_str = item_data["date"]
     return datetime.datetime.fromisoformat(date_str)
+
+
+def pub_notes_from_json(item_data: Dict[str, Any]) -> List[PubNote]:
+    try:
+        return [PubNote(note) for note in item_data["notes"]]
+    except KeyError:
+        return []
 
 
 def links_from_json(item_data: Dict[str, Any]) -> List[Link]:
@@ -265,13 +291,15 @@ class PublicationItem(ListItem):
     authors: List[Author]
     links: List[Link]
     venue: Venue
+    notes: List[PubNote]
 
     def __init__(self, year: Year, title: str, url: Optional[Url],
                  authors: List[Author], links: List[Link],
-                 venue: Venue) -> None:
+                 venue: Venue, notes: List[PubNote]) -> None:
         self.authors = authors
         self.links = links
         self.venue = venue
+        self.notes = notes
         super().__init__(year, title, url)
 
     def add_html(self, markup: Indenter) -> None:
@@ -279,7 +307,7 @@ class PublicationItem(ListItem):
         markup.add(self.title_html())
         add_authors_html(self.authors, markup)
         add_dest_html(self.venue, self, markup)
-        add_links_html(self.links, markup)
+        add_notes_and_links_html(self.notes, self.links, markup)
         markup.down().add("</li>")
 
     @staticmethod
@@ -290,8 +318,9 @@ class PublicationItem(ListItem):
         links = links_from_json(item_data)
         venue = venue_from_json(item_data, all_data)
         url = item_data["url"] if "url" in item_data else None
+        notes = pub_notes_from_json(item_data)
         return PublicationItem(year, item_data["title"], url, authors,
-                               links, venue)
+                               links, venue, notes)
 
 
 @dataclasses.dataclass
