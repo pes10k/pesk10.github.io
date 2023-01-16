@@ -1,5 +1,10 @@
 {
   "abbrs": {
+    "authors": {
+      "@me": "Peter Snyder",
+      "@sofia": "Sofia Celi",
+      "@alex-d": "Alex Davidson"
+    },
     "types": {
       "@inv": {
         "title": "invited talk"
@@ -24,10 +29,25 @@
       "@uicsigsec": {
         "title": "UIC SIG Security",
         "url": "https://acm.cs.uic.edu/sigsecurity"
+      },
+      "@rwc": {
+        "title": "Real World Crypto",
+        "abbr": "RWC"
       }
     }
   },
   "items": [
+    {
+      "title": "Designing Cryptography for Small Organizations and Projects",
+      "type": "@conf",
+      "year": 2023,
+      "venue": "@rwc",
+      "authors": [
+        "@sofia",
+        "@alex-d",
+        "@me"
+      ]
+    },
     {
       "title": "SugarCoat: Programmatically Generating Privacy-Preserving, Web-Compatible Resource Replacements for Content Blocking",
       "type": "@inv",

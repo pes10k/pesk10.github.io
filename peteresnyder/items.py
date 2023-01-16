@@ -408,17 +408,22 @@ class TalksItem(ListItem):
     type: TalkType
     links: List[Link]
     venue: Venue
+    authors: List[Author]
 
     def __init__(self, year: Year, title: str, item_type: TalkType,
-                 url: Optional[Url], links: List[Link], venue: Venue) -> None:
+                 url: Optional[Url], links: List[Link], venue: Venue,
+                 authors: List[Author]) -> None:
         self.links = links
         self.venue = venue
         self.type = item_type
+        self.authors = authors
         super().__init__(year, title, url)
 
     def add_html(self, markup: Indenter) -> None:
         markup.add("<li>").up()
         markup.add(self.title_html())
+        if len(self.authors) > 0:
+            add_authors_html(self.authors, markup)
         add_dest_html(self.venue, self, markup)
         markup.add(self.type.to_html())
         add_links_html(self.links, markup)
@@ -431,9 +436,10 @@ class TalksItem(ListItem):
         links = links_from_json(item_data)
         talk_type = talk_type_from_json(item_data, all_data)
         venue = venue_from_json(item_data, all_data)
+        authors = authors_from_json(item_data, all_data)
         url = item_data["url"] if "url" in item_data else None
         return TalksItem(year, item_data["title"], talk_type, url, links,
-                         venue)
+                         venue, authors)
 
 
 class WritingItem(ListItem):
