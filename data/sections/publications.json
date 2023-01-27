@@ -15,6 +15,10 @@
       "@alex-d": "Alex Davidson"
     },
     "venues": {
+      "@usenix": {
+        "title": "USENIX Security",
+        "abbr": "USENIX"
+      },
       "@www": {
         "title": "The Web Conference",
         "abbr": "WWW"
@@ -62,6 +66,23 @@
     }
   },
   "items": [
+    {
+      "title": "Pool-Party: Exploiting Browser Resource Pools for Web Tracking",
+      "url": "https://arxiv.org/pdf/2112.06324.pdf",
+      "year": 2023,
+      "venue": "@usenix",
+      "authors": [
+        "@me",
+        "Soroush Karami",
+        "Arthur Edelstein",
+        "@ben",
+        "@hamed"
+      ],
+      "links": {
+        "arxiv": "https://arxiv.org/pdf/2112.06324.pdf",
+        "demo": "https://anonymous.4open.science/r/poolparty-2E6B/static/inner.js"
+      }
+    },
     {
       "title": "Measuring UID Smuggling in the Wild",
       "url": "static/papers/uids-imc-2022.pdf",
