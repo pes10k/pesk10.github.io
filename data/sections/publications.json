@@ -68,7 +68,7 @@
   "items": [
     {
       "title": "Pool-Party: Exploiting Browser Resource Pools for Web Tracking",
-      "url": "https://arxiv.org/pdf/2112.06324.pdf",
+      "url": "static/papers/pool-party-usenix-2023.pdf",
       "year": 2023,
       "venue": "@usenix",
       "authors": [
