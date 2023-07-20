@@ -3,10 +3,24 @@
     "authors": {
       "@me": "Peter Snyder",
       "@shivan": "Shivan Kaul Sahib",
-      "@alex": "Alex Davidson"
+      "@alex": "Alex Davidson",
+      "@mark": "Mark Pilgrim",
+      "@sofia": "Sofía Celi"
     }
   },
   "items": [
+    {
+      "title": "The Off-The-Record Response Header Field",
+      "url": "https://datatracker.ietf.org/doc/draft-sahib-httpbis-off-the-record/",
+      "year": "@now",
+      "desc": "IETF proposal for a HTTP response header field that enables a server to inform the client that the requested website should be treated as 'off-the-record.'  The purpose is to indicate that the server considers the content sensitive in some way, and the client may choose not to retain any record of accessing it.",
+      "authors": [
+        "@mark",
+        "@sofia",
+        "@me",
+        "@shivan"
+      ]
+    },
     {
       "title": "STAR: Distributed Secret Sharing for Private Threshold Aggregation Reporting",
       "url": "https://datatracker.ietf.org/doc/draft-dss-star/",
@@ -16,7 +30,10 @@
         "@alex",
         "@shivan",
         "@me"
-      ]
+      ],
+      "links": {
+        "blog": "https://brave.com/privacy-updates/26-request-off-the-record/"
+      }
     },
     {
       "title": "W3C Security and Privacy Questionnaire",
