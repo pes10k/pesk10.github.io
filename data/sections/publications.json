@@ -81,7 +81,9 @@
       "links": {
         "arxiv": "https://arxiv.org/pdf/2112.06324.pdf",
         "demo": "https://anonymous.4open.science/r/poolparty-2E6B/static/inner.js",
-        "code": "https://github.com/brave-experiments/poolparty-resources"
+        "code": "https://github.com/brave-experiments/poolparty-resources",
+        "slides (keynote)": "static/slides/pool-party-usenix-2023.key",
+        "slides (pdf)": "static/slides/pool-party-usenix-2023.pdf"
       }
     },
     {
