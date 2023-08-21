@@ -67,6 +67,17 @@
   },
   "items": [
     {
+      "title": "Understanding the Privacy Risks of Popular Search Engine Advertising Systems",
+      "year": 2023,
+      "venue": "@imc",
+      "authors": [
+        "Salim Chouaki",
+        "Oana Goga",
+        "@hamed",
+        "@me"
+      ]
+    },
+    {
       "title": "A First Look at the Privacy Harms of the Public Suffix List",
       "year": 2023,
       "venue": "@imc",
@@ -76,17 +87,6 @@
         "Colin Perkins",
         "@hamed",
         "Gareth Tyson"
-      ]
-    },
-    {
-      "title": "Understanding the Privacy Risks of Popular Search Engine Advertising Systems",
-      "year": 2023,
-      "venue": "@imc",
-      "authors": [
-        "Salim Chouaki",
-        "Oana Goga",
-        "@hamed",
-        "@me"
       ]
     },
     {
