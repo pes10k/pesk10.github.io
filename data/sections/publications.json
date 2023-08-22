@@ -87,6 +87,9 @@
         "Colin Perkins",
         "@hamed",
         "Gareth Tyson"
+      ],
+      "notes": [
+        "#short-paper"
       ]
     },
     {
@@ -149,7 +152,7 @@
         "slides": "static/slides/star-ccs-2022.pdf"
       },
       "notes": [
-        "best paper"
+        "#best-paper"
       ]
     },
     {

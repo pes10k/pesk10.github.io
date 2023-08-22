@@ -3,12 +3,13 @@ import dataclasses
 import datetime
 import html
 import os
-from typing import Callable, cast, Dict, NamedTuple, Optional, Union
+from typing import Callable, cast, Dict, NamedTuple, Optional, Tuple, Union
 
 Html = str
 Url = str
 Year = int
 Date = Union[Year, datetime.datetime]
+CSSClass = str
 
 
 @dataclasses.dataclass
@@ -65,6 +66,36 @@ class Venue:
         return html_str
 
 
+SPECIAL_NOTE_DEFS: Dict[str, Tuple[str, CSSClass]] = {
+    "#best-paper": ("best paper", "label-primary"),
+    "#short-paper": ("short paper", "label-success"),
+}
+
+
+@dataclasses.dataclass
+class PubNote:
+    title: str
+    css_class: Optional[CSSClass]
+
+    def __init__(self, title: str) -> None:
+        if title.startswith("#"):
+            self.title, self.css_class = SPECIAL_NOTE_DEFS[title]
+        else:
+            self.title = title
+            self.css_class = None
+
+    def to_html(self) -> Html:
+        span_classes = ["label"]
+        if self.css_class:
+            span_classes.append(self.css_class)
+
+        return (
+            f"<span class='{' '.join(span_classes)}'>" +
+            html.escape(self.title) +
+            "</span>"
+        )
+
+
 class LinkValidator(NamedTuple):
     check: Callable[[str], bool]
     name: str
@@ -77,24 +108,12 @@ LINK_VALIDATORS: Dict[str, LinkValidator] = {
 
 
 @dataclasses.dataclass
-class PubNote:
-    title: str
-
-    def to_html(self) -> Html:
-        return (
-            "<span class='label label-primary'>" +
-            html.escape(self.title) +
-            "</span>"
-        )
-
-
-@dataclasses.dataclass
 class Link:
     title: str
     url: Url
 
     def __post_init__(self) -> None:
-        if self.title[0] != "@":
+        if not self.title.startswith("@"):
             return
         validator = LINK_VALIDATORS[self.title]
         if not validator.check(self.url):
