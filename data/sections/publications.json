@@ -75,7 +75,10 @@
         "Oana Goga",
         "@hamed",
         "@me"
-      ]
+      ],
+      "links": {
+        "arxiv": "https://arxiv.org/abs/2308.15309"
+      }
     },
     {
       "title": "A First Look at the Privacy Harms of the Public Suffix List",
@@ -105,7 +108,7 @@
         "@hamed"
       ],
       "links": {
-        "arxiv": "https://arxiv.org/pdf/2112.06324.pdf",
+        "arxiv": "https://arxiv.org/abs/2112.06324",
         "blog": "https://brave.com/privacy-updates/13-pool-party-side-channels/",
         "code": "https://github.com/brave-experiments/poolparty-resources",
         "demo": "https://anonymous.4open.science/r/poolparty-2E6B/static/inner.js",
@@ -128,7 +131,7 @@
         "Aaron Schulman"
       ],
       "links": {
-        "arxiv": "https://arxiv.org/pdf/2203.10188.pdf",
+        "arxiv": "https://arxiv.org/abs/2203.10188",
         "code": "https://github.com/brave-experiments/brave-redirection-recorder"
       }
     },
