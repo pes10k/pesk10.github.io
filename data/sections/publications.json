@@ -68,6 +68,7 @@
   "items": [
     {
       "title": "Understanding the Privacy Risks of Popular Search Engine Advertising Systems",
+      "url": "static/papers/search-advertising-imc-2023.pdf",
       "year": 2023,
       "venue": "@imc",
       "authors": [
@@ -77,11 +78,13 @@
         "@me"
       ],
       "links": {
-        "arxiv": "https://arxiv.org/abs/2308.15309"
+        "arxiv": "https://arxiv.org/abs/2308.15309",
+        "dataset": "https://github.com/CHOUAKIsalim/Search_Engines_Privacy"
       }
     },
     {
       "title": "A First Look at the Privacy Harms of the Public Suffix List",
+      "url": "static/papers/public-suffix-list-imc-2023.pdf",
       "year": 2023,
       "venue": "@imc",
       "authors": [
