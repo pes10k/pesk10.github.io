@@ -96,7 +96,10 @@
       ],
       "notes": [
         "#short-paper"
-      ]
+      ],
+      "links": {
+        "dataset": "https://doi.org/10.17630/50e596c3-7537-4f74-b503-e9bcc5c8b95a"
+      }
     },
     {
       "title": "Pool-Party: Exploiting Browser Resource Pools for Web Tracking",
