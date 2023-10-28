@@ -79,7 +79,8 @@
       ],
       "links": {
         "arxiv": "https://arxiv.org/abs/2308.15309",
-        "dataset": "https://github.com/CHOUAKIsalim/Search_Engines_Privacy"
+        "dataset": "https://github.com/CHOUAKIsalim/Search_Engines_Privacy",
+        "slides": "static/slides/search-advertising-imc-2023.pdf"
       }
     },
     {
