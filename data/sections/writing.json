@@ -50,7 +50,7 @@
     },
     {
       "title": "Global Privacy Control (GPC)",
-      "url": "https://globalprivacycontrol.github.io/gpc-spec/",
+      "url": "https://privacycg.github.io/gpc-spec/",
       "year": 2021,
       "desc": "Proposed spec to allow browser users to assert legal privacy rights in a privacy preserving manner.",
       "authors": [
