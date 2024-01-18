@@ -447,12 +447,15 @@ class WritingItem(ListItem):
     file_fields = ["url", "links"]
 
     links: List[Link]
+    venue: Optional[Venue]
     desc: str
     authors: List[Author]
 
     def __init__(self, year: Year, title: str, url: Url, links: List[Link],
-                 desc: str, authors: List[Author]) -> None:
+                 venue: Optional[Venue], desc: str,
+                 authors: List[Author]) -> None:
         self.links = links
+        self.venue = venue
         self.desc = desc
         self.authors = authors
         super().__init__(year, title, url)
@@ -461,7 +464,10 @@ class WritingItem(ListItem):
         markup.add("<li>").up()
         markup.add(self.title_html())
         add_authors_html(self.authors, markup)
-        add_date_html(self.date, self, markup)
+        if self.venue:
+            add_dest_html(self.venue, self, markup)
+        else:
+            add_date_html(self.date, self, markup)
         add_links_html(self.links, markup)
         add_desc_html(self.desc, markup)
         markup.down().add("</li>")
@@ -472,9 +478,12 @@ class WritingItem(ListItem):
         year = year_from_json(item_data["year"])
         links = links_from_json(item_data)
         url = item_data["url"] if "url" in item_data else None
+        venue = None
+        if "venue" in item_data:
+            venue = venue_from_json(item_data, all_data)
         authors = authors_from_json(item_data, all_data)
         return WritingItem(year, item_data["title"], url, links,
-                           item_data["desc"], authors)
+                           venue, item_data["desc"], authors)
 
 
 class CodeItem(ListItem):

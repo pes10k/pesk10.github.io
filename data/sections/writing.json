@@ -6,14 +6,32 @@
       "@alex": "Alex Davidson",
       "@mark": "Mark Pilgrim",
       "@sofia": "Sofía Celi"
+    },
+    "venues": {
+      "@ietf": {
+        "title": "Internet Engineering Task Force",
+        "abbr": "IETF"
+      },
+      "@w3c": {
+        "title": "World Wide Web Consortium",
+        "abbr": "W3C"
+      }
     }
   },
   "items": [
     {
+      "title": "Privacy Principals",
+      "url": "https://www.w3.org/TR/2024/DNOTE-privacy-principles-20240118/",
+      "year": "@now",
+      "desc": "Guidance document for specification authors, on how to protect and improve privacy in Web standards.",
+      "venue": "@ietf"
+    },
+    {
       "title": "The Off-The-Record Response Header Field",
       "url": "https://datatracker.ietf.org/doc/draft-sahib-httpbis-off-the-record/",
       "year": "@now",
-      "desc": "IETF proposal for a HTTP response header field that enables a server to inform the client that the requested website should be treated as 'off-the-record.'  The purpose is to indicate that the server considers the content sensitive in some way, and the client may choose not to retain any record of accessing it.",
+      "desc": "Proposal for a HTTP response header field that enables a server to inform the client that the requested website should be treated as 'off-the-record.'  The purpose is to indicate that the server considers the content sensitive in some way, and the client may choose not to retain any record of accessing it.",
+      "venue": "@ietf",
       "authors": [
         "@mark",
         "@sofia",
@@ -25,7 +43,8 @@
       "title": "STAR: Distributed Secret Sharing for Private Threshold Aggregation Reporting",
       "url": "https://datatracker.ietf.org/doc/draft-dss-star/",
       "year": "@now",
-      "desc": "IETF spec proposal for a cryptographic system for a high performance, low trust system form enforcing k-anonymity protections.",
+      "desc": "Proposal for a cryptographic system for a high performance, low trust system form enforcing k-anonymity protections.",
+      "venue": "@ietf",
       "authors": [
         "@alex",
         "@shivan",
@@ -39,7 +58,8 @@
       "title": "W3C Security and Privacy Questionnaire",
       "url": "https://www.w3.org/TR/security-privacy-questionnaire/",
       "year": "@now",
-      "desc": "W3C guidance document for specification authors, on how to identify and mitigate privacy and security risks in Web standards proposals.",
+      "desc": "Guidance document for specification authors, on how to identify and mitigate privacy and security risks in Web standards proposals.",
+      "venue": "@w3c",
       "authors": [
         "Theresa O’Connor",
         "@me"
@@ -53,6 +73,7 @@
       "url": "https://privacycg.github.io/gpc-spec/",
       "year": 2021,
       "desc": "Proposed spec to allow browser users to assert legal privacy rights in a privacy preserving manner.",
+      "venue": "@w3c",
       "authors": [
         "Robin Berjon",
         "Sebastian Zimmeck",

@@ -50,6 +50,7 @@ class Venue:
     title: str
     abbr: Optional[str] = None
     suffix: Optional[str] = None
+    url: Optional[Url] = None
 
     def to_html(self) -> Html:
         esc_title = html.escape(self.title)
@@ -62,6 +63,9 @@ class Venue:
 
         if self.suffix:
             html_str += " " + html.escape(self.suffix)
+
+        if self.url:
+            html_str = f'<a href="{self.url}">{html_str}</a>'
 
         return html_str
 
