@@ -168,7 +168,7 @@ class BaseItem:
     html_classes: List[str] = []
     file_fields: List[str] = []
 
-    def add_html(self, markup: Indenter) -> None:
+    def add_html(self, markup: Indenter, prior_item: Optional[Any]) -> None:
         raise NotImplementedError()
 
     def validate(self, root_dir: Path) -> bool:
@@ -201,8 +201,10 @@ class BaseItem:
     def add_list_html(cls, items: List["BaseItem"], markup: Indenter) -> None:
         class_str = " ".join(cls.html_classes)
         markup.add(f"<ul class='{class_str}'>").up()
+        prior_item = None
         for item in items:
-            item.add_html(markup)
+            item.add_html(markup, prior_item)
+            prior_item = item
         markup.down().add("</ul>")
 
     @classmethod
@@ -264,7 +266,7 @@ class BlogItem(ListItem):
         self.desc = desc
         super().__init__(date, title, url)
 
-    def add_html(self, markup: Indenter) -> None:
+    def add_html(self, markup: Indenter, prior_item: Optional[Any]) -> None:
         markup.add("<li>").up()
         markup.add(self.title_html())
         add_coauthors_html(self.authors, markup)
@@ -302,7 +304,7 @@ class PublicationItem(ListItem):
         self.notes = notes
         super().__init__(year, title, url)
 
-    def add_html(self, markup: Indenter) -> None:
+    def add_html(self, markup: Indenter, prior_item: Optional[Any]) -> None:
         markup.add("<li>").up()
         markup.add(self.title_html())
         add_authors_html(self.authors, markup)
@@ -329,17 +331,24 @@ class InvolvementItem(BaseItem):
     position: str
     date: Year
 
-    def add_html(self, markup: Indenter) -> None:
+    def add_html(self, markup: Indenter, prior_item: Optional[Any]) -> None:
+        should_add_header = False
+        if not prior_item or self.date != prior_item.date:
+            markup.add("<tr>").up()
+            markup.add(f'<th colspan="2" class="year active">{self.date}</th>')
+            markup.down().add("</tr>")
+
         markup.add("<tr>").up()
         markup.add(f'<td class="venue">{self.venue.to_html()}</td>')
         markup.add(f'<td class="position">{html.escape(self.position)}</td>')
-        markup.add(f'<td class="year">{self.date}</td>')
         markup.down().add("</tr>")
 
     @classmethod
     def add_list_html(cls, items: List["BaseItem"], markup: Indenter) -> None:
+        prior_item = None
         for item in items:
-            item.add_html(markup)
+            item.add_html(markup, prior_item)
+            prior_item = item
 
     @staticmethod
     def item_from_json(item_data: Dict[str, Any],
@@ -385,7 +394,7 @@ class PressItem(ListItem):
         markup.add(pill_html).down()
         markup.add("</span>")
 
-    def add_html(self, markup: Indenter) -> None:
+    def add_html(self, markup: Indenter, prior_item: Optional[Any]) -> None:
         markup.add("<li>").up()
         markup.add(self.title_html())
         self.add_type_markup(markup)
@@ -419,7 +428,7 @@ class TalksItem(ListItem):
         self.authors = authors
         super().__init__(year, title, url)
 
-    def add_html(self, markup: Indenter) -> None:
+    def add_html(self, markup: Indenter, prior_item: Optional[Any]) -> None:
         markup.add("<li>").up()
         markup.add(self.title_html())
         if len(self.authors) > 0:
@@ -460,7 +469,7 @@ class WritingItem(ListItem):
         self.authors = authors
         super().__init__(year, title, url)
 
-    def add_html(self, markup: Indenter) -> None:
+    def add_html(self, markup: Indenter, prior_item: Optional[Any]) -> None:
         markup.add("<li>").up()
         markup.add(self.title_html())
         add_authors_html(self.authors, markup)
@@ -499,7 +508,7 @@ class CodeItem(ListItem):
         self.desc = desc
         super().__init__(year, title, url)
 
-    def add_html(self, markup: Indenter) -> None:
+    def add_html(self, markup: Indenter, prior_item: Optional[Any]) -> None:
         markup.add("<li>").up()
         markup.add(self.title_html())
         add_date_html(self.date, self, markup)
