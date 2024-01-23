@@ -201,10 +201,8 @@ class BaseItem:
     def add_list_html(cls, items: List["BaseItem"], markup: Indenter) -> None:
         class_str = " ".join(cls.html_classes)
         markup.add(f"<ul class='{class_str}'>").up()
-        prior_item = None
         for item in items:
-            item.add_html(markup, prior_item)
-            prior_item = item
+            item.add_html(markup, None)
         markup.down().add("</ul>")
 
     @classmethod
