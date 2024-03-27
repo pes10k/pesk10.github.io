@@ -1,6 +1,10 @@
 {
   "abbrs": {
     "sources": {
+      "@bravetech": {
+        "title": "The Brave Technologist Podcast",
+        "url": "https://brave.com/podcast/"
+      },
       "@nbtv": {
         "title": "Naomi Brockwell: NBTV",
         "url": "https://www.youtube.com/c/NaomiBrockwellTV"
@@ -124,6 +128,13 @@
     }
   },
   "items": [
+    {
+      "title": "Harmonizing User Privacy with Web Functionality and Ad-Blocking Technology",
+      "url": "https://brave.com/podcast/s8-e18/",
+      "source": "@bravetech",
+      "date": "2024-03-27T00:00:00",
+      "type": "podcast"
+    },
     {
       "title": "Google Chrome coders really, truly, absolutely ready to cull third-party cookies from 2024",
       "url": "https://www.theregister.com/2023/11/14/google_chrome_devs_third_party_cookie/",
