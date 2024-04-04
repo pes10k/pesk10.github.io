@@ -20,6 +20,24 @@
   },
   "items": [
     {
+      "title": "Global Privacy Control (GPC)",
+      "url": "https://privacycg.github.io/gpc-spec/",
+      "year": "@now",
+      "desc": "Proposed spec to allow browser users to assert legal privacy rights in a privacy preserving manner.",
+      "venue": "@w3c",
+      "authors": [
+        "Robin Berjon",
+        "Sebastian Zimmeck",
+        "Ashkan Soltani",
+        "David Harbage",
+        "@me"
+      ],
+      "links": {
+        "website": "https://globalprivacycontrol.org/",
+        "source (html)": "https://github.com/globalprivacycontrol/gpc-spec/"
+      }
+    },
+    {
       "title": "Privacy Principals",
       "url": "https://www.w3.org/TR/2024/DNOTE-privacy-principles-20240118/",
       "year": "@now",
@@ -66,24 +84,6 @@
       ],
       "links": {
         "source (bikeshed)": "https://github.com/w3ctag/security-questionnaire/"
-      }
-    },
-    {
-      "title": "Global Privacy Control (GPC)",
-      "url": "https://privacycg.github.io/gpc-spec/",
-      "year": 2021,
-      "desc": "Proposed spec to allow browser users to assert legal privacy rights in a privacy preserving manner.",
-      "venue": "@w3c",
-      "authors": [
-        "Robin Berjon",
-        "Sebastian Zimmeck",
-        "Ashkan Soltani",
-        "David Harbage",
-        "@me"
-      ],
-      "links": {
-        "website": "https://globalprivacycontrol.org/",
-        "source (html)": "https://github.com/globalprivacycontrol/gpc-spec/"
       }
     },
     {
