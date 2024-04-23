@@ -5,7 +5,9 @@
       "@shivan": "Shivan Kaul Sahib",
       "@alex": "Alex Davidson",
       "@mark": "Mark Pilgrim",
-      "@sofia": "Sofía Celi"
+      "@sofia": "Sofía Celi",
+      "@ben": "Ben Livshits"
+
     },
     "venues": {
       "@ietf": {
@@ -15,6 +17,9 @@
       "@w3c": {
         "title": "World Wide Web Consortium",
         "abbr": "W3C"
+      },
+      "@patent": {
+        "title": "US Patent"
       }
     }
   },
@@ -35,6 +40,22 @@
       "links": {
         "website": "https://globalprivacycontrol.org/",
         "source (html)": "https://github.com/globalprivacycontrol/gpc-spec/"
+      }
+    },
+    {
+      "title": "Reader Mode-Optimized Attention Application",
+      "url": "static/misc/speedreader-patent-11960834.pdf",
+      "year": 2024,
+      "desc": "US patent (US-11960834-B2) covering Brave's unique, privacy preserving reader mode approach.",
+      "venue": "@patent",
+      "authors": [
+        "@ben",
+        "@me",
+        "Andrius Aucinas"
+      ],
+      "links": {
+        "patent office link": "https://ppubs.uspto.gov/dirsearch-public/print/downloadPdf/11960834",
+        "paper": "static/papers/speedreader-www-2019.pdf"
       }
     },
     {
