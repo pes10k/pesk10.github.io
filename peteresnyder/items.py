@@ -131,8 +131,8 @@ def talk_type_from_json(item_data: Dict[str, Any],
                         all_data: Dict[str, Any]) -> TalkType:
     raw_talk_type = item_data["type"]
     if raw_talk_type[0] == "@":
-        return TalkType(**all_data["abbrs"]["types"][raw_talk_type])
-    return TalkType(raw_talk_type)
+        return cast(str, all_data["abbrs"]["types"][raw_talk_type]["title"])
+    return cast(str, raw_talk_type)
 
 
 def venue_from_json(item_data: Dict[str, Any],
@@ -409,6 +409,11 @@ class PressItem(ListItem):
 
 
 class TalksItem(ListItem):
+    ITEM_TYPE_CLASSES = {
+        "conference presentation": "primary",
+        "invited talk": "info"
+    }
+
     html_classes = ["publications", "publications-talks"]
     file_fields = ["url", "links"]
 
@@ -426,13 +431,22 @@ class TalksItem(ListItem):
         self.authors = authors
         super().__init__(year, title, url)
 
+    def add_type_markup(self, markup: Indenter) -> None:
+        type_markup = html.escape(self.type)
+        markup.add("<span class='pub-type'>").up()
+        type_class = TalksItem.ITEM_TYPE_CLASSES[self.type]
+        pill_classes = f"label label-{type_class}"
+        pill_html = f"<span class='{pill_classes}'>{type_markup}</span>"
+        markup.add(pill_html).down()
+        markup.add("</span>")
+
     def add_html(self, markup: Indenter, prior: Optional[Any] = None) -> None:
         markup.add("<li>").up()
         markup.add(self.title_html())
         if len(self.authors) > 0:
             add_authors_html(self.authors, markup)
         add_dest_html(self.venue, self, markup)
-        markup.add(self.type.to_html())
+        self.add_type_markup(markup)
         add_links_html(self.links, markup)
         markup.down().add("</li>")
 

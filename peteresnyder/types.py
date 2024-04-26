@@ -10,14 +10,7 @@ Url = str
 Year = int
 Date = Union[Year, datetime.datetime]
 CSSClass = str
-
-
-@dataclasses.dataclass
-class TalkType:
-    title: str
-
-    def to_html(self) -> Html:
-        return f"<span class='pub-type'>{html.escape(self.title)}</span>"
+TalkType = str
 
 
 @dataclasses.dataclass

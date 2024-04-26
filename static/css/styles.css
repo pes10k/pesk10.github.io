@@ -152,6 +152,10 @@ a:hover {
   content: ". ";
 }
 
+.publications-talks .pub-type:after {
+  content: "";
+}
+
 .item-pairs .item-pair-label {
   display: block;
 }
@@ -195,7 +199,8 @@ code {
 
 /* Press section */
 
-.publications-press .pub-title {
+.publications-press .pub-title,
+.publications-talks .venue {
   display: block;
 }
 
