@@ -38,6 +38,16 @@
   },
   "items": [
     {
+      "title": "Web Tracking In Practice and Product",
+      "type": "@inv",
+      "year": 2024,
+      "venue": "ECE 598 - Digital Identity @ University of Illinois at Champaign Urbana",
+      "links": {
+        "slides (keynote)": "static/slides/web-tracking-uiuc-2024.key",
+        "video": "static/movies/web-tracking-uiuc-2024.mp4"
+      }
+    },
+    {
       "title": "Designing Cryptography for Small Organizations and Projects",
       "type": "@conf",
       "year": 2023,
