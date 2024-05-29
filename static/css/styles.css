@@ -199,8 +199,7 @@ code {
 
 /* Press section */
 
-.publications-press .pub-title,
-.publications-talks .venue {
+.publications-press .pub-title {
   display: block;
 }
 
@@ -221,7 +220,8 @@ code {
 }
 
 /* Blog section */
-.publications-blog .authors {
+.publications-blog .authors,
+.publications-non-tech .authors {
   display: inline-block;
 }
 

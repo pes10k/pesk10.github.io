@@ -60,7 +60,7 @@
     },
     {
       "title": "Privacy Principals",
-      "url": "https://www.w3.org/TR/2024/DNOTE-privacy-principles-20240118/",
+      "url": "https://www.w3.org/TR/privacy-principles/",
       "year": "@now",
       "desc": "Guidance document for specification authors, on how to protect and improve privacy in Web standards.",
       "venue": "@ietf"

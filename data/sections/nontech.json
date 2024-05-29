@@ -1,0 +1,36 @@
+{
+  "abbrs": {
+    "authors": {
+      "@me": "Peter Snyder"
+    },
+    "sources": {
+      "@suntimes": {
+        "title": "Chicago SunTimes",
+        "url": "https://chicago.suntimes.com/"
+      }
+    }
+  },
+  "items": [
+    {
+      "title": "In Chicago's Old Town and elsewhere, NIMBY opponents block new housing",
+      "url": "https://chicago.suntimes.com/other-views/2024/05/28/affordable-housing-development-old-town-nimby-alderman-brian-hopkins-peter-snyder-steven-vance",
+      "date": "2024-05-28T00:00:00",
+      "authors": [
+        "@me",
+        "Steven Vance"
+      ],
+      "source": "@suntimes",
+      "type": "op-ed"
+    },
+    {
+      "title": "Get rid of parking mandates that keep Chicago car-centric",
+      "url": "https://chicago.suntimes.com/2024/03/14/get-rid-of-parking-mandates-that-keep-chicago-car-centric",
+      "date": "2024-03-14T00:00:00",
+      "authors": [
+        "@me"
+      ],
+      "source": "@suntimes",
+      "type": "letter to the editor"
+    }
+  ]
+}

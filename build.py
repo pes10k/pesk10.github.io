@@ -7,7 +7,7 @@ from typing import Any, Dict
 from peteresnyder.indent import Indenter
 from peteresnyder.items import BlogItem, CodeItem, InvolvementItem
 from peteresnyder.items import PressItem, PublicationItem
-from peteresnyder.items import TalksItem, WritingItem
+from peteresnyder.items import TalksItem, WritingItem, NonTechWriting
 
 BASE_PATH = Path(sys.argv[0]).parent.resolve()
 DATA_DIR = Path(".", "data")
@@ -23,6 +23,7 @@ FILE_TYPE_MAPPING: Dict[str, Any] = {
     "talks": [TalksItem, 4],
     "writing": [WritingItem, 5],
     "code": [CodeItem, 5],
+    "nontech": [NonTechWriting, 5],
 }
 
 for section_file in SECTIONS_DIR.iterdir():

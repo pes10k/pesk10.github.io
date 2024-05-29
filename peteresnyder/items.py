@@ -80,6 +80,19 @@ def add_notes_and_links_html(notes: List[PubNote], links: List[Link],
     markup.down().add("</span>")
 
 
+def add_type_html(item: "ListItem", markup: Indenter,
+                  span_class: str = 'item-type') -> None:
+    if not item.type:
+        return
+    type_markup = html.escape(item.type)
+    markup.add(f"<span class='{span_class}'>").up()
+    type_class = item.ITEM_TYPE_CLASSES[item.type]
+    pill_classes = f"label label-{type_class}"
+    pill_html = f"<span class='{pill_classes}'>{type_markup}</span>"
+    markup.add(pill_html).down()
+    markup.add("</span>")
+
+
 def add_dest_html(dest: Union[Source, Venue], list_item: "ListItem",
                   markup: Indenter) -> None:
     markup.add("<span class='venue'>").up()
@@ -165,6 +178,7 @@ def links_from_json(item_data: Dict[str, Any]) -> List[Link]:
 
 
 class BaseItem:
+    ITEM_TYPE_CLASSES: dict[str, str] = {}
     html_classes: List[str] = []
     file_fields: List[str] = []
 
@@ -225,6 +239,7 @@ class ListItem(BaseItem):
     date: Date
     title: str
     url: Optional[Url]
+    type: Optional[str]
 
     def __init__(self, date: Date, title: str, url: Optional[Url]) -> None:
         self.date = date
@@ -383,19 +398,10 @@ class PressItem(ListItem):
         self.type = item_type
         super().__init__(date, title, url)
 
-    def add_type_markup(self, markup: Indenter) -> None:
-        type_markup = html.escape(self.type)
-        markup.add("<span class='press-type'>").up()
-        type_class = PressItem.ITEM_TYPE_CLASSES[self.type]
-        pill_classes = f"label label-{type_class}"
-        pill_html = f"<span class='{pill_classes}'>{type_markup}</span>"
-        markup.add(pill_html).down()
-        markup.add("</span>")
-
     def add_html(self, markup: Indenter, prior: Optional[Any] = None) -> None:
         markup.add("<li>").up()
         markup.add(self.title_html())
-        self.add_type_markup(markup)
+        add_type_html(self, markup)
         add_dest_html(self.source, self, markup)
         markup.down().add("</li>")
 
@@ -406,6 +412,47 @@ class PressItem(ListItem):
         source = source_from_json(item_data, all_data)
         return PressItem(date, item_data["title"], item_data["url"],
                          source, item_data["type"])
+
+
+class NonTechWriting(ListItem):
+    ITEM_TYPE_CLASSES = {
+        "op-ed": "success",
+        "letter to the editor": "primary"
+    }
+    html_classes = ["publications", "publications-non-tech"]
+
+    authors: List[Author]
+    source: Source
+    type: str
+
+    def __init__(self, date: datetime.datetime, title: str, url: Url,
+                 authors: List[Author], source: Source,
+                 item_type: str) -> None:
+        class__ = self.__class__
+        if item_type not in class__.ITEM_TYPE_CLASSES:
+            raise ValueError(f"{item_type} is not a valid {class__} type")
+        self.authors = authors
+        self.source = source
+        self.type = item_type
+        super().__init__(date, title, url)
+
+    def add_html(self, markup: Indenter, prior: Optional[Any] = None) -> None:
+        markup.add("<li>").up()
+        markup.add(self.title_html())
+        add_coauthors_html(self.authors, markup)
+        add_type_html(self, markup)
+        add_dest_html(self.source, self, markup)
+        markup.down().add("</li>")
+
+    @staticmethod
+    def item_from_json(item_data: Dict[str, Any],
+                       all_data: Dict[str, Any]) -> "NonTechWriting":
+        date = date_from_json(item_data)
+        source = source_from_json(item_data, all_data)
+        authors = authors_from_json(item_data, all_data)
+        url = item_data["url"] if "url" in item_data else None
+        return NonTechWriting(date, item_data["title"], url, authors, source,
+                              item_data["type"])
 
 
 class TalksItem(ListItem):
@@ -431,22 +478,13 @@ class TalksItem(ListItem):
         self.authors = authors
         super().__init__(year, title, url)
 
-    def add_type_markup(self, markup: Indenter) -> None:
-        type_markup = html.escape(self.type)
-        markup.add("<span class='pub-type'>").up()
-        type_class = TalksItem.ITEM_TYPE_CLASSES[self.type]
-        pill_classes = f"label label-{type_class}"
-        pill_html = f"<span class='{pill_classes}'>{type_markup}</span>"
-        markup.add(pill_html).down()
-        markup.add("</span>")
-
     def add_html(self, markup: Indenter, prior: Optional[Any] = None) -> None:
         markup.add("<li>").up()
         markup.add(self.title_html())
         if len(self.authors) > 0:
             add_authors_html(self.authors, markup)
+        add_type_html(self, markup)
         add_dest_html(self.venue, self, markup)
-        self.add_type_markup(markup)
         add_links_html(self.links, markup)
         markup.down().add("</li>")
 
@@ -455,11 +493,11 @@ class TalksItem(ListItem):
                        all_data: Dict[str, Any]) -> "TalksItem":
         year = year_from_json(item_data["year"])
         links = links_from_json(item_data)
-        talk_type = talk_type_from_json(item_data, all_data)
+        item_type = talk_type_from_json(item_data, all_data)
         venue = venue_from_json(item_data, all_data)
         authors = authors_from_json(item_data, all_data)
         url = item_data["url"] if "url" in item_data else None
-        return TalksItem(year, item_data["title"], talk_type, url, links,
+        return TalksItem(year, item_data["title"], item_type, url, links,
                          venue, authors)
 
 
