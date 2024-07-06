@@ -37,8 +37,7 @@ for section_file in SECTIONS_DIR.iterdir():
     items_sorted = section_type.sort(items)
     indenter = Indenter(indent_level, "    ")
     section_type.add_list_html(items_sorted, indenter)
-    section_html = indenter.to_html()
     TEMPLATE_INDEX_HTML_TEXT = TEMPLATE_INDEX_HTML_TEXT.replace(
-        "{{" + section_file.stem + "}}", section_html)
+        "{{" + section_file.stem + "}}", indenter.to_html())
 
 print(TEMPLATE_INDEX_HTML_TEXT)

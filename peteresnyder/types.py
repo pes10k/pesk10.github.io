@@ -1,9 +1,8 @@
-import collections
 import dataclasses
 import datetime
 import html
 import os
-from typing import Callable, cast, Dict, NamedTuple, Optional, Tuple, Union
+from typing import Callable, NamedTuple, Optional, Tuple, Union
 
 Html = str
 Url = str
@@ -63,7 +62,7 @@ class Venue:
         return html_str
 
 
-SPECIAL_NOTE_DEFS: Dict[str, Tuple[str, CSSClass]] = {
+SPECIAL_NOTE_DEFS: dict[str, Tuple[str, CSSClass]] = {
     "#best-paper": ("best paper", "label-primary"),
     "#short-paper": ("short paper", "label-success"),
 }
@@ -98,7 +97,7 @@ class LinkValidator(NamedTuple):
     name: str
 
 
-LINK_VALIDATORS: Dict[str, LinkValidator] = {
+LINK_VALIDATORS: dict[str, LinkValidator] = {
     "@slides": LinkValidator(os.path.isfile, "slides"),
     "@slides-keynote": LinkValidator(os.path.isfile, "slides (keynote)")
 }

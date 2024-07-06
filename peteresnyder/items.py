@@ -1,8 +1,9 @@
-import enum
+from __future__ import absolute_import
+
+from abc import ABC
 import dataclasses
 import datetime
 import html
-import json
 from operator import attrgetter
 from pathlib import Path
 from typing import Any, cast, Optional, Union
@@ -100,7 +101,7 @@ def add_dest_html(dest: Union[Source, Venue], list_item: "ListItem",
     markup.down().add("</span>")
 
 
-def add_date_html(date: Union[Date, Year], list_item: "ListItem",
+def add_date_html(list_item: "ListItem",
                   markup: Indenter) -> None:
     markup.add("<span class='venue'>").up()
     markup.add(list_item.date_html())
@@ -134,7 +135,7 @@ def source_from_json(item_data: dict[str, Any],
 def year_from_json(item_data: Union[str, int]) -> int:
     if isinstance(item_data, str):
         if item_data != "@now":
-            raise BaseException(f'Invalid year value in json: {item_data}')
+            raise ValueError(f'Invalid year value in json: {item_data}')
         return datetime.datetime.now().year
     return item_data
 
@@ -176,7 +177,7 @@ def links_from_json(item_data: dict[str, Any]) -> list[Link]:
         return []
 
 
-class BaseItem:
+class BaseItem(ABC):
     ITEM_TYPE_CLASSES: dict[str, str] = {}
     html_classes: list[str] = []
     file_fields: list[str] = []
@@ -344,7 +345,6 @@ class InvolvementItem(BaseItem):
     date: Year
 
     def add_html(self, markup: Indenter, prior: Optional[Any] = None) -> None:
-        should_add_header = False
         if not prior or self.date != prior.date:
             markup.add("<tr>").up()
             markup.add(f'<th colspan="2" class="year active">{self.date}</th>')
@@ -525,7 +525,7 @@ class WritingItem(ListItem):
         if self.venue:
             add_dest_html(self.venue, self, markup)
         else:
-            add_date_html(self.date, self, markup)
+            add_date_html(self, markup)
         add_links_html(self.links, markup)
         add_desc_html(self.desc, markup)
         markup.down().add("</li>")
@@ -560,7 +560,7 @@ class CodeItem(ListItem):
     def add_html(self, markup: Indenter, prior: Optional[Any] = None) -> None:
         markup.add("<li>").up()
         markup.add(self.title_html())
-        add_date_html(self.date, self, markup)
+        add_date_html(self, markup)
         add_links_html(self.links, markup)
         add_desc_html(self.desc, markup)
         markup.down().add("</li>")
