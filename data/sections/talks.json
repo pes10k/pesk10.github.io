@@ -38,6 +38,16 @@
   },
   "items": [
     {
+      "title": "Testimony in Favor of Required Browser Opt-Out Signals (AB 3048)",
+      "type": "@inv",
+      "year": 2024,
+      "venue": "California Senate Judiciary Committee",
+      "links": {
+        "video": "static/movies/ca-senate-judiciary-2024-07-02.mov",
+        "bill (pdf)": "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202320240AB3048"
+      }
+    },
+    {
       "title": "Web Tracking In Practice and Product",
       "type": "@inv",
       "year": 2024,
