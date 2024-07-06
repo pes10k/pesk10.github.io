@@ -67,6 +67,20 @@
   },
   "items": [
     {
+      "title": "Unbundle-Rewrite-Rebundle: Runtime Detection and Rewriting of Privacy-Harming Code in JavaScript Bundles",
+      "year": 2024,
+      "venue": "@ccs",
+      "authors": [
+        "Mir Masood Ali",
+        "@me",
+        "@chris",
+        "@hamed"
+      ],
+      "links": {
+        "arxiv": "https://arxiv.org/abs/2405.00596"
+      }
+    },
+    {
       "title": "Understanding the Privacy Risks of Popular Search Engine Advertising Systems",
       "url": "static/papers/search-advertising-imc-2023.pdf",
       "year": 2023,

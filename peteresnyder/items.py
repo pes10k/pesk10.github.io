@@ -5,8 +5,7 @@ import html
 import json
 from operator import attrgetter
 from pathlib import Path
-from typing import Any, cast, Dict, Generic, Literal, List
-from typing import Optional, Type, TypeVar, Union
+from typing import Any, cast, Optional, Union
 
 from .indent import Indenter
 from .types import Author, Date, Html, Link, PubNote, Source, TalkType, Url
@@ -25,7 +24,7 @@ def add_desc_html(desc: str, markup: Indenter) -> None:
     markup.add(f"<span class='description'>{desc}</span>")
 
 
-def add_authors_html(authors: List[Author], markup: Indenter) -> None:
+def add_authors_html(authors: list[Author], markup: Indenter) -> None:
     if len(authors) == 0:
         return
     markup.add("<ol class='authors'>").up()
@@ -34,7 +33,7 @@ def add_authors_html(authors: List[Author], markup: Indenter) -> None:
     markup.down().add("</ol>")
 
 
-def add_coauthors_html(authors: List[Author], markup: Indenter) -> None:
+def add_coauthors_html(authors: list[Author], markup: Indenter) -> None:
     non_me_authors = []
     for an_author in authors:
         if an_author.abbr != "@me":
@@ -50,7 +49,7 @@ def add_coauthors_html(authors: List[Author], markup: Indenter) -> None:
     markup.down().add("</div>")
 
 
-def add_links_html(links: List[Link], markup: Indenter) -> None:
+def add_links_html(links: list[Link], markup: Indenter) -> None:
     if len(links) == 0:
         return
     start_tag = "<span class='label label-default pub-link'>"
@@ -62,7 +61,7 @@ def add_links_html(links: List[Link], markup: Indenter) -> None:
     markup.down().add("</span>")
 
 
-def add_notes_and_links_html(notes: List[PubNote], links: List[Link],
+def add_notes_and_links_html(notes: list[PubNote], links: list[Link],
                              markup: Indenter) -> None:
     if len(links) == 0 and len(notes) == 0:
         return
@@ -108,9 +107,9 @@ def add_date_html(date: Union[Date, Year], list_item: "ListItem",
     markup.down().add("</span>")
 
 
-def authors_from_json(item_data: Dict[str, Any],
-                      all_data: Dict[str, Any]) -> List[Author]:
-    authors: List[Author] = []
+def authors_from_json(item_data: dict[str, Any],
+                      all_data: dict[str, Any]) -> list[Author]:
+    authors: list[Author] = []
     try:
         authors_data = item_data["authors"]
     except KeyError:
@@ -125,8 +124,8 @@ def authors_from_json(item_data: Dict[str, Any],
     return authors
 
 
-def source_from_json(item_data: Dict[str, Any],
-                     all_data: Dict[str, Any]) -> Source:
+def source_from_json(item_data: dict[str, Any],
+                     all_data: dict[str, Any]) -> Source:
     source_abbr = item_data["source"]
     source_data = all_data["abbrs"]["sources"][source_abbr]
     return Source(source_data["title"], source_data["url"], source_abbr)
@@ -140,35 +139,35 @@ def year_from_json(item_data: Union[str, int]) -> int:
     return item_data
 
 
-def talk_type_from_json(item_data: Dict[str, Any],
-                        all_data: Dict[str, Any]) -> TalkType:
+def talk_type_from_json(item_data: dict[str, Any],
+                        all_data: dict[str, Any]) -> TalkType:
     raw_talk_type = item_data["type"]
     if raw_talk_type[0] == "@":
         return cast(str, all_data["abbrs"]["types"][raw_talk_type]["title"])
     return cast(str, raw_talk_type)
 
 
-def venue_from_json(item_data: Dict[str, Any],
-                    all_data: Dict[str, Any]) -> Venue:
+def venue_from_json(item_data: dict[str, Any],
+                    all_data: dict[str, Any]) -> Venue:
     raw_venue = item_data["venue"]
     if raw_venue[0] == "@":
         return Venue(**all_data["abbrs"]["venues"][raw_venue])
     return Venue(raw_venue)
 
 
-def date_from_json(item_data: Dict[str, Any]) -> datetime.datetime:
+def date_from_json(item_data: dict[str, Any]) -> datetime.datetime:
     date_str = item_data["date"]
     return datetime.datetime.fromisoformat(date_str)
 
 
-def pub_notes_from_json(item_data: Dict[str, Any]) -> List[PubNote]:
+def pub_notes_from_json(item_data: dict[str, Any]) -> list[PubNote]:
     try:
         return [PubNote(note) for note in item_data["notes"]]
     except KeyError:
         return []
 
 
-def links_from_json(item_data: Dict[str, Any]) -> List[Link]:
+def links_from_json(item_data: dict[str, Any]) -> list[Link]:
     try:
         links_data = item_data["links"]
         links = [Link(k, v) for k, v in links_data.items()]
@@ -179,14 +178,14 @@ def links_from_json(item_data: Dict[str, Any]) -> List[Link]:
 
 class BaseItem:
     ITEM_TYPE_CLASSES: dict[str, str] = {}
-    html_classes: List[str] = []
-    file_fields: List[str] = []
+    html_classes: list[str] = []
+    file_fields: list[str] = []
 
     def add_html(self, markup: Indenter, prior: Optional[Any] = None) -> None:
         raise NotImplementedError()
 
     def validate(self, root_dir: Path) -> bool:
-        possible_files: List[str] = []
+        possible_files: list[str] = []
         for file_field_name in type(self).file_fields:
             field_values = getattr(self, file_field_name)
             if not isinstance(field_values, list):
@@ -208,11 +207,11 @@ class BaseItem:
         return True
 
     @staticmethod
-    def sort(items: List["BaseItem"]) -> List["BaseItem"]:
+    def sort(items: list["BaseItem"]) -> list["BaseItem"]:
         return sorted(items, key=attrgetter("date"), reverse=True)
 
     @classmethod
-    def add_list_html(cls, items: List["BaseItem"], markup: Indenter) -> None:
+    def add_list_html(cls, items: list["BaseItem"], markup: Indenter) -> None:
         class_str = " ".join(cls.html_classes)
         markup.add(f"<ul class='{class_str}'>").up()
         for item in items:
@@ -220,15 +219,15 @@ class BaseItem:
         markup.down().add("</ul>")
 
     @classmethod
-    def list_from_json(cls, data: Dict[str, Any]) -> List["BaseItem"]:
-        items: List["BaseItem"] = []
+    def list_from_json(cls, data: dict[str, Any]) -> list["BaseItem"]:
+        items: list["BaseItem"] = []
         for item in data["items"]:
             items.append(cls.item_from_json(item, data))
         return items
 
     @staticmethod
-    def item_from_json(item_data: Dict[str, Any],
-                       all_data: Dict[str, Any]) -> "BaseItem":
+    def item_from_json(item_data: dict[str, Any],
+                       all_data: dict[str, Any]) -> "BaseItem":
         raise NotImplementedError()
 
 
@@ -269,11 +268,11 @@ class BlogItem(ListItem):
     html_classes = ["publications", "publications-blog"]
 
     source: Source
-    authors: List[Author]
-    desc = Optional[Type[str]]
+    authors: list[Author]
+    desc: Optional[str]
 
     def __init__(self, date: Date, title: str, url: Url, source: Source,
-                 authors: List[Author], desc: Optional[str]) -> None:
+                 authors: list[Author], desc: Optional[str]) -> None:
         self.authors = authors
         self.source = source
         self.desc = desc
@@ -289,8 +288,8 @@ class BlogItem(ListItem):
         markup.down().add("</li>")
 
     @staticmethod
-    def item_from_json(item_data: Dict[str, Any],
-                       all_data: Dict[str, Any]) -> "BlogItem":
+    def item_from_json(item_data: dict[str, Any],
+                       all_data: dict[str, Any]) -> "BlogItem":
         date = date_from_json(item_data)
         authors = authors_from_json(item_data, all_data)
         source = source_from_json(item_data, all_data)
@@ -303,14 +302,14 @@ class BlogItem(ListItem):
 class PublicationItem(ListItem):
     file_fields = ["url", "links"]
 
-    authors: List[Author]
-    links: List[Link]
+    authors: list[Author]
+    links: list[Link]
     venue: Venue
-    notes: List[PubNote]
+    notes: list[PubNote]
 
     def __init__(self, year: Year, title: str, url: Optional[Url],
-                 authors: List[Author], links: List[Link],
-                 venue: Venue, notes: List[PubNote]) -> None:
+                 authors: list[Author], links: list[Link],
+                 venue: Venue, notes: list[PubNote]) -> None:
         self.authors = authors
         self.links = links
         self.venue = venue
@@ -326,8 +325,8 @@ class PublicationItem(ListItem):
         markup.down().add("</li>")
 
     @staticmethod
-    def item_from_json(item_data: Dict[str, Any],
-                       all_data: Dict[str, Any]) -> "PublicationItem":
+    def item_from_json(item_data: dict[str, Any],
+                       all_data: dict[str, Any]) -> "PublicationItem":
         year = year_from_json(item_data["year"])
         authors = authors_from_json(item_data, all_data)
         links = links_from_json(item_data)
@@ -357,15 +356,15 @@ class InvolvementItem(BaseItem):
         markup.down().add("</tr>")
 
     @classmethod
-    def add_list_html(cls, items: List["BaseItem"], markup: Indenter) -> None:
+    def add_list_html(cls, items: list["BaseItem"], markup: Indenter) -> None:
         prior_item = None
         for item in items:
             item.add_html(markup, prior_item)
             prior_item = item
 
     @staticmethod
-    def item_from_json(item_data: Dict[str, Any],
-                       all_data: Dict[str, Any]) -> "InvolvementItem":
+    def item_from_json(item_data: dict[str, Any],
+                       all_data: dict[str, Any]) -> "InvolvementItem":
         raw_venue = item_data["venue"]
         if raw_venue[0] == "@":
             venue = Venue(**all_data["abbrs"]["venues"][raw_venue])
@@ -406,8 +405,8 @@ class PressItem(ListItem):
         markup.down().add("</li>")
 
     @staticmethod
-    def item_from_json(item_data: Dict[str, Any],
-                       all_data: Dict[str, Any]) -> "PressItem":
+    def item_from_json(item_data: dict[str, Any],
+                       all_data: dict[str, Any]) -> "PressItem":
         date = date_from_json(item_data)
         source = source_from_json(item_data, all_data)
         return PressItem(date, item_data["title"], item_data["url"],
@@ -421,12 +420,12 @@ class NonTechWriting(ListItem):
     }
     html_classes = ["publications", "publications-non-tech"]
 
-    authors: List[Author]
+    authors: list[Author]
     source: Source
     type: str
 
     def __init__(self, date: datetime.datetime, title: str, url: Url,
-                 authors: List[Author], source: Source,
+                 authors: list[Author], source: Source,
                  item_type: str) -> None:
         class__ = self.__class__
         if item_type not in class__.ITEM_TYPE_CLASSES:
@@ -445,8 +444,8 @@ class NonTechWriting(ListItem):
         markup.down().add("</li>")
 
     @staticmethod
-    def item_from_json(item_data: Dict[str, Any],
-                       all_data: Dict[str, Any]) -> "NonTechWriting":
+    def item_from_json(item_data: dict[str, Any],
+                       all_data: dict[str, Any]) -> "NonTechWriting":
         date = date_from_json(item_data)
         source = source_from_json(item_data, all_data)
         authors = authors_from_json(item_data, all_data)
@@ -465,13 +464,13 @@ class TalksItem(ListItem):
     file_fields = ["url", "links"]
 
     type: TalkType
-    links: List[Link]
+    links: list[Link]
     venue: Venue
-    authors: List[Author]
+    authors: list[Author]
 
     def __init__(self, year: Year, title: str, item_type: TalkType,
-                 url: Optional[Url], links: List[Link], venue: Venue,
-                 authors: List[Author]) -> None:
+                 url: Optional[Url], links: list[Link], venue: Venue,
+                 authors: list[Author]) -> None:
         self.links = links
         self.venue = venue
         self.type = item_type
@@ -489,8 +488,8 @@ class TalksItem(ListItem):
         markup.down().add("</li>")
 
     @staticmethod
-    def item_from_json(item_data: Dict[str, Any],
-                       all_data: Dict[str, Any]) -> "TalksItem":
+    def item_from_json(item_data: dict[str, Any],
+                       all_data: dict[str, Any]) -> "TalksItem":
         year = year_from_json(item_data["year"])
         links = links_from_json(item_data)
         item_type = talk_type_from_json(item_data, all_data)
@@ -505,14 +504,14 @@ class WritingItem(ListItem):
     html_classes = ["publications", "publications-other-writing"]
     file_fields = ["url", "links"]
 
-    links: List[Link]
+    links: list[Link]
     venue: Optional[Venue]
     desc: str
-    authors: List[Author]
+    authors: list[Author]
 
-    def __init__(self, year: Year, title: str, url: Url, links: List[Link],
+    def __init__(self, year: Year, title: str, url: Url, links: list[Link],
                  venue: Optional[Venue], desc: str,
-                 authors: List[Author]) -> None:
+                 authors: list[Author]) -> None:
         self.links = links
         self.venue = venue
         self.desc = desc
@@ -532,8 +531,8 @@ class WritingItem(ListItem):
         markup.down().add("</li>")
 
     @staticmethod
-    def item_from_json(item_data: Dict[str, Any],
-                       all_data: Dict[str, Any]) -> "WritingItem":
+    def item_from_json(item_data: dict[str, Any],
+                       all_data: dict[str, Any]) -> "WritingItem":
         year = year_from_json(item_data["year"])
         links = links_from_json(item_data)
         url = item_data["url"] if "url" in item_data else None
@@ -549,10 +548,10 @@ class CodeItem(ListItem):
     html_classes = ["publications"]
     file_fields = ["links"]
 
-    links: List[Link]
+    links: list[Link]
     desc: str
 
-    def __init__(self, year: Year, title: str, url: Url, links: List[Link],
+    def __init__(self, year: Year, title: str, url: Url, links: list[Link],
                  desc: str) -> None:
         self.links = links
         self.desc = desc
@@ -567,8 +566,8 @@ class CodeItem(ListItem):
         markup.down().add("</li>")
 
     @staticmethod
-    def item_from_json(item_data: Dict[str, Any],
-                       all_data: Dict[str, Any]) -> "CodeItem":
+    def item_from_json(item_data: dict[str, Any],
+                       all_data: dict[str, Any]) -> "CodeItem":
         year = year_from_json(item_data["year"])
         links = links_from_json(item_data)
         url = item_data["url"] if "url" in item_data else None
