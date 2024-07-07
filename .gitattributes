@@ -1,2 +1,4 @@
 static/movies/web-tracking-uiuc-2024.mp4 filter=lfs diff=lfs merge=lfs -text
 ./static/movies/* filter=lfs diff=lfs merge=lfs -text
+static/movies/ca-senate-judiciary-2024-07-02.mov filter=lfs diff=lfs merge=lfs -text
+static/movies/web-api-feature-detection.mov filter=lfs diff=lfs merge=lfs -text
