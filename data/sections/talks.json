@@ -11,6 +11,9 @@
       },
       "@conf": {
         "title": "conference presentation"
+      },
+      "@other": {
+        "title": "other"
       }
     },
     "venues": {
@@ -39,7 +42,7 @@
   "items": [
     {
       "title": "Testimony in Favor of Required Browser Opt-Out Signals (AB 3048)",
-      "type": "@inv",
+      "type": "@other",
       "year": 2024,
       "venue": "California Senate Judiciary Committee",
       "links": {

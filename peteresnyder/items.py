@@ -457,7 +457,8 @@ class NonTechWriting(ListItem):
 class TalksItem(ListItem):
     ITEM_TYPE_CLASSES = {
         "conference presentation": "primary",
-        "invited talk": "info"
+        "invited talk": "info",
+        "other": "success"
     }
 
     html_classes = ["publications", "publications-talks"]
