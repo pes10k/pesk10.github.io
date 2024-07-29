@@ -22,13 +22,13 @@ def is_local_file_ref(ref: Optional[str]) -> bool:
 
 
 def add_desc_html(desc: str, markup: Indenter) -> None:
-    markup.add(f"<span class='description'>{desc}</span>")
+    markup.add(f'<span class="description">{desc}</span>')
 
 
 def add_authors_html(authors: list[Author], markup: Indenter) -> None:
     if len(authors) == 0:
         return
-    markup.add("<ol class='authors'>").up()
+    markup.add('<ol class="authors">').up()
     for author in authors:
         markup.add(f"<li>{author.to_html()}</li>")
     markup.down().add("</ol>")
@@ -41,22 +41,22 @@ def add_coauthors_html(authors: list[Author], markup: Indenter) -> None:
             non_me_authors.append(an_author)
     if len(non_me_authors) == 0:
         return
-    markup.add("<div class='co-authors-sec'>").up()
-    markup.add("<span class='co-authors-desc'>Written with:</span>")
-    markup.add("<ol class='authors co-authors'>").up()
+    markup.add('<div class="co-authors-sec">').up()
+    markup.add('<span class="co-authors-desc">Written with:</span>')
+    markup.add('<ol class="authors co-authors">').up()
     for author in non_me_authors:
-        markup.add(f"<li>{author.to_html()}</li>")
-    markup.down().add("</ol>")
-    markup.down().add("</div>")
+        markup.add(f'<li>{author.to_html()}</li>')
+    markup.down().add('</ol>')
+    markup.down().add('</div>')
 
 
 def add_links_html(links: list[Link], markup: Indenter) -> None:
     if len(links) == 0:
         return
-    start_tag = "<span class='label label-default pub-link'>"
+    start_tag = '<span class="label label-default pub-link">'
     end_tag = "</span>"
 
-    markup.add("<span class='pub-links'>").up()
+    markup.add('<span class="pub-links">').up()
     for link in links:
         markup.add(f"{start_tag}{link.to_html()}{end_tag}")
     markup.down().add("</span>")
@@ -67,13 +67,13 @@ def add_notes_and_links_html(notes: list[PubNote], links: list[Link],
     if len(links) == 0 and len(notes) == 0:
         return
 
-    markup.add("<span class='pub-links'>").up()
+    markup.add('<span class="pub-links">').up()
     if len(notes) > 0:
         for note in notes:
             markup.add(note.to_html())
 
     if len(links) > 0:
-        start_tag = "<span class='label label-default pub-link'>"
+        start_tag = '<span class="label label-default pub-link">'
         end_tag = "</span>"
         for link in links:
             markup.add(f"{start_tag}{link.to_html()}{end_tag}")
@@ -85,17 +85,17 @@ def add_type_html(item: "ListItem", markup: Indenter,
     if not item.type:
         return
     type_markup = html.escape(item.type)
-    markup.add(f"<span class='{span_class}'>").up()
+    markup.add(f'<span class="{span_class}">').up()
     type_class = item.ITEM_TYPE_CLASSES[item.type]
     pill_classes = f"label label-{type_class}"
-    pill_html = f"<span class='{pill_classes}'>{type_markup}</span>"
+    pill_html = f'<span class="{pill_classes}">{type_markup}</span>'
     markup.add(pill_html).down()
     markup.add("</span>")
 
 
 def add_dest_html(dest: Union[Source, Venue], list_item: "ListItem",
                   markup: Indenter) -> None:
-    markup.add("<span class='venue'>").up()
+    markup.add('<span class="venue">').up()
     markup.add(dest.to_html())
     markup.add(list_item.date_html())
     markup.down().add("</span>")
@@ -103,7 +103,7 @@ def add_dest_html(dest: Union[Source, Venue], list_item: "ListItem",
 
 def add_date_html(list_item: "ListItem",
                   markup: Indenter) -> None:
-    markup.add("<span class='venue'>").up()
+    markup.add('<span class="venue">').up()
     markup.add(list_item.date_html())
     markup.down().add("</span>")
 
@@ -214,7 +214,7 @@ class BaseItem(ABC):
     @classmethod
     def add_list_html(cls, items: list["BaseItem"], markup: Indenter) -> None:
         class_str = " ".join(cls.html_classes)
-        markup.add(f"<ul class='{class_str}'>").up()
+        markup.add(f'<ul class="{class_str}">').up()
         for item in items:
             item.add_html(markup, None)
         markup.down().add("</ul>")
@@ -249,8 +249,8 @@ class ListItem(BaseItem):
     def title_html(self) -> Html:
         safe_title = html.escape(self.title)
         if self.url:
-            return f"<a class='pub-title' href='{self.url}'>{safe_title}</a>"
-        return f"<span class='pub-title'>{safe_title}</span>"
+            return f'<a class="pub-title" href="{self.url}">{safe_title}</a>'
+        return f'<span class="pub-title">{safe_title}</span>'
 
     def date_html(self) -> Html:
         date_line = ""
@@ -262,7 +262,7 @@ class ListItem(BaseItem):
         except AttributeError:
             date_line = str(self.date)
             date_value = date_line
-        return f"<time datetime='{date_value}'>{date_line}</time>"
+        return f'<time datetime="{date_value}">{date_line}</time>'
 
 
 class BlogItem(ListItem):

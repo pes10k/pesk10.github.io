@@ -19,7 +19,7 @@ class Author:
 
     def to_html(self) -> Html:
         if self.abbr == "@me":
-            return f"<span class='me'>{html.escape(self.title)}</span>"
+            return f'<span class="me">{html.escape(self.title)}</span>'
         return html.escape(self.title)
 
 
@@ -31,7 +31,7 @@ class Source:
 
     def to_html(self) -> Html:
         return (
-            f"<a href='{self.url}' class='source source-{self.abbr[1:]}'>" +
+            f'<a href="{self.url}" class="source source-{self.abbr[1:]}">' +
             html.escape(self.title) +
             "</a>"
         )
@@ -86,7 +86,7 @@ class PubNote:
             span_classes.append(self.css_class)
 
         return (
-            f"<span class='{' '.join(span_classes)}'>" +
+            f'<span class="{' '.join(span_classes)}">' +
             html.escape(self.title) +
             "</span>"
         )
@@ -117,4 +117,4 @@ class Link:
         self.title = validator.name
 
     def to_html(self) -> Html:
-        return f"<a href='{self.url}'>{html.escape(self.title)}</a>"
+        return f'<a href="{self.url}">{html.escape(self.title)}</a>'

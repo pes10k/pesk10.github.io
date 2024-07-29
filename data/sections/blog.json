@@ -63,7 +63,7 @@
       "title": "Why Brave Disables FLoC",
       "url": "https://brave.com/why-brave-disables-floc/",
       "date": "2021-04-12T00:00:00",
-      "desc": "Description of the privacy harms and categorical errors in Google's <abbr title='Federated Learning of Cohorts'>FLoC</abbr> proposal",
+      "desc": "Description of the privacy harms and categorical errors in Google's <abbr title=\"Federated Learning of Cohorts\">FLoC</abbr> proposal",
       "authors": [
         "@me",
         "@brendan"
@@ -95,7 +95,7 @@
       "title": "Brave, Fingerprinting, and Privacy Budgets",
       "url": "https://brave.com/web-standards-at-brave/2-privacy-budgets/",
       "date": "2019-12-06T00:00:00",
-      "desc": "Discussion of why <a href='//github.com/bslassey/privacy-budget'>Google's Privacy Budget</a> proposal for combating browser fingerprinting would not be effective, and what alternatives Brave is pursuing.",
+      "desc": "Discussion of why <a href=\"//github.com/bslassey/privacy-budget\">Google's Privacy Budget</a> proposal for combating browser fingerprinting would not be effective, and what alternatives Brave is pursuing.",
       "authors": [
         "@me",
         "@ben"
@@ -106,7 +106,7 @@
       "title": "Privacy Anti-Patterns In Standards",
       "url": "https://www.w3.org/blog/2019/06/privacy-anti-patterns-in-standards/",
       "date": "2019-06-12T00:00:00",
-      "desc": "Description of several privacy-harming patterns observed as part of <a href='//www.w3.org/Privacy/'><abbr title='Privacy Interest Group'>PING</abbr></a>, the W3C's privacy review group, how these anti-patterns make it difficult to protect user privacy on the web.",
+      "desc": "Description of several privacy-harming patterns observed as part of <a href=\"//www.w3.org/Privacy/\"><abbr title=\"Privacy Interest Group\">PING</abbr></a>, the W3C's privacy review group, how these anti-patterns make it difficult to protect user privacy on the web.",
       "authors": [
         "@me"
       ],
@@ -116,7 +116,7 @@
       "title": "Brave's Concerns with the Client-Hints Proposal",
       "url": "https://brave.com/web-standards-at-brave/1-client-hints/",
       "date": "2019-05-09T00:00:00",
-      "desc": "Discussion of concerns with the proposed <a href='//tools.ietf.org/html/draft-ietf-httpbis-client-hints-07'>Client Hints</a> standard, and why it would be harmful for web privacy.",
+      "desc": "Discussion of concerns with the proposed <a href=\"//tools.ietf.org/html/draft-ietf-httpbis-client-hints-07\">Client Hints</a> standard, and why it would be harmful for web privacy.",
       "authors": [
         "@me",
         "Pranjal Jumde",
@@ -129,7 +129,7 @@
       "title": "Understanding Redirection-Based Tracking",
       "url": "https://brave.com/redirection-based-tracking/",
       "date": "2018-08-12T00:00:00",
-      "desc": "Blog post description research lead at Brave regarding the frequency and parties involved in bounce-tracking. Conducted as part of designing Brave's improvements to Safari's <a href='//webkit.org/blog/8311/intelligent-tracking-prevention-2-0/'>Intelligent Tracking Prevention 2.0</a>.",
+      "desc": "Blog post description research lead at Brave regarding the frequency and parties involved in bounce-tracking. Conducted as part of designing Brave's improvements to Safari's <a href=\"//webkit.org/blog/8311/intelligent-tracking-prevention-2-0/\">Intelligent Tracking Prevention 2.0</a>.",
       "authors": [
         "@me",
         "@ben"
