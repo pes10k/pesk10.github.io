@@ -67,6 +67,20 @@
   },
   "items": [
     {
+      "title": "A First Look at Related Website Sets",
+      "year": 2024,
+      "venue": "@imc",
+      "authors": [
+        "Stephen McQuistin",
+        "@me",
+        "@hamed",
+        "Gareth Tyson"
+      ],
+      "notes": [
+        "#short-paper"
+      ]
+    },
+    {
       "title": "Unbundle-Rewrite-Rebundle: Runtime Detection and Rewriting of Privacy-Harming Code in JavaScript Bundles",
       "year": 2024,
       "venue": "@ccs",
