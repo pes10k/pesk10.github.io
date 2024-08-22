@@ -78,7 +78,10 @@
       ],
       "notes": [
         "#short-paper"
-      ]
+      ],
+      "links": {
+        "arxiv": "https://arxiv.org/abs/2408.07495"
+      }
     },
     {
       "title": "Unbundle-Rewrite-Rebundle: Runtime Detection and Rewriting of Privacy-Harming Code in JavaScript Bundles",
