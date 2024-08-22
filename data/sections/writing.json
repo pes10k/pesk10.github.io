@@ -63,7 +63,7 @@
       "url": "https://www.w3.org/TR/privacy-principles/",
       "year": "@now",
       "desc": "Guidance document for specification authors, on how to protect and improve privacy in Web standards.",
-      "venue": "@ietf"
+      "venue": "@w3c"
     },
     {
       "title": "The Off-The-Record Response Header Field",
