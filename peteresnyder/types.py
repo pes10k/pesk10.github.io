@@ -74,7 +74,7 @@ class PubNote:
     css_class: Optional[CSSClass]
 
     def __init__(self, title: str) -> None:
-        if title.startswith("#"):
+        if title in SPECIAL_NOTE_DEFS:
             self.title, self.css_class = SPECIAL_NOTE_DEFS[title]
         else:
             self.title = title
@@ -102,11 +102,33 @@ LINK_VALIDATORS: dict[str, LinkValidator] = {
     "@slides-keynote": LinkValidator(os.path.isfile, "slides (keynote)")
 }
 
+LINK_CLASS_PREFIXES: dict[str, CSSClass] = {
+    "#fix:": "label-warning"
+}
+
 
 @dataclasses.dataclass
 class Link:
     title: str
     url: Url
+    css_class: Optional[CSSClass] = None
+
+    def __init__(self, title: str, url: Url,
+                 css_class: Optional[CSSClass] = None) -> None:
+        self.title = title
+        self.url = url
+        if css_class:
+            self.css_class = css_class
+        else:
+            if title.startswith("#"):
+                for prefix, a_css_class in LINK_CLASS_PREFIXES.items():
+                    if title.startswith(prefix):
+                        self.title = title[1:]
+                        self.css_class = a_css_class
+                        break
+                if not self.css_class:
+                    raise ValueError(f"Couldn't match {title} with a prefix")
+
 
     def __post_init__(self) -> None:
         if not self.title.startswith("@"):
@@ -117,4 +139,12 @@ class Link:
         self.title = validator.name
 
     def to_html(self) -> Html:
-        return f'<a href="{self.url}">{html.escape(self.title)}</a>'
+        default_label_class = 'label-default'
+        if self.css_class is not None:
+            label_class = self.css_class
+        else:
+            label_class = default_label_class
+        start_tag = f'<span class="label {label_class} pub-link">'
+        end_tag = '</span>'
+        title_text = html.escape(self.title)
+        return f'{start_tag}<a href="{self.url}">{title_text}</a>{end_tag}'

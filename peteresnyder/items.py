@@ -53,12 +53,9 @@ def add_coauthors_html(authors: list[Author], markup: Indenter) -> None:
 def add_links_html(links: list[Link], markup: Indenter) -> None:
     if len(links) == 0:
         return
-    start_tag = '<span class="label label-default pub-link">'
-    end_tag = "</span>"
-
     markup.add('<span class="pub-links">').up()
     for link in links:
-        markup.add(f"{start_tag}{link.to_html()}{end_tag}")
+        markup.add(link.to_html())
     markup.down().add("</span>")
 
 
@@ -73,10 +70,8 @@ def add_notes_and_links_html(notes: list[PubNote], links: list[Link],
             markup.add(note.to_html())
 
     if len(links) > 0:
-        start_tag = '<span class="label label-default pub-link">'
-        end_tag = "</span>"
         for link in links:
-            markup.add(f"{start_tag}{link.to_html()}{end_tag}")
+            markup.add(link.to_html())
     markup.down().add("</span>")
 
 

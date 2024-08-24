@@ -151,7 +151,9 @@
         "code": "https://github.com/brave-experiments/poolparty-resources",
         "demo": "https://anonymous.4open.science/r/poolparty-2E6B/static/inner.js",
         "slides (keynote)": "static/slides/pool-party-usenix-2023.key",
-        "slides (pdf)": "static/slides/pool-party-usenix-2023.pdf"
+        "slides (pdf)": "static/slides/pool-party-usenix-2023.pdf",
+        "#fix: brave": "https://github.com/brave/brave-core/pull/11609",
+        "#fix: safari": "https://support.apple.com/en-la/103170"
       }
     },
     {
