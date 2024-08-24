@@ -113,24 +113,16 @@ class Link:
     url: Url
     css_class: Optional[CSSClass] = None
 
-    def __init__(self, title: str, url: Url,
-                 css_class: Optional[CSSClass] = None) -> None:
-        self.title = title
-        self.url = url
-        if css_class:
-            self.css_class = css_class
-        else:
-            if title.startswith("#"):
-                for prefix, a_css_class in LINK_CLASS_PREFIXES.items():
-                    if title.startswith(prefix):
-                        self.title = title[1:]
-                        self.css_class = a_css_class
-                        break
-                if not self.css_class:
-                    raise ValueError(f"Couldn't match {title} with a prefix")
-
-
     def __post_init__(self) -> None:
+        if self.title.startswith("#"):
+            for prefix, a_css_class in LINK_CLASS_PREFIXES.items():
+                if self.title.startswith(prefix):
+                    self.title = self.title[1:]
+                    self.css_class = a_css_class
+                    break
+            if not self.css_class:
+                raise ValueError(f"Couldn't match {self.title} with a prefix")
+
         if not self.title.startswith("@"):
             return
         validator = LINK_VALIDATORS[self.title]
