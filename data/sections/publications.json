@@ -85,7 +85,7 @@
     },
     {
       "title": "Unbundle-Rewrite-Rebundle: Runtime Detection and Rewriting of Privacy-Harming Code in JavaScript Bundles",
-      "url": "static/papers/unbundle-rewrite-rebundle-ccs-2023.pdf",
+      "url": "static/papers/unbundle-rewrite-rebundle-ccs-2024.pdf",
       "year": 2024,
       "venue": "@ccs",
       "authors": [
@@ -365,7 +365,9 @@
         "@ben"
       ],
       "links": {
-        "arxiv": "https://arxiv.org/abs/1811.03661"
+        "arxiv": "https://arxiv.org/abs/1811.03661",
+        "blog": "https://brave.com/blog/speed-reader/",
+        "code (brave)": "https://github.com/brave/brave-core/tree/master/components/speedreader"
       }
     },
     {
