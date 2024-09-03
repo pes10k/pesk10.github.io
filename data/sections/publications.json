@@ -85,6 +85,7 @@
     },
     {
       "title": "Unbundle-Rewrite-Rebundle: Runtime Detection and Rewriting of Privacy-Harming Code in JavaScript Bundles",
+      "url": "static/papers/unbundle-rewrite-rebundle-ccs-2023.pdf",
       "year": 2024,
       "venue": "@ccs",
       "authors": [
@@ -94,7 +95,8 @@
         "@hamed"
       ],
       "links": {
-        "arxiv": "https://arxiv.org/abs/2405.00596"
+        "arxiv": "https://arxiv.org/abs/2405.00596",
+        "code": "https://github.com/masood/urr"
       }
     },
     {
