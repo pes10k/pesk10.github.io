@@ -91,7 +91,7 @@
       },
       "@protocol": {
         "title": "Protocol",
-        "url": "https://www.protocol.com/"
+        "url": "https://web.archive.org/web/20240105004116/https://www.protocol.com/"
       },
       "@fastcompany": {
         "title": "Fast Company",
@@ -291,7 +291,7 @@
     },
     {
       "title": "Concern trolls and power grabs: Inside Big Tech’s angry, geeky, often petty war for your privacy",
-      "url": "https://www.protocol.com/policy/w3c-privacy-war",
+      "url": "https://web.archive.org/web/20240202115008/https://www.protocol.com/policy/w3c-privacy-war",
       "source": "@protocol",
       "date": "2021-07-13T00:00:00",
       "type": "news"

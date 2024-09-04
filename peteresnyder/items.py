@@ -65,13 +65,13 @@ def add_notes_and_links_html(notes: list[PubNote], links: list[Link],
         return
 
     markup.add('<span class="pub-links">').up()
-    if len(notes) > 0:
-        for note in notes:
-            markup.add(note.to_html())
+    items: list[Union["PubNote", "Link"]] = []
+    items += notes
+    items += links
+    sorted_items = sorted(items, key=lambda x: "label-default" in x.to_html())
 
-    if len(links) > 0:
-        for link in links:
-            markup.add(link.to_html())
+    for item in sorted_items:
+        markup.add(item.to_html())
     markup.down().add("</span>")
 
 

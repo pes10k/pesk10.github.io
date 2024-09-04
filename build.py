@@ -40,4 +40,7 @@ for section_file in SECTIONS_DIR.iterdir():
     TEMPLATE_INDEX_HTML_TEXT = TEMPLATE_INDEX_HTML_TEXT.replace(
         "{{" + section_file.stem + "}}", indenter.to_html())
 
-print(TEMPLATE_INDEX_HTML_TEXT)
+
+IS_VALIDATE = "--validate" in sys.argv
+if not IS_VALIDATE:
+    print(TEMPLATE_INDEX_HTML_TEXT)

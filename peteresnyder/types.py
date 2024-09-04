@@ -2,7 +2,13 @@ import dataclasses
 import datetime
 import html
 import os
-from typing import Callable, NamedTuple, Optional, Tuple, Union
+from pathlib import Path
+import sys
+from typing import Any, Optional, Tuple, Union
+from urllib.parse import urlparse
+
+from diskcache import Cache  # type: ignore
+import requests
 
 Html = str
 Url = str
@@ -10,6 +16,55 @@ Year = int
 Date = Union[Year, datetime.datetime]
 CSSClass = str
 TalkType = str
+
+
+def should_strict_validate() -> bool:
+    return "--verbose" in sys.argv
+
+
+REQUESTS_ARGS: dict[str, Any] = {
+    "timeout": 5,
+    "headers": {
+        # pylint: disable-next=line-too-long
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+    }
+}
+REQUEST_CACHE_TTL: int = 60 * 60 * 24
+REQUEST_CACHE: Cache = Cache(Path(f"{os.getcwd()}/.request-cache"))
+REQUEST_IGNORE_FAILURES: list[Url] = [
+    "www.fastcompany.com",
+    "www.inc.com",
+    "adage.com",
+]
+
+
+def is_path_valid(path: str) -> bool:
+    url_parts = urlparse(path)
+    if url_parts.scheme:
+        if url_parts.hostname in REQUEST_IGNORE_FAILURES:
+            return True
+        if should_strict_validate():
+            print(f"- Checking url {path}")
+            if REQUEST_CACHE.get(path):
+                print("  * found in cache")
+                return True
+            try:
+                requests.head(path, **REQUESTS_ARGS).raise_for_status()
+            except requests.exceptions.HTTPError:
+                requests.get(path, **REQUESTS_ARGS).raise_for_status()
+            REQUEST_CACHE.set(path, True, expire=REQUEST_CACHE_TTL)
+        return True
+    # Otherwise, treat it as a file path, and make sure that file exists
+    return os.path.isfile(path)
+
+
+def raise_path_validation_error(path: str) -> None:
+    raise ValueError(f"{path} is not a valid url or local path")
+
+
+def throw_if_invalid_path(path: str) -> None:
+    if not is_path_valid(path):
+        raise_path_validation_error(path)
 
 
 @dataclasses.dataclass
@@ -29,6 +84,9 @@ class Source:
     url: Url
     abbr: str
 
+    def __post_init__(self) -> None:
+        throw_if_invalid_path(self.url)
+
     def to_html(self) -> Html:
         return (
             f'<a href="{self.url}" class="source source-{self.abbr[1:]}">' +
@@ -43,6 +101,10 @@ class Venue:
     abbr: Optional[str] = None
     suffix: Optional[str] = None
     url: Optional[Url] = None
+
+    def __post_init__(self) -> None:
+        if self.url:
+            throw_if_invalid_path(self.url)
 
     def to_html(self) -> Html:
         esc_title = html.escape(self.title)
@@ -92,16 +154,6 @@ class PubNote:
         )
 
 
-class LinkValidator(NamedTuple):
-    check: Callable[[str], bool]
-    name: str
-
-
-LINK_VALIDATORS: dict[str, LinkValidator] = {
-    "@slides": LinkValidator(os.path.isfile, "slides"),
-    "@slides-keynote": LinkValidator(os.path.isfile, "slides (keynote)")
-}
-
 LINK_CLASS_PREFIXES: dict[str, CSSClass] = {
     "#fix:": "label-warning"
 }
@@ -122,13 +174,7 @@ class Link:
                     break
             if not self.css_class:
                 raise ValueError(f"Couldn't match {self.title} with a prefix")
-
-        if not self.title.startswith("@"):
-            return
-        validator = LINK_VALIDATORS[self.title]
-        if not validator.check(self.url):
-            raise ValueError(f"{self.url} is not a valid {self.title}")
-        self.title = validator.name
+        throw_if_invalid_path(self.url)
 
     def to_html(self) -> Html:
         default_label_class = 'label-default'

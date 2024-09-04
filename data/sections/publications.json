@@ -152,8 +152,8 @@
         "blog": "https://brave.com/privacy-updates/13-pool-party-side-channels/",
         "code": "https://github.com/brave-experiments/poolparty-resources",
         "demo": "https://anonymous.4open.science/r/poolparty-2E6B/static/inner.js",
-        "slides (keynote)": "static/slides/pool-party-usenix-2023.key",
-        "slides (pdf)": "static/slides/pool-party-usenix-2023.pdf",
+        "slides: keynote": "static/slides/pool-party-usenix-2023.key",
+        "slides: pdf": "static/slides/pool-party-usenix-2023.pdf",
         "#fix: brave": "https://github.com/brave/brave-core/pull/11609",
         "#fix: safari": "https://support.apple.com/en-la/103170"
       }
@@ -173,8 +173,7 @@
         "Aaron Schulman"
       ],
       "links": {
-        "arxiv": "https://arxiv.org/abs/2203.10188",
-        "code": "https://github.com/brave-experiments/brave-redirection-recorder"
+        "arxiv": "https://arxiv.org/abs/2203.10188"
       }
     },
     {
@@ -194,7 +193,7 @@
         "arxiv": "https://arxiv.org/abs/2109.10074",
         "code": "https://github.com/brave/sta-rs",
         "ietf proposal": "https://datatracker.ietf.org/doc/draft-dss-star/",
-        "slides": "static/slides/star-ccs-2022.pdf"
+        "slides: pdf": "static/slides/star-ccs-2022.pdf"
       },
       "notes": [
         "#best-paper"
@@ -285,7 +284,7 @@
       "links": {
         "arxiv": "https://arxiv.org/abs/2005.11910",
         "dataset": "https://github.com/semantic-signatures/semantic-signatures",
-        "@slides": "static/slides/sigmetrics-2020-filters-slides.pdf"
+        "slides: pdf": "static/slides/sigmetrics-2020-filters-slides.pdf"
       }
     },
     {
@@ -300,7 +299,7 @@
       ],
       "links": {
         "arxiv": "https://arxiv.org/abs/1810.09160",
-        "@slides": "static/slides/easylist-sigmetrics-2020.pdf"
+        "slides: pdf": "static/slides/easylist-sigmetrics-2020.pdf"
       }
     },
     {
@@ -382,7 +381,7 @@
       ],
       "links": {
         "code": "https://github.com/pes10k/firefox-api-blocking-extension",
-        "@slides": "static/papers/vibrate-ccs-2017.pdf"
+        "slides: pdf": "static/papers/vibrate-ccs-2017.pdf"
       }
     },
     {
@@ -397,8 +396,8 @@
         "@damon"
       ],
       "links": {
-        "code": "static/misc/dox-pipeline.zip",
-        "@slides": "static/slides/doxing-imc-2017.pdf"
+        "@code": "static/misc/dox-pipeline.zip",
+        "slides: pdf": "static/slides/doxing-imc-2017.pdf"
       }
     },
     {
@@ -414,7 +413,7 @@
       ],
       "links": {
         "code": "https://github.com/bitslab/cdf",
-        "@slides": "static/slides/cdf-conpro-2017.pdf"
+        "slides: pdf": "static/slides/cdf-conpro-2017.pdf"
       }
     },
     {
@@ -429,9 +428,8 @@
         "Chris Kanich"
       ],
       "links": {
-        "dataset": "http://imdc.datcat.org/collection/1-0723-8=Web-API-usage-in-the-Alexa-10k",
-        "@slides": "static/slides/feature-use-imc-2016.pdf",
-        "@slides-keynote": "static/slides/feature-use-imc-2016.key"
+        "slides: pdf": "static/slides/feature-use-imc-2016.pdf",
+        "slides: keynote": "static/slides/feature-use-imc-2016.key"
       }
     },
     {
@@ -444,7 +442,7 @@
         "@chris"
       ],
       "links": {
-        "journal listing": "https://cybersecurity.oxfordjournals.org/content/2/1/71"
+        "journal listing": "https://academic.oup.com/cybersecurity/article/2/1/71/2629557"
       }
     },
     {
@@ -458,8 +456,8 @@
         "@chris"
       ],
       "links": {
-        "@slides": "static/slides/phishing-laser-2016.pdf",
-        "@slides-keynote": "static/slides/phishing-laser-2016.key"
+        "slides: pdf": "static/slides/phishing-laser-2016.pdf",
+        "slides: keynote": "static/slides/phishing-laser-2016.key"
       }
     },
     {
@@ -473,7 +471,7 @@
       ],
       "links": {
         "extended": "static/papers/cookie-stuffing-weis-2015-extended.pdf",
-        "slides": "static/slides/cookie-stuffing-weis-2015.pdf"
+        "slides: pdf": "static/slides/cookie-stuffing-weis-2015.pdf"
       }
     },
     {

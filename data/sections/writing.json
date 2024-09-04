@@ -39,7 +39,7 @@
       ],
       "links": {
         "website": "https://globalprivacycontrol.org/",
-        "source (html)": "https://github.com/globalprivacycontrol/gpc-spec/"
+        "source: html": "https://github.com/globalprivacycontrol/gpc-spec/"
       }
     },
     {
@@ -54,7 +54,7 @@
         "Andrius Aucinas"
       ],
       "links": {
-        "patent office link": "https://ppubs.uspto.gov/dirsearch-public/print/downloadPdf/11960834",
+        "google patents link": "https://patents.google.com/patent/US11960834B2/en?oq=US-11960834-B2",
         "paper": "static/papers/speedreader-www-2019.pdf"
       }
     },
@@ -104,7 +104,7 @@
         "@me"
       ],
       "links": {
-        "source (bikeshed)": "https://github.com/w3ctag/security-questionnaire/"
+        "source: bikeshed": "https://github.com/w3ctag/security-questionnaire/"
       }
     },
     {
@@ -113,8 +113,8 @@
       "year": 2018,
       "desc": "My thesis, presenting a thorough measurement of WebAPI use, and ways those findings can be used to better protect the privacy and security of web users. Written for the completion of my PhD.",
       "links": {
-        "slides (pdf)": "static/slides/defense-slides.pdf",
-        "source (latex)": "https://github.com/pes10k/thesis"
+        "slides: pdf": "static/slides/defense-slides.pdf",
+        "source: latex": "https://github.com/pes10k/thesis"
       }
     },
     {
@@ -123,8 +123,8 @@
       "year": 2014,
       "desc": "Literature review of performance and security developments in using Yao's Protocol for secure function evaluation. Written for my degree's \"Written Critique and Presentation\" requirement.",
       "links": {
-        "slides (pdf)": "static/slides/Yaos_Garbled_Circuits_-_Recent_Directions_and_Implementations_slides.pdf",
-        "source (latex)": "https://github.com/pes10k/wcp-paper"
+        "slides: pdf": "static/slides/Yaos_Garbled_Circuits_-_Recent_Directions_and_Implementations_slides.pdf",
+        "source: latex": "https://github.com/pes10k/wcp-paper"
       }
     }
   ]

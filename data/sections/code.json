@@ -29,7 +29,6 @@
       "year": 2019,
       "links": {
         "firefox": "https://addons.mozilla.org/en-US/firefox/addon/webapi-manager/",
-        "chrome": "https://chrome.google.com/webstore/detail/webapi-manager/hojoljbhkebfjalcbnfmoiljfidcmcmj",
         "source": "https://github.com/snyderp/web-api-manager"
       }
     },
@@ -49,8 +48,7 @@
       "desc": "A Firefox extension to make dealing and developing form based applications easier. I just maintain it now, but wrote it back when I was doing web development work.",
       "year": 2015,
       "links": {
-        "source": "https://github.com/pes10k/FormBug",
-        "firefox": "https://addons.mozilla.org/en-US/firefox/addon/formbug/"
+        "source": "https://github.com/pes10k/FormBug"
       }
     },
     {
@@ -69,8 +67,7 @@
       "desc": "Web app to measure and mitigate the frequency of plaintext password sharing in Gmail archives. The public tool allows users to redact or encrypt-in-place found passwords. The site has had over 2,500 users and has secured over 38,000 messages",
       "year": 2013,
       "links": {
-        "paper": "static/papers/cloudsweeper-ccsw-2013.pdf",
-        "source": "https://github.com/kaytwo/drano"
+        "paper": "static/papers/cloudsweeper-ccsw-2013.pdf"
       }
     },
     {
