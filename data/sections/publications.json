@@ -96,6 +96,7 @@
       ],
       "links": {
         "arxiv": "https://arxiv.org/abs/2405.00596",
+        "blog": "https://brave.com/blog/related-website-sets/",
         "code": "https://github.com/masood/urr"
       }
     },
@@ -113,7 +114,7 @@
       "links": {
         "arxiv": "https://arxiv.org/abs/2308.15309",
         "dataset": "https://github.com/CHOUAKIsalim/Search_Engines_Privacy",
-        "slides": "static/slides/search-advertising-imc-2023.pdf"
+        "slides: pdf": "static/slides/search-advertising-imc-2023.pdf"
       }
     },
     {
