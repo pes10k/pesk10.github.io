@@ -28,7 +28,7 @@
       "desc": "WebExtension, cross-browser extension that allows users to improve their privacy and security online by controlling what browser functionality web hosts have access to. Web API functionality access controls can be defined in general, or on a per host level, and can allow, for example, only trusted hosts to have access to privacy-risky browser functionality like high resolution timers, WebGL and WebRTC.",
       "year": 2019,
       "links": {
-        "firefox": "https://addons.mozilla.org/en-US/firefox/addon/webapi-manager/",
+        "firefox extension": "https://addons.mozilla.org/en-US/firefox/addon/webapi-manager/",
         "source": "https://github.com/snyderp/web-api-manager"
       }
     },
@@ -77,7 +77,7 @@
       "year": 2013,
       "links": {
         "source": "https://github.com/pes10k/nes-machine-learning",
-        "slides (ppt)": "https://github.com/snyderp/nes-machine-learning/blob/master/docs/Presentation/Presentation.ppt?raw=true"
+        "slides: ppt": "https://github.com/snyderp/nes-machine-learning/blob/master/docs/Presentation/Presentation.ppt?raw=true"
       }
     }
   ]

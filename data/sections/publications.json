@@ -80,7 +80,8 @@
         "#short-paper"
       ],
       "links": {
-        "arxiv": "https://arxiv.org/abs/2408.07495"
+        "arxiv": "https://arxiv.org/abs/2408.07495",
+        "blog": "https://brave.com/blog/related-website-sets/"
       }
     },
     {
@@ -96,7 +97,6 @@
       ],
       "links": {
         "arxiv": "https://arxiv.org/abs/2405.00596",
-        "blog": "https://brave.com/blog/related-website-sets/",
         "code": "https://github.com/masood/urr"
       }
     },
