@@ -46,7 +46,7 @@
       "year": 2024,
       "venue": "California Senate Judiciary Committee",
       "links": {
-        "video": "static/movies/ca-senate-judiciary-2024-07-02.mov",
+        "video": "static/movies/ca-senate-judiciary-2024-07-02.m4v",
         "bill: pdf": "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202320240AB3048"
       }
     },
@@ -57,7 +57,7 @@
       "venue": "ECE 598 - Digital Identity @ University of Illinois at Champaign Urbana",
       "links": {
         "slides: keynote": "static/slides/web-tracking-uiuc-2024.key",
-        "video": "static/movies/web-tracking-uiuc-2024.mp4"
+        "video": "static/movies/web-tracking-uiuc-2024.m4v"
       }
     },
     {

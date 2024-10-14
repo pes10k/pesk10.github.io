@@ -3,3 +3,4 @@
 *.swp
 .mypy_cache
 .request-cache
+static/not-tracked/*
