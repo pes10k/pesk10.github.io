@@ -234,3 +234,9 @@ code {
     width: 75%;
   }
 }
+
+@media (max-width: 768px) {
+  .pub-links {
+    display: block;
+  }
+}

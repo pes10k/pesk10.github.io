@@ -147,8 +147,9 @@ class PubNote:
         if self.css_class:
             span_classes.append(self.css_class)
 
+        classes_markup = ' '.join(span_classes)
         return (
-            f'<span class="{' '.join(span_classes)}">' +
+            f'<span class="{classes_markup}">' +
             html.escape(self.title) +
             "</span>"
         )
