@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+import argparse
 import json
 from pathlib import Path
 import sys
@@ -8,6 +9,24 @@ from peteresnyder.indent import Indenter
 from peteresnyder.items import BlogItem, CodeItem, InvolvementItem
 from peteresnyder.items import PressItem, PublicationItem
 from peteresnyder.items import TalksItem, WritingItem, NonTechWriting
+
+parser = argparse.ArgumentParser(
+    prog="Build www.peteresnyder.com",
+    formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+parser.add_argument(
+    "--validate",
+    action="store_true",
+    default=False,
+    help="Don't print the generated page, just validate that the page seems "
+         "to build correctly. Exits with process code 0 if the page builds "
+         "successfully, and 1 otherwise.")
+parser.add_argument(
+    "--output", "-o",
+    type=Path,
+    default=Path("./index.html"),
+    help="Path to write the resulting HTML to. If passed '-', output is "
+         "written to STDOUT.")
+ARGS = parser.parse_args()
 
 BASE_PATH = Path(sys.argv[0]).parent.resolve()
 DATA_DIR = Path(".", "data")
@@ -41,6 +60,11 @@ for section_file in SECTIONS_DIR.iterdir():
         "{{" + section_file.stem + "}}", indenter.to_html())
 
 
-IS_VALIDATE = "--validate" in sys.argv
-if not IS_VALIDATE:
-    print(TEMPLATE_INDEX_HTML_TEXT)
+if ARGS.validate:
+    sys.exit(0)
+
+if ARGS.output.name == "-":
+    sys.stdout.write(TEMPLATE_INDEX_HTML_TEXT)
+else:
+    ARGS.output.write_text(TEMPLATE_INDEX_HTML_TEXT)
+sys.exit(0)
