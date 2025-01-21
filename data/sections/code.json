@@ -6,7 +6,7 @@
       "title": "Brave Browser",
       "url": "https://github.com/brave/brave-core/",
       "desc": "Features and bugfixes I've added to the Brave browser while working at Brave.",
-      "year": 2022,
+      "year": "@now",
       "links": {
         "PRs": "https://github.com/brave/brave-core/pulls?q=is%3Apr+author%3Apes10k+is%3Aclosed"
       }
@@ -30,6 +30,15 @@
       "links": {
         "firefox extension": "https://addons.mozilla.org/en-US/firefox/addon/webapi-manager/",
         "source": "https://github.com/snyderp/web-api-manager"
+      }
+    },
+    {
+      "title": "University of Illinois at Chicago Computer Science Thesis Template",
+      "url": "https://github.com/bitslab/uic-cs-thesis-template",
+      "desc": "(Oddly!) I still maintain the thesis template for my university's PhD thesis.",
+      "year": "@now",
+      "links": {
+        "source": "https://github.com/bitslab/uic-cs-thesis-template"
       }
     },
     {
