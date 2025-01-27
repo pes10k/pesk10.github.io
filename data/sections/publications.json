@@ -68,6 +68,7 @@
   "items": [
     {
       "title": "Web Execution Bundles: Reproducible, Accurate, and Archivable Web Measurements",
+      "url": "static/papers/webrec-usenix-2025.pdf",
       "year": 2025,
       "venue": "@usenix",
       "authors": [
