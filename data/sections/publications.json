@@ -76,7 +76,10 @@
         "@me",
         "@hamed",
         "Ben Stock"
-      ]
+      ],
+      "links": {
+        "arxiv": "https://arxiv.org/abs/2501.15911"
+      }
     },
     {
       "title": "A First Look at Related Website Sets",
