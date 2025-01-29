@@ -78,7 +78,9 @@
         "Ben Stock"
       ],
       "links": {
-        "arxiv": "https://arxiv.org/abs/2501.15911"
+        "arxiv": "https://arxiv.org/abs/2501.15911",
+        "code": "https://github.com/brave/pagegraph-crawl/",
+        "dataset": "https://doi.org/10.5281/zenodo.14761021"
       }
     },
     {
