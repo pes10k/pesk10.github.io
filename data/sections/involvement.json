@@ -1,6 +1,10 @@
 {
   "abbrs": {
     "venues": {
+      "@pets": {
+        "title": "Privacy Enhancing Technologies Symposium",
+        "abbr": "PETS"
+      },
       "@pepr": {
         "title": "Conference on Privacy Engineering Practice and Respect",
         "abbr": "PEPR"
@@ -54,6 +58,11 @@
     }
   },
   "items": [
+    {
+      "venue": "@pets",
+      "position": "@pc",
+      "year": 2026
+    },
     {
       "venue": "@pepr",
       "position": "@pc",
