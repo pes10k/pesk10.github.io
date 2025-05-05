@@ -2,6 +2,7 @@
   "abbrs": {
     "authors": {
       "@me": "Peter Snyder",
+      "@ali": "Ali Shahin Shamsabadi",
       "@ben": "Ben Livshits",
       "@jordan": "Jordan Jueckstock",
       "@panos": "Panagiotis Papadopoulos",
@@ -12,7 +13,8 @@
       "@michael": "Michael Smith",
       "@hamed": "Hamed Haddadi",
       "@deian": "Deian Stefan",
-      "@alex-d": "Alex Davidson"
+      "@alex-d": "Alex Davidson",
+      "@gareth": "Gareth Tyson"
     },
     "venues": {
       "@usenix": {
@@ -67,6 +69,33 @@
   },
   "items": [
     {
+      "title": "Measuring the Accuracy and Effectiveness of PII Removal Services",
+      "year": 2025,
+      "venue": "@pets",
+      "authors": [
+        "Jiahui HE",
+        "@me",
+        "@hamed",
+        "Fabian E. Bustamante",
+        "@gareth"
+      ]
+    },
+    {
+      "title": "Nebula: Efficient, Private and Accurate Histogram Estimation",
+      "year": 2025,
+      "venue": "@ccs",
+      "authors": [
+        "@ali",
+        "@me",
+        "Ralph Giles",
+        "Aurélien Bellet",
+        "@hamed"
+      ],
+      "links": {
+        "arxiv": "https://arxiv.org/abs/2409.09676"
+      }
+    },
+    {
       "title": "Web Execution Bundles: Reproducible, Accurate, and Archivable Web Measurements",
       "url": "static/papers/webrec-usenix-2025.pdf",
       "year": 2025,
@@ -92,7 +121,7 @@
         "Stephen McQuistin",
         "@me",
         "@hamed",
-        "Gareth Tyson"
+        "@gareth"
       ],
       "notes": [
         "#short-paper"
@@ -145,7 +174,7 @@
         "@me",
         "Colin Perkins",
         "@hamed",
-        "Gareth Tyson"
+        "@gareth"
       ],
       "notes": [
         "#short-paper"
