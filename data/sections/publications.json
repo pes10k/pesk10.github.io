@@ -78,7 +78,10 @@
         "@hamed",
         "Fabian E. Bustamante",
         "@gareth"
-      ]
+      ],
+      "links": {
+        "arxiv": "https://arxiv.org/abs/2505.06989"
+      }
     },
     {
       "title": "Nebula: Efficient, Private and Accurate Histogram Estimation",
