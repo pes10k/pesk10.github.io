@@ -69,19 +69,15 @@
   },
   "items": [
     {
-      "title": "Measuring the Accuracy and Effectiveness of PII Removal Services",
+      "title": "Local Frames: Exploiting Inherited Origins to Bypass Content Blockers",
       "year": 2025,
-      "venue": "@pets",
+      "venue": "@ccs",
       "authors": [
-        "Jiahui HE",
-        "@me",
+        "Alisha Ukani",
         "@hamed",
-        "Fabian E. Bustamante",
-        "@gareth"
-      ],
-      "links": {
-        "arxiv": "https://arxiv.org/abs/2505.06989"
-      }
+        "Alex C. Snoeren",
+        "@me"
+      ]
     },
     {
       "title": "Nebula: Efficient, Private and Accurate Histogram Estimation",
@@ -96,6 +92,21 @@
       ],
       "links": {
         "arxiv": "https://arxiv.org/abs/2409.09676"
+      }
+    },
+    {
+      "title": "Measuring the Accuracy and Effectiveness of PII Removal Services",
+      "year": 2025,
+      "venue": "@pets",
+      "authors": [
+        "Jiahui HE",
+        "@me",
+        "@hamed",
+        "Fabian E. Bustamante",
+        "@gareth"
+      ],
+      "links": {
+        "arxiv": "https://arxiv.org/abs/2505.06989"
       }
     },
     {
