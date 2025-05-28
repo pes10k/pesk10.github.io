@@ -229,6 +229,11 @@ code {
   display: block;
 }
 
+section ul {
+  list-style-type: none;
+  padding-inline-start: 0px;
+}
+
 @media (min-width: 575.98px) {
   .description {
     width: 75%;
