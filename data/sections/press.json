@@ -129,6 +129,13 @@
   },
   "items": [
     {
+      "title": "Browser Extensions are DANGEROUS",
+      "url": "https://www.youtube.com/watch?app=desktop&v=11P6DdI8HOo&t=999s",
+      "source": "@nbtv",
+      "date": "2025-04-18T00:00:00",
+      "type": "video"
+    },
+    {
       "title": "Microsoft's playdate in Google's Privacy Sandbox gets messy",
       "url": "https://www.theregister.com/2024/04/04/microsoft_sandbox_google/",
       "source": "@register",
