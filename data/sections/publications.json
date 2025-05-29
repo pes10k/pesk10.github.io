@@ -77,7 +77,15 @@
         "@hamed",
         "Alex C. Snoeren",
         "@me"
-      ]
+      ],
+      "links": {
+        "dataset": "https://osf.io/9yq57/files/osfstorage",
+        "#fix: adguard": "https://github.com/AdguardTeam/AdguardBrowserExtension/commit/0fc7d25d542af2b70421cb3d249480a92d9b7581",
+        "#fix: brave": "https://github.com/brave/brave-core/pull/26622",
+        "#fix: duckduckgo": "https://github.com/duckduckgo/BrowserServicesKit/pull/1021",
+        "#fix: ublock origin": "https://github.com/gorhill/uBlock/commit/520f81f",
+        "#fix: safari": "https://support.apple.com/en-us/122371"
+      }
     },
     {
       "title": "Nebula: Efficient, Private and Accurate Histogram Estimation",
