@@ -70,6 +70,7 @@
   "items": [
     {
       "title": "Local Frames: Exploiting Inherited Origins to Bypass Content Blockers",
+      "url": "static/papers/local-frames-ccs-2025.pdf",
       "year": 2025,
       "venue": "@ccs",
       "authors": [
@@ -90,6 +91,7 @@
     },
     {
       "title": "Nebula: Efficient, Private and Accurate Histogram Estimation",
+      "url": "static/papers/nebula-ccs-2025.pdf",
       "year": 2025,
       "venue": "@ccs",
       "authors": [
