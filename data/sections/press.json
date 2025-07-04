@@ -124,10 +124,21 @@
       "@drum": {
         "title": "The Drum",
         "url": "https://www.thedrum.com/"
+      },
+      "@owa": {
+        "title": "Open Web Advocacy",
+        "url": "https://open-web-advocacy.org/"
       }
     }
   },
   "items": [
+    {
+      "title": "Google's Hotseat Hypocrisy",
+      "url": "https://open-web-advocacy.org/blog/googles-hotseat-hypocrisy/",
+      "source": "@owa",
+      "date": "2025-07-04T00:00:00",
+      "type": "news"
+    },
     {
       "title": "Browser Extensions are DANGEROUS",
       "url": "https://www.youtube.com/watch?app=desktop&v=11P6DdI8HOo&t=999s",
