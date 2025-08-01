@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Simple session test</title>
+  </head>
+  <body>
+    <h1>Simple session test</h1>
+    <p>Loading...</p>
+    <script>
+      const localStorageKey = 'prev-visit'
+      let lastVisitText = ''
+      const pElm = document.getElementsByTagName('p')[0]
+      const currentlySavedTime = window.localStorage[localStorageKey]
+      if (currentlySavedTime === undefined || Number.isInteger(+currentlySavedTime)) {
+        window.localStorage[localStorageKey] = (new Date()).toUTCString()
+        lastVisitText = 'Looks like this is your first visit'
+      } else {
+        lastVisitText = `Looks like you last visited on ${currentlySavedTime}`
+      }
+      pElm.innerText = lastVisitText
+    </script>
+  </body>
+</html>
