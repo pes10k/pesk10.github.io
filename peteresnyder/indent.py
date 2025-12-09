@@ -1,7 +1,8 @@
+from __future__ import annotations
+
 from typing import List
 
-from .types import Html
-
+from .type_aliases import Html
 
 class Indenter:
     level: int
@@ -13,15 +14,15 @@ class Indenter:
         self.chars = chars
         self.markup = []
 
-    def add(self, html: Html) -> "Indenter":
+    def add(self, html: Html) -> Indenter:
         self.markup.append((self.level * self.chars) + html)
         return self
 
-    def up(self) -> "Indenter":
+    def up(self) -> Indenter:
         self.level += 1
         return self
 
-    def down(self) -> "Indenter":
+    def down(self) -> Indenter:
         self.level -= 1
         return self
 

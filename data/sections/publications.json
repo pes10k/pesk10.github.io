@@ -69,6 +69,20 @@
   },
   "items": [
     {
+      "title": "Privacy Practices of Browser Agents",
+      "year": 2026,
+      "venue": "preprint",
+      "authors": [
+        "Alisha Ukani",
+        "@hamed",
+        "@ali",
+        "@me"
+      ],
+      "links": {
+        "arxiv": "https://arxiv.org/abs/2512.07725"
+      }
+    },
+    {
       "title": "Local Frames: Exploiting Inherited Origins to Bypass Content Blockers",
       "url": "static/papers/local-frames-ccs-2025.pdf",
       "year": 2025,

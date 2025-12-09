@@ -193,6 +193,10 @@ code {
   content: " ";
 }
 
+.venue .venue-title-preprint {
+  font-style: italic;
+}
+
 .publications-talks .venue span:after {
   content: ", ";
 }

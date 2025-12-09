@@ -1,21 +1,16 @@
 import dataclasses
-import datetime
 import html
 import os
 from pathlib import Path
 import sys
-from typing import Any, Optional, Tuple, Union
+from typing import Any, Optional, Tuple
 from urllib.parse import urlparse
 
 from diskcache import Cache  # type: ignore
 import requests
 
-Html = str
-Url = str
-Year = int
-Date = Union[Year, datetime.datetime]
-CSSClass = str
-TalkType = str
+from .html_helpers import to_css_class
+from .type_aliases import CSSClass, Html, Url
 
 
 def should_strict_validate() -> bool:
@@ -106,14 +101,23 @@ class Venue:
         if self.url:
             throw_if_invalid_path(self.url)
 
+    def title_classes(self) -> list[CSSClass]:
+        text_to_stub = self.abbr or self.title
+        return ["venue-title", f"venue-title-{to_css_class(text_to_stub)}"]
+
     def to_html(self) -> Html:
         esc_title = html.escape(self.title)
         html_str = ""
+        css_classes = " ".join(self.title_classes())
+
         if self.abbr:
             esc_abbr = html.escape(self.abbr)
-            html_str += f'<abbr title="{esc_title}">{esc_abbr}</abbr>'
+            html_str += (
+                f'<abbr class="{css_classes}" ' +
+                f'title="{esc_title}">{esc_abbr}</abbr>'
+            )
         else:
-            html_str += f'<span>{esc_title}</span>'
+            html_str += f'<span class="{css_classes}">{esc_title}</span>'
 
         if self.suffix:
             html_str += " " + html.escape(self.suffix)
