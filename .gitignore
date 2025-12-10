@@ -1,6 +1,6 @@
-*/__pycache__/*
+__pycache__
 .DS_Store
 *.swp
 .mypy_cache
 .request-cache
-static/not-tracked/*
+web/static/not-tracked/*

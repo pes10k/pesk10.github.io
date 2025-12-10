@@ -1,65 +1,10 @@
 import dataclasses
 import html
-import os
 from pathlib import Path
-import sys
-from typing import Any, Optional, Tuple
-from urllib.parse import urlparse
+from typing import Optional, Tuple
 
-from diskcache import Cache  # type: ignore
-import requests
-
-from .html_helpers import to_css_class
+from .helpers import to_css_class
 from .type_aliases import CSSClass, Html, Url
-
-
-def should_strict_validate() -> bool:
-    return "--verbose" in sys.argv
-
-
-REQUESTS_ARGS: dict[str, Any] = {
-    "timeout": 5,
-    "headers": {
-        # pylint: disable-next=line-too-long
-        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
-    }
-}
-REQUEST_CACHE_TTL: int = 60 * 60 * 24
-REQUEST_CACHE: Cache = Cache(Path(f"{os.getcwd()}/.request-cache"))
-REQUEST_IGNORE_FAILURES: list[Url] = [
-    "www.fastcompany.com",
-    "www.inc.com",
-    "adage.com",
-]
-
-
-def is_path_valid(path: str) -> bool:
-    url_parts = urlparse(path)
-    if url_parts.scheme:
-        if url_parts.hostname in REQUEST_IGNORE_FAILURES:
-            return True
-        if should_strict_validate():
-            print(f"- Checking url {path}")
-            if REQUEST_CACHE.get(path):
-                print("  * found in cache")
-                return True
-            try:
-                requests.head(path, **REQUESTS_ARGS).raise_for_status()
-            except requests.exceptions.HTTPError:
-                requests.get(path, **REQUESTS_ARGS).raise_for_status()
-            REQUEST_CACHE.set(path, True, expire=REQUEST_CACHE_TTL)
-        return True
-    # Otherwise, treat it as a file path, and make sure that file exists
-    return os.path.isfile(path)
-
-
-def raise_path_validation_error(path: str) -> None:
-    raise ValueError(f"{path} is not a valid url or local path")
-
-
-def throw_if_invalid_path(path: str) -> None:
-    if not is_path_valid(path):
-        raise_path_validation_error(path)
 
 
 @dataclasses.dataclass
@@ -76,11 +21,8 @@ class Author:
 @dataclasses.dataclass
 class Source:
     title: str
-    url: Url
+    url: Url | Path
     abbr: str
-
-    def __post_init__(self) -> None:
-        throw_if_invalid_path(self.url)
 
     def to_html(self) -> Html:
         return (
@@ -95,11 +37,7 @@ class Venue:
     title: str
     abbr: Optional[str] = None
     suffix: Optional[str] = None
-    url: Optional[Url] = None
-
-    def __post_init__(self) -> None:
-        if self.url:
-            throw_if_invalid_path(self.url)
+    url: Optional[Url | Path] = None
 
     def title_classes(self) -> list[CSSClass]:
         text_to_stub = self.abbr or self.title
@@ -179,7 +117,6 @@ class Link:
                     break
             if not self.css_class:
                 raise ValueError(f"Couldn't match {self.title} with a prefix")
-        throw_if_invalid_path(self.url)
 
     def to_html(self) -> Html:
         default_label_class = 'label-default'

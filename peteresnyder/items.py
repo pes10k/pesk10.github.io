@@ -11,14 +11,7 @@ from typing import Any, cast, Optional, Union
 from .indent import Indenter
 from .type_aliases import Date, Html, TalkType, Url, Year
 from .types import Author, Link, PubNote, Source, Venue
-
-
-def is_local_file_ref(ref: Optional[str]) -> bool:
-    if not ref:
-        return False
-    if "//" in ref:  # Looks like a HTTP link
-        return False
-    return True
+from .helpers import validate_file_reference
 
 
 def add_desc_html(desc: str, markup: Indenter) -> None:
@@ -180,26 +173,8 @@ class BaseItem(ABC):
     def add_html(self, markup: Indenter, prior: Optional[Any] = None) -> None:
         raise NotImplementedError()
 
-    def validate(self, root_dir: Path) -> bool:
-        possible_files: list[str] = []
-        for file_field_name in type(self).file_fields:
-            field_values = getattr(self, file_field_name)
-            if not isinstance(field_values, list):
-                field_values = [field_values]
-            for a_field_value in field_values:
-                if isinstance(a_field_value, dict):
-                    possible_files.extend(a_field_value.values())
-                    continue
-                if isinstance(a_field_value, Link):
-                    possible_files.append(a_field_value.url)
-                    continue
-                possible_files.append(a_field_value)
-        for a_ref in possible_files:
-            if not is_local_file_ref(a_ref):
-                continue
-            possible_file_path = root_dir / Path(a_ref)
-            if not possible_file_path.is_file():
-                raise FileNotFoundError(str(possible_file_path))
+    # pylint: disable-next=unused-argument
+    def validate(self, root_dir: Path, strict: bool = False) -> bool:
         return True
 
     @staticmethod
@@ -240,6 +215,11 @@ class ListItem(BaseItem):
         self.date = date
         self.title = title
         self.url = url
+
+    def validate(self, root_dir: Path, strict: bool = False) -> bool:
+        if self.url:
+            validate_file_reference(root_dir, self.url, strict)
+        return True
 
     def title_html(self) -> Html:
         safe_title = html.escape(self.title)
@@ -311,6 +291,13 @@ class PublicationItem(ListItem):
         self.venue = venue
         self.notes = notes
         super().__init__(year, title, url)
+
+    def validate(self, root_dir: Path, strict: bool = False) -> bool:
+        if self.url:
+            validate_file_reference(root_dir, self.url, strict)
+        for a_link in self.links:
+            validate_file_reference(root_dir, a_link.url, strict)
+        return True
 
     def add_html(self, markup: Indenter, prior: Optional[Any] = None) -> None:
         markup.add("<li>").up()
@@ -473,6 +460,13 @@ class TalksItem(ListItem):
         self.authors = authors
         super().__init__(year, title, url)
 
+    def validate(self, root_dir: Path, strict: bool = False) -> bool:
+        if self.url:
+            validate_file_reference(root_dir, self.url, strict)
+        for a_link in self.links:
+            validate_file_reference(root_dir, a_link.url, strict)
+        return True
+
     def add_html(self, markup: Indenter, prior: Optional[Any] = None) -> None:
         markup.add("<li>").up()
         markup.add(self.title_html())
@@ -514,6 +508,13 @@ class WritingItem(ListItem):
         self.authors = authors
         super().__init__(year, title, url)
 
+    def validate(self, root_dir: Path, strict: bool = False) -> bool:
+        if self.url:
+            validate_file_reference(root_dir, self.url, strict)
+        for a_link in self.links:
+            validate_file_reference(root_dir, a_link.url, strict)
+        return True
+
     def add_html(self, markup: Indenter, prior: Optional[Any] = None) -> None:
         markup.add("<li>").up()
         markup.add(self.title_html())
@@ -552,6 +553,11 @@ class CodeItem(ListItem):
         self.links = links
         self.desc = desc
         super().__init__(year, title, url)
+
+    def validate(self, root_dir: Path, strict: bool = False) -> bool:
+        for a_link in self.links:
+            validate_file_reference(root_dir, a_link.url, strict)
+        return True
 
     def add_html(self, markup: Indenter, prior: Optional[Any] = None) -> None:
         markup.add("<li>").up()
