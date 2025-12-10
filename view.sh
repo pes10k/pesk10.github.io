@@ -5,7 +5,7 @@ if [[ $BUILD_PID > 0 ]]; then
   >&2 echo "Build failed, exiting";
   exit;
 fi;
-python3 -m http.server -d ./web &
+python3 -m http.server -d ./docs &
 PY_PID=$!
 open http://[::]:8000/index.html
 sleep 5

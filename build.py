@@ -10,7 +10,7 @@ from peteresnyder.items import BlogItem, CodeItem, InvolvementItem
 from peteresnyder.items import PressItem, PublicationItem
 from peteresnyder.items import TalksItem, WritingItem, NonTechWriting
 
-DEFAULT_ROOT = Path(".", "web")
+DEFAULT_ROOT = Path(".", "docs")
 
 parser = argparse.ArgumentParser(
     prog="Build www.peteresnyder.com",

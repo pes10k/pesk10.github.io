@@ -3,4 +3,4 @@ __pycache__
 *.swp
 .mypy_cache
 .request-cache
-web/static/not-tracked/*
+docs/static/not-tracked/*
